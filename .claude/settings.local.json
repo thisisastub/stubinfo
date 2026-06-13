@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\tommy\\\\Downloads\" | Where-Object { $_.Name -imatch \"stubblefield|brand|design\" } | Select-Object Name, LastWriteTime)",
+      "PowerShell($json = Get-Content \"C:\\\\Users\\\\tommy\\\\Downloads\\\\stubblefield-handoff\\\\stubblefield-info-3-0\\\\project\\\\.image-slots.state.json\" -Raw | ConvertFrom-Json; $json.PSObject.Properties.Name)"
+    ]
+  }
+}
