@@ -1,0 +1,50 @@
+/* ============================================================
+   Color tokens
+   Warm "paper" neutrals carry the surface; one brick-red accent.
+   Three themes ship: Paper (default), Ink (dark), Oxblood (warm).
+   ============================================================ */
+
+:root {
+  /* --- core palette (Paper, default theme) --- */
+  --color-bg:      #F5F0E8;   /* warm cream paper        */
+  --color-text:    #1A1A2E;   /* deep ink navy           */
+  --color-primary: #1A1A2E;   /* primary ink (= text)    */
+  --color-accent:  #C44B4B;   /* brick red — the accent  */
+  --color-surface: #EDE6D8;   /* sunken paper panel      */
+  --color-border:  #D8CDB9;   /* hairline rule           */
+
+  /* --- derived ink tints (text at reduced emphasis) --- */
+  --ink-70: rgba(26, 26, 46, 0.70);
+  --ink-55: rgba(26, 26, 46, 0.55);
+  --ink-12: rgba(26, 26, 46, 0.12);
+
+  /* --- logo recolor target --- */
+  --logo-color: var(--color-primary);
+}
+
+/* --- Ink theme — dark, accent stays red --- */
+:root[data-theme="ink"] {
+  --color-bg:      #16162a;
+  --color-text:    #F2ECE0;
+  --color-primary: #F5F0E8;
+  --color-surface: #1f1f38;
+  --color-border:  rgba(245, 240, 232, 0.16);
+  --ink-70: rgba(242, 236, 224, 0.74);
+  --ink-55: rgba(242, 236, 224, 0.56);
+  --ink-12: rgba(245, 240, 232, 0.14);
+  --logo-color: var(--color-accent);
+}
+
+/* --- Oxblood theme — warm paper, oxblood primary --- */
+:root[data-theme="oxblood"] {
+  --color-bg:      #F5F0E8;
+  --color-text:    #2A1416;
+  --color-primary: #7C2B2B;
+  --color-accent:  #B23A3A;
+  --color-surface: #efe3da;
+  --color-border:  #e0cbc1;
+  --ink-70: rgba(42, 20, 22, 0.70);
+  --ink-55: rgba(42, 20, 22, 0.55);
+  --ink-12: rgba(42, 20, 22, 0.12);
+  --logo-color: var(--color-primary);
+}
