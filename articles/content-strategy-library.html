@@ -14,7 +14,10 @@
 <link rel="stylesheet" href="../article.css">
 <link rel="stylesheet" href="../transformation.css">
 <link rel="stylesheet" href="../transformation-03.css">
-<script>(function(){var t=null;try{t=localStorage.getItem('sf.theme')}catch(e){}if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='ink';document.documentElement.setAttribute('data-theme',t==='ink'?'ink':'paper')})();</script>
+<!-- Pre-paint theme. The homepage is ink-only, so ink is the site default and the
+     fallback here: a visitor clicking through must not flip to light. An explicit
+     choice from the header toggle is stored as sf.theme and still wins. -->
+<script>(function(){var t=null;try{t=localStorage.getItem('sf.theme')}catch(e){}document.documentElement.setAttribute('data-theme',t==='paper'?'paper':'ink')})();</script>
 </head>
 <body class="dk-body">
 
