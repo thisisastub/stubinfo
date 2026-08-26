@@ -79,7 +79,8 @@
     .strategy-copy .pillars { display: none; }
     .cs-preview { height: auto; display: flex; flex-direction: column; gap: 1rem; }
     .cs-pane { position: static; opacity: 1; pointer-events: auto; transform: none; }
-    .cs-thumb { flex: 0 0 auto; height: 210px; }
+    /* img.cs-thumb sets height:100% at 0,1,1 — match that specificity or the stacked thumbs collapse to min-height */
+    .cs-thumb, img.cs-thumb { flex: 0 0 auto; height: 210px; }
   }
 </style>
 </head>
