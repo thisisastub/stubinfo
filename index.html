@@ -21,26 +21,65 @@
     :root[data-hero="a"] .hero-a .hero-grid { grid-template-columns: 1fr; }
   }
 
-  /* Content Strategy — scroll-driven game tree (fully-pinned stage) */
-  .strategy-scroll { height: 300vh; position: relative; }
+  /* Content Strategy — pinned stage: examples list + live preview */
+  .strategy-scroll { height: 315vh; position: relative; }
   .strategy-sticky { position: sticky; top: 0; height: 100vh; display: grid; align-content: center; }
-  .strategy-stage { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.8rem, 4vw, 4rem); align-items: center; width: 100%; }
-  .strategy-copy .section-head { max-width: none; margin-bottom: clamp(1.1rem, 2.4vh, 1.9rem); }
-  .strategy-copy .section-head h2 { font-size: clamp(1.7rem, 1rem + 1.9vw, 2.6rem); }
+  .strategy-stage { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(1.8rem, 4vw, 3.6rem); align-items: center; width: 100%; }
+  .strategy-copy .section-head { max-width: none; margin-bottom: clamp(0.9rem, 2vh, 1.6rem); }
+  .strategy-copy .section-head h2 { font-size: clamp(1.6rem, 1rem + 1.7vw, 2.45rem); }
   .strategy-copy .section-head p:not(.eyebrow) { font-size: var(--text-base); margin-top: 0.8rem; }
   .strategy-copy .pillars { grid-template-columns: 1fr; gap: 0; }
-  .strategy-copy .pillar { gap: 0.35rem; padding: 0.85rem 0; border-top: 1px solid var(--color-border); transition: opacity .5s ease; }
+  .strategy-copy .pillar { gap: 0.3rem; padding: 0.8rem 0; border-top: 1px solid var(--color-border); transition: opacity .45s ease; }
   .strategy-copy .pillar:first-child { border-top: none; padding-top: 0; }
+  .strategy-copy .pillar:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
   .strategy-copy .pillar h3 { font-size: var(--text-xl); }
-  .strategy-copy .pillar p { font-size: 0.95rem; line-height: 1.5; }
-  .strategy-tree-wrap { height: min(62vh, 500px); }
-  #strategy-tree { width: 100%; height: 100%; }
+  .strategy-copy .pillar p { font-size: 0.94rem; line-height: 1.5; }
+
+  .cs-preview { position: relative; height: min(68vh, 560px); }
+  .cs-pane { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden;
+    background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+    opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
+  .cs-pane.is-active { opacity: 1; pointer-events: auto; transform: none; }
+  .cs-thumb { width: 100%; flex: 1 1 auto; min-height: 120px; display: block; border-bottom: 1px solid var(--color-border); }
+  img.cs-thumb { height: 100%; object-fit: cover; object-position: center 38%; }
+  .cs-pane-body { padding: clamp(1.2rem, 2.4vw, 1.7rem); display: flex; flex-direction: column; gap: 0.55rem; }
+  .cs-pane .kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); }
+  .cs-pane h3 { font-family: var(--font-display); font-size: clamp(1.28rem, 1.05rem + 0.7vw, 1.65rem); line-height: 1.15; text-wrap: pretty; }
+  .cs-pane p { color: var(--ink-70); font-size: 0.96rem; line-height: 1.55; }
+  .cs-pane-foot { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.85rem; }
+
+  /* 03 — Content Strategy Library, in the library's own palette */
+  .cs-pane.cstl { background: #F8F7F2; border-color: #C6C5BB; justify-content: center; gap: 1.05rem; padding: clamp(1.5rem, 3vw, 2.3rem); }
+  .cs-pane.cstl .kicker { color: #16160E; opacity: 0.5; }
+  .cs-pane.cstl h3 { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.02em; color: #16160E; font-size: clamp(1.45rem, 1.1rem + 1vw, 1.95rem); }
+  .cs-pane.cstl p { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 1.0125rem; line-height: 1.6; color: #52524A; }
+  .cs-pane.cstl .hl { background: #F7C531; padding: 1px 6px; }
+  .cs-pane.cstl ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .cs-pane.cstl li { display: flex; gap: 0.75rem; align-items: flex-start; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.55; color: #52524A; }
+  .cs-pane.cstl li::before { content: ""; width: 7px; height: 7px; background: #F7C531; flex-shrink: 0; margin-top: 0.5em; transform: rotate(45deg); border-radius: 1px; }
+  .cs-btn-y { display: inline-flex; align-items: center; gap: 0.5rem; align-self: flex-start; font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.9375rem; font-weight: 600; color: #16160E; background: #F7C531; border-radius: 4px; padding: 0.7rem 1.25rem; text-decoration: none; letter-spacing: -0.01em; transition: opacity 120ms; }
+  .cs-btn-y:hover { opacity: 0.85; color: #16160E; }
+  .cs-btn-row { display: flex; flex-wrap: wrap; gap: 0.625rem; align-items: center; }
+  .cs-btn-y.ghost { background: transparent; color: #16160E; box-shadow: inset 0 0 0 1.5px #16160E; }
+  .cs-btn-y.ghost:hover { background: #16160E; color: #FFFDF5; opacity: 1; }
+  @media (min-width: 901px) and (max-height: 760px) {
+    .cs-thumb { min-height: 80px; }
+    .cs-pane-body { padding: 1.1rem 1.25rem; gap: 0.4rem; }
+    .cs-pane-foot { margin-top: 0.6rem; }
+    .cs-pane.cstl { gap: 0.7rem; padding: 1.3rem; }
+    .cs-pane.cstl h3 { font-size: 1.38rem; }
+    .cs-pane.cstl p { font-size: 0.95rem; }
+    .cs-pane.cstl li { font-size: 0.88rem; }
+  }
   @media (max-width: 900px) {
     .strategy-scroll { height: auto; }
     .strategy-sticky { position: static; height: auto; display: block; padding-block: 1rem; }
-    .strategy-stage { grid-template-columns: 1fr; gap: 2rem; }
-    .strategy-copy .pillar { opacity: 1 !important; }
-    .strategy-tree-wrap { height: 56vh; }
+    .strategy-stage { grid-template-columns: 1fr; gap: 1.6rem; }
+    .strategy-copy .pillars { display: none; }
+    .cs-preview { height: auto; display: flex; flex-direction: column; gap: 1rem; }
+    .cs-pane { position: static; opacity: 1; pointer-events: auto; transform: none; }
+    .cs-thumb { flex: 0 0 auto; height: 210px; }
   }
 </style>
 </head>
@@ -89,8 +128,8 @@
           <h1>How many steps ahead is your <span class="accent">content?</span></h1>
           <p class="hero-sub">Strategic marketer, builder, and thought leader. Twenty-plus years creating content solutions.</p>
           <div class="hero-cta">
-            <a class="btn btn-solid" href="#work">See selected work <span class="arr" aria-hidden="true">↗</span></a>
-            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            <a class="btn btn-solid" href="#strategy">See content strategy work <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
         </div>
         <div class="mark-wrap">
@@ -106,7 +145,7 @@
       <h1>The future of marketing<br>isn't louder. It's <span class="accent">sharper.</span></h1>
       <p class="hero-sub">Tommy Stubblefield, strategic marketer, builder, and thought leader. Content strategy, editing, and writing that move the right minds.</p>
       <div class="hero-cta">
-        <a class="btn btn-solid" href="#work">See selected work <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn btn-solid" href="#strategy">See content strategy work <span class="arr" aria-hidden="true">↗</span></a>
         <a class="btn btn-ghost" href="#contact">Start a conversation</a>
       </div>
       <div class="masthead-rule" aria-hidden="true"></div>
@@ -120,7 +159,7 @@
           <h1>Strategy first. Then the <span class="accent">perfect words.</span></h1>
           <p class="hero-sub">Tommy Stubblefield, strategic marketer, builder, and thought leader. I help brands decide what to say, who to say it to, and why it will change a mind.</p>
           <div class="hero-cta">
-            <a class="btn btn-solid" href="#work">See selected work <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn btn-solid" href="#strategy">See content strategy work <span class="arr" aria-hidden="true">↗</span></a>
             <a class="btn btn-ghost" href="#contact">Start a conversation</a>
           </div>
         </div>
@@ -144,7 +183,7 @@
     <div class="about-grid">
       <div class="reveal">
         <p class="eyebrow">The brief on me</p>
-        <p class="about-lead">I'm Tommy, a marketer, builder, and thought leader who has spent <span class="accent">two decades</span> planning and executing strategic content.</p>
+        <p class="about-lead">I'm Tommy, a marketer and thought leader who has spent <span class="accent">two decades</span> planning and executing strategic content.</p>
         <div class="about-body" style="margin-top:1.6rem;">
           <p>Content strategy is more than a calendar, more than social promotion. It's research, problem solving and transformation. And like a good game of chess, it's thinking several moves ahead.</p>
           <p>That instinct has carried across online retail, tourism, healthcare, and fintech, from a founding B Corporation to a national staffing platform. That's why I built the <a href="https://www.contentstrategylibrary.com/">Content Strategy Library</a>.</p>
@@ -174,7 +213,7 @@
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
-          <span>Created social media strategies for a popular U.S. <b>beach destination</b> and a well-known <b>FinTech</b> organization.</span>
+          <span>Created social media strategies for a popular U.S. <b>beach destination</b> and a well-known <b>FinTech</b> brand.</span>
         </li>
       </ul>
       </div>
@@ -200,58 +239,70 @@
        <div class="strategy-copy">
         <div class="section-head">
       <p class="eyebrow">Content Strategy</p>
-      <h2>Anyone can make content. Strategy decides whether it changes anything.</h2>
-      <p>My work starts with the question most content efforts leave out: whose mind are we moving, and toward what? Everything downstream, voice, channel, cadence, the words themselves, answers to that.</p>
+      <h2>Anyone can make content. Strategy gives it meaning.</h2>
+      <p>My work starts with the question most content efforts leave out: whose mind are we moving, and toward what? Everything else answers to that. Here are some examples of my content strategy in action.</p>
     </div>
 
         <div class="pillars">
-          <div class="pillar" data-plystep="0" style="opacity:1">
+          <div class="pillar" data-plystep="0" tabindex="0" style="opacity:1">
             <div class="n">01</div>
-            <h3>Audience first</h3>
-            <p>People are the reason for any campaign. I map who you're trying to convince before I write a single line.</p>
+            <h3>Discover Atlanta</h3>
+            <p>Destination marketing. Two audiences, one domain, and a site that asked every reader to sort themselves.</p>
           </div>
-          <div class="pillar" data-plystep="1" style="opacity:.28">
+          <div class="pillar" data-plystep="1" tabindex="0" style="opacity:.28">
             <div class="n">02</div>
-            <h3>Strategy before output</h3>
-            <p>Every asset earns its place against the plan, taking into account industry positioning, distribution channels, and the specific move you want a reader to make. <b>No content for content's sake.</b></p>
+            <h3>Major fintech brand</h3>
+            <p>Four business lines publishing constantly, and a social team with no way to decide what to post next week.</p>
           </div>
-          <div class="pillar" data-plystep="2" style="opacity:.18">
+          <div class="pillar" data-plystep="2" tabindex="0" style="opacity:.18">
             <div class="n">03</div>
-            <h3>Built to displace competition</h3>
-            <p>Editorial systems and a durable voice will keep paying off long after a campaign ends. The future of changing minds is repeatable, not a one-off blast.</p>
+            <h3>Content Strategy Library</h3>
+            <p>I created a free, growing reference for the frameworks content strategists actually use.</p>
           </div>
         </div>
        </div><!-- /.strategy-copy -->
-       <div class="strategy-tree-wrap"><div id="strategy-tree" role="img" aria-label="An animated decision tree that searches candidate content strategies, prunes the weak ones, and highlights the strongest line"></div></div>
+       <div class="cs-preview">
+        <article class="cs-pane is-active" data-plypane="0">
+          <img class="cs-thumb" src="assets/cs-atlanta-skyline.jpg" alt="Midtown Atlanta skyline seen across Lake Clara Meer in Piedmont Park" loading="lazy" decoding="async">
+          <div class="cs-pane-body">
+            <span class="kicker">01 · Case Study</span>
+            <h3>Two audiences... with overlap.</h3>
+            <p>A destination marketing site was speaking to leisure travelers and convention planners in the same place at the same time, asking readers to figure out which one they were.</p>
+            <div class="cs-pane-foot">
+              <a class="btn btn-solid" href="articles/discover-atlanta.html">Learn more <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="cs-pane" data-plypane="1">
+          <img class="cs-thumb" src="assets/cs-strategy-table.jpg" alt="A team discussing strategy around a table" loading="lazy" decoding="async">
+          <div class="cs-pane-body">
+            <span class="kicker">02 · Case Study</span>
+            <h3>A full library. An empty calendar.</h3>
+            <p>A major fintech brand published across four business lines, constantly. Its social team still had no way to decide what to post next week.</p>
+            <div class="cs-pane-foot">
+              <a class="btn btn-solid" href="articles/regional-bank-social.html">Learn more <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="cs-pane cstl" data-plypane="2">
+          <span class="kicker">03 · Free resource</span>
+          <h3>Browse the Content Strategy Library</h3>
+          <p>The <span class="hl">Content Strategy Library</span> is a free, growing reference for the frameworks content strategists can actually use: what each one is, when to reach for it, and why they matter.</p>
+          <ul>
+            <li>Definitions, use cases, and context for every tool</li>
+            <li>A tool recommender that matches you with the right frameworks</li>
+            <li>Built for practitioners, not theorists</li>
+          </ul>
+          <div class="cs-btn-row">
+            <a class="cs-btn-y" href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener">Visit now <span aria-hidden="true">↗</span></a>
+            <a class="cs-btn-y ghost" href="articles/content-strategy-library.html">Learn more</a>
+          </div>
+        </article>
+       </div><!-- /.cs-preview -->
       </div><!-- /.strategy-stage -->
      </div><!-- /.strategy-sticky -->
     </div><!-- /.strategy-scroll -->
 
-    <div class="cap-grid one">
-      <div class="cap cap-feature reveal" style="background:#F8F7F2;border-color:#C6C5BB;position:relative;overflow:hidden;padding:clamp(1.6rem,3vw,2.4rem) clamp(1.9rem,4vw,3.2rem);">
-        <div style="display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;">
-          <h3 style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:1.75rem;font-weight:700;letter-spacing:-0.02em;color:#16160E;line-height:1.15;margin:0;">Browse the Content Strategy Library</h3>
-          <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#16160E;background:#F7C531;border-radius:4px;padding:0.7rem 1.25rem;text-decoration:none;letter-spacing:-0.01em;transition:opacity 120ms;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Get content strategy tools <span aria-hidden="true">↗</span></a>
-        </div>
-        <div>
-          <p style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:#52524A;margin:0 0 1.25rem;">The <span style="background:#F7C531;padding:1px 6px;">Content Strategy Library</span> is a free, growing reference for the frameworks content strategists can actually use: what each one is, when to reach for it, and why they matter.</p>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.7rem;">
-            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <span aria-hidden="true" style="display:inline-block;width:7px;height:7px;background:#F7C531;flex-shrink:0;margin-top:0.5em;transform:rotate(45deg);border-radius:1px;"></span>
-              <span style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:0.9375rem;line-height:1.55;color:#52524A;">Definitions, use cases, and context for every tool</span>
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <span aria-hidden="true" style="display:inline-block;width:7px;height:7px;background:#F7C531;flex-shrink:0;margin-top:0.5em;transform:rotate(45deg);border-radius:1px;"></span>
-              <span style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:0.9375rem;line-height:1.55;color:#52524A;">A tool recommender that matches you with the right frameworks</span>
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <span aria-hidden="true" style="display:inline-block;width:7px;height:7px;background:#F7C531;flex-shrink:0;margin-top:0.5em;transform:rotate(45deg);border-radius:1px;"></span>
-              <span style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:0.9375rem;line-height:1.55;color:#52524A;">Built for practitioners, not theorists</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -260,11 +311,15 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Selected Work</p>
+      <!-- Designed copy, restore the day "Beyond the Buy Button" ships (and un-comment the own-writing
+           slides below, bumping ctotal to match):
+           <h2>The writing, client and my own.</h2>
+           <p>A sample across healthcare, tourism, and retail.</p> -->
       <h2>A sample of the words, and the thinking behind them.</h2>
-      <p>Case studies, editorial features, and a few well-loved humor pieces across healthcare, tourism, and retail.</p>
+      <p>Client work across healthcare, tourism, and retail.</p>
     </div>
 
-    <div class="work-carousel reveal">
+    <div class="work-carousel is-compact reveal">
       <div class="carousel-bar">
         <p class="carousel-hint"><span class="cnum" id="work-current">01</span> <span class="csep">/</span> <span class="ctotal">10</span><span class="cscroll">Scroll for more →</span></p>
         <div class="carousel-nav">
@@ -275,6 +330,53 @@
 
       <div class="carousel-viewport" id="work-viewport">
         <div class="carousel-track" id="work-track">
+
+          <!-- Own writing samples — hidden until the new pieces are ready. Restore by removing this comment wrapper
+               (and bump the ctotal count in the carousel bar above to match).
+          <article class="work-slide" data-company="Opinion" data-industry="stubblefield.info">
+            <div class="slide-tag"><span class="slide-co">Opinion</span><span class="slide-ind">Published here</span></div>
+            <image-slot class="work-thumb" id="thumb-op-4" shape="rect" radius="0" placeholder="Drop a header image"></image-slot>
+            <a class="work-body" href="articles/beyond-the-buy-button.html">
+              <span class="kicker">August 24, 2026 · 9 min</span>
+              <h4>Beyond the Buy Button</h4>
+              <p>Ten cookieless ways an audience can tell you it is ready for the next stage, with the mechanism, the signal, and who already runs it.</p>
+              <span class="read">Read now <span class="arr" aria-hidden="true">↗</span></span>
+            </a>
+          </article>
+
+          <article class="work-slide" data-company="Opinion" data-industry="stubblefield.info">
+            <div class="slide-tag"><span class="slide-co">Opinion</span><span class="slide-ind">Published here</span></div>
+            <image-slot class="work-thumb" id="thumb-op-1" shape="rect" radius="0" placeholder="Drop a stock photo"></image-slot>
+            <a class="work-body" href="articles/nobody-owns-a-data-point.html">
+              <span class="kicker">August 11, 2026 · 9 min</span>
+              <h4>Nobody Owns a Data Point</h4>
+              <p>Competitor content displacement, and why the target is the statistic rather than the page.</p>
+              <span class="read">Read now <span class="arr" aria-hidden="true">↗</span></span>
+            </a>
+          </article>
+
+          <article class="work-slide" data-company="Opinion" data-industry="stubblefield.info">
+            <div class="slide-tag"><span class="slide-co">Opinion</span><span class="slide-ind">Published here</span></div>
+            <image-slot class="work-thumb" id="thumb-op-2" shape="rect" radius="0" placeholder="Drop a stock photo"></image-slot>
+            <a class="work-body" href="articles/type-faster-think-better.html">
+              <span class="kicker">July 28, 2026 · 8 min</span>
+              <h4>AI Made Us Faster. It Also Made Us Legible.</h4>
+              <p>What the 2026 research says about generative tools, and what it says about the people holding them.</p>
+              <span class="read">Read now <span class="arr" aria-hidden="true">↗</span></span>
+            </a>
+          </article>
+
+          <article class="work-slide" data-company="Analysis" data-industry="stubblefield.info">
+            <div class="slide-tag"><span class="slide-co">Analysis</span><span class="slide-ind">Published here</span></div>
+            <image-slot class="work-thumb" id="thumb-op-3" shape="rect" radius="0" placeholder="Drop a stock photo"></image-slot>
+            <a class="work-body" href="articles/six-ai-content-operations-models.html">
+              <span class="kicker">July 14, 2026 · 8 min</span>
+              <h4>Six Ways Companies Actually Use AI in Content Operations</h4>
+              <p>Six structurally different models. Who runs them, what they produced, and what each one is quietly betting on.</p>
+              <span class="read">Read now <span class="arr" aria-hidden="true">↗</span></span>
+            </a>
+          </article>
+          -->
 
           <article class="work-slide" data-company="LocumTenens.com" data-industry="Healthcare Staffing">
             <div class="slide-tag"><span class="slide-co">LocumTenens.com</span><span class="slide-ind">Healthcare Staffing</span></div>
@@ -540,7 +642,7 @@
         <input type="email" id="cf-email" name="email" autocomplete="email" required>
       </div>
       <div class="field">
-        <label for="cf-message">What mind are you trying to change?</label>
+        <label for="cf-message">Whose mind are you trying to change?</label>
         <textarea id="cf-message" name="message" rows="4" required></textarea>
       </div>
       <button type="submit" class="btn btn-solid cf-submit">
@@ -566,6 +668,7 @@
   </div>
   <div class="wrap-lower">
     <p class="no-llm">Content on this site is not licensed for use in training AI or large language models.</p>
+    <p class="photo-credit">Homepage photo: <a href="https://commons.wikimedia.org/wiki/File:Midtown_Atlanta_skyline_from_Clara_Meer_in_Piedmont_Park.JPG" target="_blank" rel="noopener">Midtown Atlanta skyline from Clara Meer in Piedmont Park</a> by Daniel Mayer, licensed <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</p>
   </div>
 </footer>
 
@@ -761,11 +864,11 @@
   })();
 </script>
 
-<!-- Hero chess board + strategy tree widgets (React, no Babel needed) -->
+<!-- Hero chess board (React, no Babel needed) + content strategy stage -->
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="chess-board.js"></script>
-<script src="game-tree.js"></script>
+<script src="cs-stage.js"></script>
 
 </body>
 </html>

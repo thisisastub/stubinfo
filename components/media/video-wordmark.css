@@ -1,0 +1,26 @@
+/* VideoWordmark — looping background video with inline display type locked over it.
+   Self-contained: every token has a fallback, so it works outside the article shell.
+   Continuo (Delve Fonts) must be loaded separately — see VideoWordmark.prompt.md. */
+
+.vwm { margin: 0; }
+.vwm-frame { position: relative; container-type: inline-size; aspect-ratio: var(--vwm-ratio, 1103 / 522); border-radius: var(--radius-lg, 12px); border: 1px solid var(--color-border, rgb(255 255 255 / 0.14)); overflow: hidden; background: var(--color-text, #111); }
+.vwm-frame video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* the type plate */
+.vwm-mark { position: absolute; inset: 0; margin: 0; display: grid; align-content: center; justify-items: center; padding-inline: var(--vwm-inset, 5%); pointer-events: none; }
+.vwm-mark span { text-transform: uppercase; line-height: var(--vwm-leading, 1.06); }
+
+/* real Continuo: the inline void lives inside the glyphs, so fill solid */
+.vwm-mark span { font-family: continuo, 'Poppins', var(--font-body, system-ui), sans-serif; font-weight: 400; letter-spacing: 0.02em; color: #fff; text-shadow: var(--vwm-shadow, 0.022em 0.024em 0.055em rgb(0 0 0 / 0.4)); }
+.vwm-mark span:first-child { font-size: var(--vwm-size-1, 14.6cqw); }
+.vwm-mark span + span { font-size: var(--vwm-size-2, 15.8cqw); }
+
+/* no-Continuo fallback: fake the inline by stroking a mid-weight geometric sans */
+.vwm-mark.is-faux span { font-family: 'Poppins', var(--font-body, system-ui), sans-serif; font-weight: 600; letter-spacing: 0.045em; color: transparent; -webkit-text-stroke: max(1.8px, 0.46cqw) #fff; text-shadow: none; }
+.vwm-mark.is-faux span:first-child { font-size: var(--vwm-size-1, 14.4cqw); }
+.vwm-mark.is-faux span + span { font-size: var(--vwm-size-2, 15.4cqw); letter-spacing: 0.03em; }
+@supports not (-webkit-text-stroke: 1px #fff) { .vwm-mark.is-faux span { color: #fff; } }
+
+.vwm figcaption { margin-top: 0.7rem; font-family: var(--font-body, system-ui), sans-serif; font-size: 0.76rem; line-height: 1.5; color: var(--ink-55, rgb(255 255 255 / 0.55)); }
+.vwm figcaption a { color: var(--ink-70, rgb(255 255 255 / 0.7)); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.vwm figcaption a:hover { color: var(--color-accent, #cf202f); }

@@ -1,0 +1,99 @@
+/* ============================================================
+   Case study 03 — Content Strategy Library
+   Panel-specific styles. Loads after transformation.css.
+   ============================================================ */
+
+/* ---- panel 02: the question, set as a statement ---- */
+.ask-big { font-family: var(--font-display); font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem); line-height: 1.15; color: var(--dk-accent-run, var(--color-accent)); margin: 0; max-width: 20ch; text-wrap: balance; }
+
+/* ---- panel 03: what they said / what they meant ---- */
+.heard { display: grid; width: 100%; }
+.hd-row { display: grid; grid-template-columns: minmax(0, 1.15fr) auto minmax(0, 0.85fr); gap: clamp(0.6rem, 2vw, 1.4rem); align-items: baseline; padding-block: clamp(0.6rem, 1.6vh, 0.9rem); border-top: 1px solid var(--color-border); }
+.hd-row:last-child { border-bottom: 1px solid var(--color-border); }
+.hd-q { font-family: var(--font-display); font-size: clamp(0.92rem, 0.86rem + 0.32vw, 1.12rem); line-height: 1.35; color: var(--color-text); margin: 0; text-wrap: pretty; }
+.hd-arr { flex: 0 0 auto; font-family: var(--font-body); font-size: 0.9rem; color: var(--dk-accent-run, var(--color-accent)); line-height: 1; align-self: center; }
+.hd-m { font-family: var(--font-body); font-size: clamp(0.82rem, 0.79rem + 0.22vw, 0.94rem); line-height: 1.45; color: var(--ink-70); margin: 0; text-wrap: pretty; }
+@media (max-width: 760px) { .hd-row { grid-template-columns: 1fr; gap: 0.25rem; } .hd-arr { display: none; } .hd-m { padding-left: 0.9rem; border-left: 2px solid color-mix(in srgb, var(--color-accent) 45%, transparent); } }
+
+/* ---- panel 04: the definition, given room ---- */
+.defq { width: 100%; max-width: 46rem; display: grid; gap: 0.9rem; padding: clamp(1.1rem, 3vw, 1.8rem) clamp(1.1rem, 3vw, 1.9rem); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--color-bg) 82%, transparent); backdrop-filter: blur(6px); }
+.defq q { font-family: var(--font-display); font-size: clamp(1.05rem, 0.92rem + 0.72vw, 1.55rem); line-height: 1.4; color: var(--color-text); quotes: "\201C" "\201D"; text-wrap: pretty; display: block; }
+.defq .cite { font-family: var(--font-body); font-size: 0.78rem; line-height: 1.5; color: var(--ink-55); font-style: normal; }
+.defq .cite b { font-weight: 700; color: var(--ink-70); }
+
+/* ---- panel 03: portrait behind the definition, same treatment as panel 10 ---- */
+.pnl-bg-photo { position: absolute; inset: 0; overflow: hidden; display: grid; place-items: end center; justify-items: end; }
+.pnl-bg-photo img { display: block; width: auto; height: min(86%, 46rem); max-width: 46%; object-fit: contain; object-position: bottom right; margin-right: clamp(1rem, 5vw, 6rem); border-radius: var(--radius-md, 3px); filter: contrast(1.04); -webkit-mask-image: radial-gradient(115% 92% at 62% 42%, #000 34%, color-mix(in srgb, #000 55%, transparent) 66%, transparent 88%); mask-image: radial-gradient(115% 92% at 62% 42%, #000 34%, color-mix(in srgb, #000 55%, transparent) 66%, transparent 88%); }
+@media (max-width: 860px) { .pnl-bg-photo img { max-width: 74%; height: 52%; margin-right: 0; } }
+
+
+/* ---- panel 06: the craft, scattered — full-bleed word cloud ---- */
+.wcloud { position: absolute; inset: -6% 0; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; align-items: baseline; gap: 0.05em 0.42em; padding: 2vmin clamp(0.75rem, 3vw, 2.5rem); overflow: hidden; }
+.wcloud span { font-family: var(--font-display); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; color: var(--color-text); white-space: nowrap; }
+.wcloud .s1 { font-size: clamp(2.1rem, 5.4vw, 4.6rem); opacity: 0.30; color: color-mix(in oklch, var(--color-text) 84%, var(--color-accent)); }
+.wcloud .s2 { font-size: clamp(1.5rem, 3.7vw, 3.2rem); opacity: 0.26; color: color-mix(in oklch, var(--color-text) 62%, var(--color-accent)); }
+.wcloud .s3 { font-size: clamp(1.05rem, 2.5vw, 2.1rem); opacity: 0.21; color: color-mix(in oklch, var(--color-text) 74%, var(--color-bg)); }
+.wcloud .s4 { font-size: clamp(0.8rem, 1.7vw, 1.4rem); opacity: 0.17; color: color-mix(in oklch, var(--color-text) 55%, var(--color-bg)); }
+/* irregular tinting across the grid so the cloud reads as depth, not tiers */
+.wcloud span:nth-of-type(5n) { color: color-mix(in oklch, var(--color-accent) 55%, var(--color-text)); }
+.wcloud span:nth-of-type(7n) { color: color-mix(in oklch, var(--color-text) 45%, var(--color-bg)); }
+.wcloud span:nth-of-type(4n+1) { opacity: 0.13; }
+.wcloud .hi { color: var(--color-accent); opacity: 0.42; }
+.pnl-bg-cloud .bg-scrim { background: linear-gradient(100deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 90%, transparent) 40%, color-mix(in srgb, var(--color-bg) 58%, transparent) 74%, color-mix(in srgb, var(--color-bg) 44%, transparent) 100%); }
+@media (max-width: 900px) { .pnl-bg-cloud .bg-scrim { background: color-mix(in srgb, var(--color-bg) 84%, transparent); } }
+
+/* ---- panel 07: the library itself, in browser chrome, as the panel's illustration ---- */
+.pnl-split > .in { max-width: 66rem; justify-self: center; grid-template-columns: minmax(0, 30rem); }
+.pnl-bg-shot .brw { position: absolute; top: 11%; left: 52%; width: 62%; height: 80%; border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; background: var(--color-bg); box-shadow: 0 30px 72px rgba(22, 22, 14, 0.24); }
+.pnl-bg-shot .brw .bar { display: flex; align-items: center; gap: 0.6rem; height: 2rem; padding: 0 0.75rem; background: color-mix(in srgb, var(--color-text) 7%, var(--color-bg)); border-bottom: 1px solid var(--color-border); }
+.pnl-bg-shot .brw .dots { display: flex; gap: 0.3rem; }
+.pnl-bg-shot .brw .dots i { width: 8px; height: 8px; border-radius: 50%; background: color-mix(in srgb, var(--color-text) 22%, transparent); }
+.pnl-bg-shot .brw .url { font-family: var(--font-body); font-size: 0.68rem; color: var(--ink-55); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pnl-bg-shot .brw img { display: block; width: 100%; height: calc(100% - 2rem); object-fit: cover; object-position: top left; }
+.pnl-bg-shot .bg-scrim { background: linear-gradient(96deg, var(--color-bg) 0%, var(--color-bg) 38%, color-mix(in srgb, var(--color-bg) 74%, transparent) 56%, color-mix(in srgb, var(--color-bg) 22%, transparent) 78%, transparent 100%); }
+@media (max-width: 900px) { .pnl-split > .in { grid-template-columns: minmax(0, 1fr); } .pnl-bg-shot .brw { top: auto; bottom: -6%; left: 22%; width: 86%; height: 46%; } .pnl-bg-shot .bg-scrim { background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg) 52%, color-mix(in srgb, var(--color-bg) 72%, transparent) 74%, color-mix(in srgb, var(--color-bg) 40%, transparent) 100%); } }
+
+/* ---- three framework cards in a row ---- */
+.pnl .tf-cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 62rem; }
+@media (max-width: 900px) { .pnl .tf-cards.three { grid-template-columns: 1fr; max-width: 30rem; } }
+.pnl .tf-cards.three a.tf-card { display: flex; flex-direction: column; }
+.pnl .tf-cards.three .tf-src { margin-top: auto; padding-top: 0.9rem; }
+
+/* ---- background photo treatments ---- */
+.pnl-bg-blur .bg-fill img, .pnl-bg-blur .bg-fill image-slot { filter: blur(7px) saturate(0.85); transform: scale(1.06); }
+
+/* ---- close panel: three buttons wrap gracefully ---- */
+.dk-close .btn { white-space: nowrap; }
+
+/* ---- panel 01: cover over the meeting footage. The scrim carries most of the
+   legibility work: near-solid page colour under the copy column, thinning to
+   the right where the footage is allowed to read. ---- */
+.pnl-bg-vid .bg-vid { position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; transform: none; object-fit: cover; opacity: 0.9; filter: saturate(0.5) contrast(1.03); }
+.pnl-bg-vid .bg-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 30%, transparent) 22%, transparent 46%), linear-gradient(0deg, var(--color-bg) 0%, transparent 30%), linear-gradient(93deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 93%, transparent) 38%, color-mix(in srgb, var(--color-bg) 72%, transparent) 66%, color-mix(in srgb, var(--color-bg) 46%, transparent) 100%); }
+[data-theme="ink"] .pnl-bg-vid .bg-vid { opacity: 0.85; filter: saturate(0.4) brightness(0.8); }
+.pnl-cover .slab { max-width: 30ch; }
+.pnl-cover .cover-lede { display: grid; gap: 0.7rem; width: 100%; max-width: 58rem; }
+.pnl-cover .cover-lede .slab-sub { max-width: 46ch; }
+.pnl-cover .ask-big { font-size: clamp(1.2rem, min(0.9rem + 1.5vw, 3.4vh), 2.1rem); }
+@media (max-width: 760px) { .pnl-cover .cover-lede { grid-template-columns: 1fr; } .pnl-bg-vid .bg-scrim { background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 88%, transparent) 55%, color-mix(in srgb, var(--color-bg) 66%, transparent) 100%); } }
+@media (max-height: 720px) { .pnl-cover .cover-lede .slab-sub { font-size: 0.88rem; line-height: 1.5; } }
+
+/* ---- panel 10: the site itself as a full-screen background. Six frames, three
+   seconds each, crossfaded — one 18s loop with staggered delays. Covers the whole
+   panel, anchored top so page headers read; the scrim keeps solid page colour
+   under the copy column and falls off to the right. ---- */
+.pnl-bg-reel { position: absolute; inset: 0; overflow: hidden; }
+.pnl-bg-reel .reel { position: absolute; inset: 0; }
+.pnl-bg-reel .reel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; filter: saturate(0.7); animation: csl-reel 18s linear infinite; }
+.pnl-bg-reel .reel img:nth-child(2) { animation-delay: 3s; }
+.pnl-bg-reel .reel img:nth-child(3) { animation-delay: 6s; }
+.pnl-bg-reel .reel img:nth-child(4) { animation-delay: 9s; }
+.pnl-bg-reel .reel img:nth-child(5) { animation-delay: 12s; }
+.pnl-bg-reel .reel img:nth-child(6) { animation-delay: 15s; }
+@keyframes csl-reel { 0% { opacity: 0 } 2% { opacity: 0.6 } 15% { opacity: 0.6 } 17% { opacity: 0 } 100% { opacity: 0 } }
+[data-theme="ink"] .pnl-bg-reel .reel img { animation-name: csl-reel-ink; }
+@keyframes csl-reel-ink { 0% { opacity: 0 } 2% { opacity: 0.5 } 15% { opacity: 0.5 } 17% { opacity: 0 } 100% { opacity: 0 } }
+@media (prefers-reduced-motion: reduce) { .pnl-bg-reel .reel img { animation: none; } .pnl-bg-reel .reel img:first-child { opacity: 0.6; } }
+.pnl-bg-full .bg-scrim { position: absolute; inset: 0; background: linear-gradient(93deg, var(--color-bg) 0%, var(--color-bg) 46%, color-mix(in srgb, var(--color-bg) 88%, transparent) 58%, color-mix(in srgb, var(--color-bg) 52%, transparent) 76%, color-mix(in srgb, var(--color-bg) 34%, transparent) 100%), linear-gradient(0deg, color-mix(in srgb, var(--color-bg) 62%, transparent) 0%, transparent 24%); }
+.pnl-bg-full .in { max-width: 66rem; margin-inline: auto; grid-template-columns: minmax(0, 30rem); }
+@media (max-width: 860px) { .pnl-bg-full .bg-scrim { background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 92%, transparent) 58%, color-mix(in srgb, var(--color-bg) 62%, transparent) 100%); } .pnl-bg-full .in { grid-template-columns: minmax(0, 1fr); } }
