@@ -148,7 +148,7 @@ function TypePicker({ sel, setSel, onBegin, onDemo, demo, tap, press }) {
           React.createElement("button", { type: "button", "aria-label": "Remove " + t.label, onClick: () => setSel(sel.filter(x => x !== id)) }, "×")); })),
     React.createElement("div", { className: "ix-nav" },
       demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Fill out an example"),
-      React.createElement("button", { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: demo || sel.length === 0, onClick: onBegin },
+      React.createElement("button", { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: sel.length === 0, onClick: demo ? undefined : onBegin },
         sel.length === 0 ? "Select at least one" : "Begin " + sel.length + (sel.length === 1 ? " request" : " requests") + " →"))
   );
 }
@@ -172,7 +172,7 @@ function StepScreen({ t, tIdx, total, step, sIdx, sTotal, ans, setAns, onBack, o
     })),
     React.createElement("div", { className: "ix-nav" },
       React.createElement("button", { type: "button", className: "ix-btn", onClick: onBack, disabled: !!demo }, "← Back"),
-      React.createElement("button", { type: "button", className: "ix-btn go" + (press === "next" ? " press" : ""), disabled: !!demo || missing, onClick: onNext },
+      React.createElement("button", { type: "button", className: "ix-btn go" + (press === "next" ? " press" : ""), disabled: missing, onClick: demo ? undefined : onNext },
         demo ? nextLabel : (missing ? "Fill the required fields" : nextLabel)))
   );
 }
@@ -297,7 +297,10 @@ function IntakeApp() {
 
   /* the walkthrough. Every simulated click is announced before it lands, since
      there is no cursor on screen to explain what just happened. */
-  const clickPause = async () => { await wait(520); if (stop.current) return; setPress("next"); await wait(340); setPress(null); await wait(120); };
+  /* a full second on the filled screen: the required fields are complete, so
+     Continue has just un-greyed, and the pause lets that register before the
+     tap lands */
+  const clickPause = async () => { await wait(1000); if (stop.current) return; setPress("next"); await wait(340); setPress(null); await wait(120); };
 
   const runDemo = async () => {
     stop.current = false;
@@ -314,7 +317,7 @@ function IntakeApp() {
       picked.push(id); setSel(picked.slice()); setTap(null);
       await wait(420);
     }
-    await wait(520);
+    await wait(1000);
     if (stop.current) return;
     setPress("go"); await wait(360); setPress(null);
     setPos([0, 0]); setPhase("run"); await wait(520);

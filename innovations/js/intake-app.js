@@ -190,7 +190,7 @@ function TypePicker({ sel, setSel, onBegin, onDemo, demo, tap, press }) {
       demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Fill out an example"),
       React.createElement(
         "button",
-        { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: demo || sel.length === 0, onClick: onBegin },
+        { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: sel.length === 0, onClick: demo ? void 0 : onBegin },
         sel.length === 0 ? "Select at least one" : "Begin " + sel.length + (sel.length === 1 ? " request" : " requests") + " \u2192"
       )
     )
@@ -223,7 +223,7 @@ function StepScreen({ t, tIdx, total, step, sIdx, sTotal, ans, setAns, onBack, o
       React.createElement("button", { type: "button", className: "ix-btn", onClick: onBack, disabled: !!demo }, "\u2190 Back"),
       React.createElement(
         "button",
-        { type: "button", className: "ix-btn go" + (press === "next" ? " press" : ""), disabled: !!demo || missing, onClick: onNext },
+        { type: "button", className: "ix-btn go" + (press === "next" ? " press" : ""), disabled: missing, onClick: demo ? void 0 : onNext },
         demo ? nextLabel : missing ? "Fill the required fields" : nextLabel
       )
     )
@@ -394,7 +394,7 @@ function IntakeApp() {
     setPhase("done");
   };
   const clickPause = async () => {
-    await wait(520);
+    await wait(1e3);
     if (stop.current) return;
     setPress("next");
     await wait(340);
@@ -423,7 +423,7 @@ function IntakeApp() {
       setTap(null);
       await wait(420);
     }
-    await wait(520);
+    await wait(1e3);
     if (stop.current) return;
     setPress("go");
     await wait(360);
