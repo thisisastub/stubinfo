@@ -1,0 +1,28 @@
+/* Hover motion for the innovations cards. Each tile holds footage of the thing
+   inside; it only plays while the card is hovered or keyboard-focused, so
+   nothing moves on an idle page. */
+
+.inv-tile { position: relative; }
+.inv-tile .t-ico { width: auto; height: auto; border: 0; color: #2A2F2C; opacity: 0.8; transition: opacity 220ms ease, transform 220ms ease; }
+.inv-tile .t-ico svg { width: 5rem; height: 5rem; stroke-width: 1.1; }
+.inv-item:hover .t-ico, .inv-item:focus-visible .t-ico { opacity: 0; transform: scale(0.9); }
+
+.t-prev { position: absolute; inset: 0; z-index: 2; overflow: hidden; opacity: 0; background: #000; transition: opacity 240ms ease; pointer-events: none; }
+.inv-item:hover .t-prev, .inv-item:focus-visible .t-prev { opacity: 1; }
+/* the extra pixel of overscan keeps the pale tile from showing as a seam where
+   the card height lands on a fraction */
+.t-prev video { position: absolute; inset: 0 0 -1px 0; width: 100%; height: calc(100% + 1px); object-fit: cover; }
+/* no bright divider between clip and copy once the clip is up */
+.inv-item:hover .inv-tile, .inv-item:focus-visible .inv-tile { background: #0C0E1A; border-bottom-color: transparent; }
+.inv-tile { transition: background-color 300ms ease, border-bottom-color 300ms ease; }
+
+/* the lab film coasts to a stop underneath while a card previews */
+.inv-hero-bg video { transition: opacity 700ms ease; }
+.inv-hero-bg.is-resting video { opacity: 0.13; }
+@media (prefers-reduced-motion: reduce) { .inv-hero-bg video { transition: none } }
+
+/* BoothTok stacks its clips and cross-fades, so there is no blank frame */
+.pv-tok video { opacity: 0; transition: opacity 320ms ease; }
+.pv-tok video.on { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) { .t-prev { display: none } }

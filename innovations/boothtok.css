@@ -1,0 +1,70 @@
+/* BoothTok case study page — the booth hero and the phone rig. */
+
+/* ---------- hero: the booth render, with the feed running on its screen ----------
+   The screen box is positioned as a percentage of the render, so it stays
+   registered to the panel at every width. mini.html is authored at 180x377
+   and scaled to fit by the page script. */
+.bt-hero{padding-block:0 0}
+.bt-frame{position:relative;width:100%;margin-inline:0}
+.bt-stage{position:relative;aspect-ratio:1344/768;overflow:hidden;background:#0b0d0c}
+.bt-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.bt-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(7,9,8,.94) 0,rgba(7,9,8,.82) 24%,rgba(7,9,8,.44) 44%,rgba(7,9,8,0) 60%)}
+.bt-screen{position:absolute;left:75.15%;top:39.9%;width:7.9%;height:28.8%;overflow:hidden;background:#000}
+.bt-screen iframe{width:180px;height:377px;border:0;transform-origin:0 0;filter:saturate(.94) brightness(.9);pointer-events:none}
+.bt-screen::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 6px rgba(0,0,0,.55);background:linear-gradient(112deg,rgba(255,255,255,.11) 0,rgba(255,255,255,0) 42%)}
+/* the left inset clears the fixed previous-innovation rail (39px) at every
+   width, then tracks the page's content edge once there is room */
+.bt-stage-copy{position:absolute;z-index:2;left:max(clamp(3.6rem,3.4vw,4.4rem),calc(50% - 33rem + 1.5rem));top:15%;width:min(38%,30rem)}
+.bt-stage-copy .inv-back{color:rgba(255,255,255,.62)}
+.bt-stage-copy .inv-back:hover{color:#fff}
+.bt-stage-copy h1{margin-top:.5rem;color:#fff;font-size:clamp(1.9rem,4.4vw,4rem);line-height:1.02;text-wrap:balance}
+.bt-stage-copy .inv-lead{margin-top:clamp(.7rem,1.4vw,1.2rem);max-width:none;color:rgba(255,255,255,.78);font-size:clamp(.86rem,1.15vw,1.06rem);text-wrap:pretty}
+.bt-stage-note{margin:.7rem 0 0;font-family:var(--font-body);font-size:.78rem;color:var(--ink-55)}
+
+/* narrow: the render becomes a banner and the copy drops below it */
+@media (max-width:760px){
+.bt-stage{border-radius:0}
+.bt-stage::after{background:linear-gradient(180deg,rgba(7,9,8,0) 40%,rgba(7,9,8,.5) 100%)}
+.bt-stage-copy{position:static;width:auto;padding:1.5rem clamp(1.1rem,5vw,2rem) 0}
+.bt-stage-copy .inv-back{color:var(--ink-70)}
+.bt-stage-copy h1{color:var(--color-text)}
+.bt-stage-copy .inv-lead{color:var(--ink-70)}
+.bt-stage-note{margin-top:.6rem}
+}
+
+/* ---------- the phone rig ---------- */
+.bt-rig{display:grid;justify-items:center;gap:1.4rem;padding:clamp(1.6rem,4vw,2.8rem) 0 0}
+/* the solution section runs the copy and the working phone side by side */
+.bt-split{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,30vw,360px);gap:clamp(1.4rem,3.4vw,3rem);align-items:start;margin-top:1.5rem}
+.bt-split .cs-prose{margin-top:0}
+.bt-split .bt-rig{padding:0;gap:1rem}
+.bt-split .bt-hint{max-width:none;text-align:left}
+.bt-split .bt-acts{justify-content:flex-start;width:100%}
+@media (max-width:760px){.bt-split{grid-template-columns:minmax(0,1fr)}.bt-split .bt-rig{padding-top:1rem;justify-items:start}}
+.bt-phone{position:relative;width:min(360px,100%);padding:12px;background:linear-gradient(160deg,#2a2d2b,#111413);border-radius:46px;box-shadow:0 2px 3px rgba(255,255,255,.18) inset,0 26px 50px -22px rgba(12,16,13,.65),0 0 0 1px rgba(12,16,13,.4)}
+.bt-phone::after{content:"";position:absolute;z-index:2;top:22px;left:50%;transform:translateX(-50%);width:74px;height:6px;border-radius:4px;background:#0a0c0b;pointer-events:none}
+.bt-phone iframe{display:block;width:100%;height:748px;min-height:600px;max-height:calc(100dvh - 8rem);border:0;border-radius:34px;background:#000}
+.bt-phone:fullscreen{width:100%;height:100%;padding:0;border-radius:0;box-shadow:none;background:#000}
+.bt-phone:fullscreen::after{display:none}
+.bt-phone:fullscreen iframe{height:100%;max-height:none;border-radius:0}
+.bt-phone:-webkit-full-screen{width:100%;height:100%;padding:0;border-radius:0}
+.bt-phone:-webkit-full-screen iframe{height:100%;max-height:none;border-radius:0}
+.bt-acts{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.bt-hint{max-width:34rem;font-family:var(--font-body);font-size:.82rem;line-height:1.6;color:var(--ink-55);text-align:center;text-wrap:pretty}
+/* on a phone the bezel is pointless: the device is the bezel */
+@media (max-width:560px){
+.bt-rig{gap:1rem}
+.bt-phone{width:100%;padding:8px;border-radius:32px}
+.bt-phone::after{top:16px;width:60px}
+.bt-phone iframe{height:min(78dvh,640px);min-height:520px;border-radius:26px}
+.bt-acts{width:100%;flex-direction:column}
+.bt-acts .btn{justify-content:center;text-align:center}
+}
+
+/* before / after tally, same shape as the other case studies */
+.bt-tally{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--d-line);border:1px solid var(--d-line);margin-top:2.4rem}
+@media (max-width:700px){.bt-tally{grid-template-columns:1fr}}
+.bt-tally>div{background:var(--d-paper);padding:1rem 1.05rem;display:grid;gap:.3rem;align-content:start}
+.bt-tally .n{font-family:var(--d-font-logo);font-size:1.6rem;line-height:1;color:var(--d-green-bright)}
+.bt-tally .l{font-family:var(--d-font-ui);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--d-ink-45)}
+.bt-tally .d{font-family:var(--d-font-body);font-size:.85rem;line-height:1.5;color:var(--d-ink-70)}

@@ -1,0 +1,15 @@
+Dollarous palette
+
+Paper         #FFFFFF  rgb(255, 255, 255)  --d-paper
+Ground        #FAFAF7  rgb(250, 250, 247)  --d-bg
+Surface       #F1F3EE  rgb(241, 243, 238)  --d-surface-2
+Rule          #DBDFD6  rgb(219, 223, 214)  --d-line
+Rule 2        #BEC5B7  rgb(190, 197, 183)  --d-line-2
+Ink           #0C100D  rgb(12, 16, 13)  --d-ink
+Ink 70        #474D46  rgb(71, 77, 70)  --d-ink-70
+Ink 45        #6A7068  rgb(106, 112, 104)  --d-ink-45
+Green         #0B3D2C  rgb(11, 61, 44)  --d-green
+Green mid     #14624A  rgb(20, 98, 74)  --d-green-mid
+Green bright  #1E8A62  rgb(30, 138, 98)  --d-green-bright
+Sage          #93A896  rgb(147, 168, 150)  --d-sage
+Brass         #A8873C  rgb(168, 135, 60)  --d-brass

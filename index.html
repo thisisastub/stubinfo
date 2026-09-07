@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Libre+Caslon+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home-innovations.css">
 <!-- chess-piece glyphs (Noto Sans Symbols 2) for the hero board -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&amp;text=%E2%99%94%E2%99%95%E2%99%96%E2%99%97%E2%99%98%E2%99%99%E2%99%9A%E2%99%9B%E2%99%9C%E2%99%9D%E2%99%9E%E2%99%9F&amp;display=swap" rel="stylesheet">
 <style id="chess-board-styles">
@@ -94,9 +95,10 @@
       <span class="name">Tommy Stubblefield</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="#approach">The Brief</a>
+      <a class="nav-link" href="#approach">About Me</a>
       <a class="nav-link" href="#strategy">Content Strategy</a>
-      <a class="nav-link" href="#work">Selected Work</a>
+      <a class="nav-link" href="#innovations">Innovations</a>
+      <a class="nav-link" href="#work">Writing</a>
       <a class="nav-link" href="#recommendations">Testimonials</a>
       <a class="btn btn-solid" href="#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
     </nav>
@@ -108,9 +110,10 @@
 
 <div class="mobile-nav" id="mobile-nav" hidden>
   <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close">&#x2715;</button>
-  <a href="#approach">The Brief</a>
+  <a href="#approach">About Me</a>
   <a href="#strategy">Content Strategy</a>
-  <a href="#work">Selected Work</a>
+  <a href="#innovations">Innovations</a>
+  <a href="#work">Writing</a>
   <a href="#recommendations">Testimonials</a>
   <a href="#contact" class="btn btn-solid">Contact &#x2197;</a>
 </div>
@@ -125,7 +128,6 @@
     <div class="hero-variant hero-a">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow hero-slogan">Thinking forward.</p>
           <h1>How many steps ahead is your <span class="accent">content?</span></h1>
           <p class="hero-sub">Strategic marketer, builder, and thought leader. Twenty-plus years creating content solutions.</p>
           <div class="hero-cta">
@@ -142,7 +144,6 @@
     <!-- HERO B, Masthead -->
     <div class="hero-variant hero-b">
       <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <p class="eyebrow hero-slogan no-rule">Thinking forward.</p>
       <h1>The future of marketing<br>isn't louder. It's <span class="accent">sharper.</span></h1>
       <p class="hero-sub">Tommy Stubblefield, strategic marketer, builder, and thought leader. Content strategy, editing, and writing that move the right minds.</p>
       <div class="hero-cta">
@@ -156,7 +157,6 @@
     <div class="hero-variant hero-c">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow hero-slogan">Thinking forward.</p>
           <h1>Strategy first. Then the <span class="accent">perfect words.</span></h1>
           <p class="hero-sub">Tommy Stubblefield, strategic marketer, builder, and thought leader. I help brands decide what to say, who to say it to, and why it will change a mind.</p>
           <div class="hero-cta">
@@ -183,7 +183,6 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="reveal">
-        <p class="eyebrow">The brief on me</p>
         <p class="about-lead">I'm Tommy, a marketer and thought leader who has spent <span class="accent">two decades</span> planning and executing strategic content.</p>
         <div class="about-body" style="margin-top:1.6rem;">
           <p>Content strategy is more than a calendar, more than social promotion. It's research, problem solving and transformation. And like a good game of chess, it's thinking several moves ahead.</p>
@@ -239,7 +238,6 @@
       <div class="strategy-stage">
        <div class="strategy-copy">
         <div class="section-head">
-      <p class="eyebrow">Content Strategy</p>
       <h2>Anyone can make content. Strategy gives it meaning.</h2>
       <p>My work starts with the question most content efforts leave out: whose mind are we moving, and toward what? Everything else answers to that. Here are some examples of my content strategy in action.</p>
     </div>
@@ -307,11 +305,86 @@
   </div>
 </section>
 
+<!-- ===================== INNOVATIONS ===================== -->
+<section class="section rule-top" id="innovations">
+  <div class="inv-sec-bg" aria-hidden="true"><video src="innovations/hero-lab.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video></div>
+  <div class="wrap">
+    <div class="inv-stage reveal">
+      <div class="inv-copy">
+        <div class="section-head">
+          <h2>Innovations</h2>
+          <p>Tools and workflows I created to improve content operations.</p>
+        </div>
+        <a class="btn btn-solid" href="innovations/index.html">See innovations <span class="arr" aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="inv-show" id="inv-show">
+        <div class="inv-frames">
+          <figure class="inv-frame is-active" data-vid="innovations/boothtok/crowd.mp4">
+            <div class="ifc-tile">
+              <span class="inv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="m11 9.5 4 2.5-4 2.5z"/><path d="M20 8v4M4 8v4"/></svg></span>
+              <video class="ifc-vid" src="innovations/boothtok/crowd.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            </div>
+            <figcaption>
+              <h3>BoothTok</h3>
+              <p>A trade show touchscreen that needs no instructions, because every passerby already knows the gesture. Try it on your own phone.</p>
+              <span class="ifc-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
+            </figcaption>
+            <a class="if-go" href="innovations/boothtok.html" aria-label="BoothTok"></a>
+          </figure>
+          <figure class="inv-frame" data-vid="innovations/hero-calc.mp4">
+            <div class="ifc-tile">
+              <span class="inv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/><line x1="16" y1="18" x2="16" y2="18"/></svg></span>
+              <video class="ifc-vid" src="innovations/hero-calc.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            </div>
+            <figcaption>
+              <h3>Cost Calculator</h3>
+              <p>A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</p>
+              <span class="ifc-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
+            </figcaption>
+            <a class="if-go" href="innovations/cost-calculator.html" aria-label="Cost Calculator"></a>
+          </figure>
+          <figure class="inv-frame" data-vid="innovations/hero-tl.mp4">
+            <div class="ifc-tile">
+              <span class="inv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11M4 9h16M4 13h16M4 17h9"/><circle cx="19" cy="5" r="2.4"/></svg></span>
+              <video class="ifc-vid" src="innovations/hero-tl.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            </div>
+            <figcaption>
+              <h3>Thought Leadership Enhancements</h3>
+              <p>An all-text blog post and ten enhancements you can switch on one at a time, each with the reason it was worth recommending.</p>
+              <span class="ifc-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
+            </figcaption>
+            <a class="if-go" href="innovations/thought-leadership.html" aria-label="Thought Leadership Enhancements"></a>
+          </figure>
+          <figure class="inv-frame" data-vid="innovations/hero-intake.mp4">
+            <div class="ifc-tile">
+              <span class="inv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg></span>
+              <video class="ifc-vid" src="innovations/hero-intake.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            </div>
+            <figcaption>
+              <h3>Visual Content Intake</h3>
+              <p>A 214-field requirements document, the AI rewrite that made it worse, and the branching form that replaced both.</p>
+              <span class="ifc-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
+            </figcaption>
+            <a class="if-go" href="innovations/content-intake.html" aria-label="Visual Content Intake"></a>
+          </figure>
+        </div>
+        <div class="inv-bar">
+          <p class="inv-count"><span class="cnum" id="inv-current">01</span> <span class="csep">/</span> <span class="ctotal">04</span></p>
+          <div class="carousel-nav">
+            <button type="button" class="cbtn" id="inv-prev" aria-label="Previous innovation">←</button>
+            <button type="button" class="cbtn" id="inv-next" aria-label="Next innovation">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== SELECTED WORK ===================== -->
 <section class="section rule-top" id="work">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Selected Work</p>
       <!-- Designed copy, restore the day "Beyond the Buy Button" ships (and un-comment the own-writing
            slides below, bumping ctotal to match):
            <h2>The writing, client and my own.</h2>
@@ -506,7 +579,6 @@
 <section class="section rule-top testimonials" id="recommendations">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Testimonials</p>
       <h2>What collaborators say.</h2>
       <p>Some endorsements from the editors, marketers, and leaders I've built with.</p>
     </div>
@@ -586,7 +658,6 @@
 
   <div class="wrap ask-ai reveal">
     <div class="ask-head">
-      <p class="eyebrow">Ask AI about me</p>
       <h3>Rather ask an assistant?</h3>
       <p>Pick your preferred platform and a question. Opens in a new tab with the prompt ready to send.</p>
     </div>
@@ -610,7 +681,6 @@
 <section class="section contact" id="contact">
   <div class="wrap contact-grid">
     <div class="section-head">
-      <p class="eyebrow">Contact</p>
       <h2>Let's think forward together.</h2>
       <p class="lead">Looking for the perfect words, and the strategy to make them count? Tell me what mind you're trying to change, and let's get into it.</p>
       <div class="actions connect-actions">
@@ -871,5 +941,34 @@
 <script src="chess-board.js"></script>
 <script src="cs-stage.js"></script>
 
+<script>
+(function () {
+  var show = document.getElementById('inv-show');
+  if (!show) return;
+  var frames = show.querySelectorAll('.inv-frame');
+  var label = document.getElementById('inv-current');
+  var i = 0, timer = null;
+  function go(n) {
+    i = (n + frames.length) % frames.length;
+    frames.forEach(function (f, k) { f.classList.toggle('is-active', k === i); });
+    label.textContent = String(i + 1).padStart(2, '0');
+  }
+  function play() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stop();
+    timer = setInterval(function () { go(i + 1); }, 4200);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  go(0);
+  document.getElementById('inv-prev').addEventListener('click', function () { go(i - 1); play(); });
+  document.getElementById('inv-next').addEventListener('click', function () { go(i + 1); play(); });
+  show.addEventListener('mouseenter', stop);
+  show.addEventListener('mouseleave', play);
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? play() : stop(); });
+  }, { threshold: 0.25 }).observe(show);
+})();
+</script>
+<script src="home-innovations.js"></script>
 </body>
 </html>

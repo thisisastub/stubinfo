@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   DOLLAROUS · "Fictitious FinTech"
+   A wholly invented brand used as a stand-in for anonymized
+   client work. Scoped under .dlr so it cannot leak into
+   Tommy Stubblefield's own system.
+
+   Direction: financial press and private banking. Paper-white
+   grounds, hairline rules, square corners, serif throughout,
+   generous whitespace. Money greens, brass, ink, gray.
+   House rules: no eyebrow labels, no em dashes.
+   ============================================================ */
+
+.dlr {
+  --d-paper: #FFFFFF;
+  --d-bg: #FAFAF7;
+  --d-surface: #FFFFFF;
+  --d-surface-2: #F1F3EE;
+  --d-line: #DBDFD6;
+  --d-line-2: #BEC5B7;
+  --d-ink: #0C100D;
+  --d-ink-70: #474D46;
+  --d-ink-45: #6A7068;
+  --d-green: #0B3D2C;
+  --d-green-mid: #14624A;
+  --d-green-bright: #1E8A62;
+  --d-sage: #93A896;
+  --d-brass: #A8873C;
+  --d-font-display: 'Newsreader', Georgia, serif;
+  --d-font-body: 'Newsreader', Georgia, serif;
+  --d-font-ui: 'Archivo', system-ui, sans-serif;
+  --d-font-logo: var(--font-panoptica);
+  color-scheme: light;
+  background: var(--d-bg);
+  color: var(--d-ink);
+  font-family: var(--d-font-body);
+  font-size: 17px;
+  line-height: 1.66;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dlr *, .dlr *::before, .dlr *::after { box-sizing: border-box; border-radius: 0; }
+.dlr h1, .dlr h2, .dlr h3, .dlr h4, .dlr h5 { font-family: var(--d-font-display); font-weight: 600; letter-spacing: -0.014em; line-height: 1.16; margin: 0; text-wrap: pretty; color: var(--d-ink); }
+.dlr h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.1rem); font-weight: 500; }
+.dlr p { margin: 0; }
+.dlr a { color: var(--d-green-mid); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.dlr a:hover { color: var(--d-ink); }
+.dlr strong, .dlr b { font-weight: 600; }
+.dlr .num { font-variant-numeric: tabular-nums; }
+
+/* inverted block, for data visuals that need a dark ground */
+.dlr .dlr-invert { background: var(--d-ink); color: var(--d-paper); }
+.dlr .dlr-invert h1, .dlr .dlr-invert h2, .dlr .dlr-invert h3, .dlr .dlr-invert h4 { color: var(--d-paper); }
+.dlr .dlr-invert a { color: #9DD3B8; }
+.dlr .dlr-invert a:hover { color: var(--d-paper); }
+
+/* ---------- Panoptica, the logo face ----------
+   Nick Shinn's Panoptica: monowidth, unicase. Adobe Fonts only, so it needs a
+   Typekit web-project stylesheet loaded in the page head. Used for the wordmark
+   and for "Dollarous" inside my own section headings. Never for body text.
+   ---------------------------------------------------------------- */
+:root { --font-panoptica: 'panoptica', 'IBM Plex Mono', ui-monospace, monospace; --font-panoptica-sans: 'panoptica-sans', 'IBM Plex Sans', system-ui, sans-serif; }
+
+/* Panoptica is for the lockup only, never for headings in my own voice */
+
+/* ---------- masthead lockup, and the deliberate wink ---------- */
+.dlr .dlr-mark { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-panoptica-sans); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.006em; color: var(--d-ink); text-decoration: none; line-height: 1; }
+.dlr .dlr-mark:hover { color: var(--d-ink); text-decoration: none; }
+.dlr-glyph { width: 1.42em; height: 1.42em; flex-shrink: 0; background: var(--d-green) url('../assets/dollarous-icon-white.png') center / 84% no-repeat; }
+.dlr-slogan { font-family: var(--d-font-display); font-style: italic; font-weight: 400; font-size: 0.84rem; letter-spacing: 0; color: var(--d-ink-45); }
+.dlr-lockup { display: flex; align-items: center; gap: 0.6rem; }
+.dlr-lockup .dlr-slogan { position: relative; padding-left: 0.65rem; line-height: 1.2; }
+.dlr-lockup .dlr-slogan::before { content: ""; position: absolute; left: 0; top: 0.02em; bottom: 0.02em; width: 1px; background: var(--d-line-2); }
+
+/* ---------- chrome ---------- */
+.dlr-bar { display: flex; align-items: center; gap: 1.5rem; padding: 1rem clamp(1rem, 3vw, 1.75rem); background: var(--d-paper); border-bottom: 1px solid var(--d-line); }
+.dlr-bar nav { display: flex; gap: 1.35rem; margin-left: auto; }
+.dlr-bar nav a { font-family: var(--d-font-ui); font-size: 0.83rem; font-weight: 500; color: var(--d-ink-70); text-decoration: none; }
+.dlr-bar nav a:hover, .dlr-bar nav a[aria-current] { color: var(--d-green); }
+@media (max-width: 640px) { .dlr-bar nav { display: none; } }
+
+/* ---------- buttons ---------- */
+.dlr .dlr-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--d-font-ui); font-size: 0.86rem; font-weight: 600; letter-spacing: 0.005em; padding: 0.7rem 1.3rem; border: 1px solid var(--d-green); background: var(--d-green); color: var(--d-paper); cursor: pointer; text-decoration: none; transition: background 140ms ease, border-color 140ms ease, color 140ms ease; }
+.dlr .dlr-btn:hover { background: var(--d-ink); border-color: var(--d-ink); color: var(--d-paper); text-decoration: none; }
+.dlr .dlr-btn.ghost { background: transparent; color: var(--d-green); border-color: var(--d-line-2); }
+.dlr .dlr-btn.ghost:hover { background: transparent; color: var(--d-ink); border-color: var(--d-ink); }
+.dlr .dlr-btn.alt { background: var(--d-paper); color: var(--d-green); border-color: var(--d-green); }
+.dlr .dlr-btn.alt:hover { background: var(--d-green); color: var(--d-paper); }
+.dlr .dlr-btn:focus-visible { outline: 2px solid var(--d-green-bright); outline-offset: 2px; }
+.dlr .dlr-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* ---------- surfaces ---------- */
+.dlr-card { background: var(--d-surface); border: 1px solid var(--d-line); padding: clamp(1.1rem, 2.4vw, 1.65rem); }
+.dlr-card.flat { background: transparent; border: 0; }
+.dlr-rule { height: 1px; background: var(--d-line); border: 0; margin: 0; }
+.dlr-hair { border-top: 1px solid var(--d-line); }
+
+/* small sans label for functional UI chrome only, never above a heading */
+.dlr-label { font-family: var(--d-font-ui); font-size: 0.74rem; font-weight: 600; letter-spacing: 0; color: var(--d-ink-45); }
+.dlr-chip { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--d-font-ui); font-size: 0.72rem; font-weight: 600; padding: 0.24rem 0.55rem; background: var(--d-surface-2); border: 1px solid var(--d-line); color: var(--d-ink-70); }
+.dlr-chip.green { background: var(--d-green); border-color: var(--d-green); color: var(--d-paper); }
+
+/* serif figure numeral, replaces the numbered-eyebrow pattern */
+.dlr-num { display: inline-block; font-family: var(--d-font-display); font-weight: 400; font-size: 1.5rem; line-height: 1; letter-spacing: -0.02em; color: var(--d-green-bright); font-variant-numeric: tabular-nums; }
+
+/* ---------- form controls ---------- */
+.dlr-field { display: grid; gap: 0.35rem; }
+.dlr-field > label { font-family: var(--d-font-ui); font-size: 0.79rem; font-weight: 600; color: var(--d-ink-70); }
+.dlr-input, .dlr-select, .dlr-textarea { width: 100%; font-family: var(--d-font-body); font-size: 1rem; color: var(--d-ink); background: var(--d-paper); border: 1px solid var(--d-line-2); padding: 0.6rem 0.7rem; }
+.dlr-input:focus, .dlr-select:focus, .dlr-textarea:focus { outline: 0; border-color: var(--d-green); box-shadow: inset 0 0 0 1px var(--d-green); }
+.dlr-help { font-family: var(--d-font-ui); font-size: 0.74rem; line-height: 1.5; color: var(--d-ink-45); }
+.dlr-help a { color: var(--d-green-mid); }
+
+/* ---------- footnote / disclosure ---------- */
+.dlr-note { font-family: var(--d-font-ui); font-size: 0.72rem; line-height: 1.6; color: var(--d-ink-45); }
+.dlr-note a { color: var(--d-ink-70); }

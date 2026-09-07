@@ -1,0 +1,35 @@
+/* Homepage innovations, version 2 — the card plays its own clip on hover, the
+   way the innovations index cards do, and the background film coasts to a stop
+   underneath rather than cutting out. */
+
+/* one fixed card size, so cycling never resizes the frame */
+.inv-frames { height: clamp(332px, 27vw, 372px); min-height: 0; }
+.inv-frame { grid-template-columns: 44% 1fr; grid-template-rows: 1fr; align-content: stretch; justify-items: stretch; gap: 0; padding: 0; text-align: left; }
+.ifc-tile { position: relative; display: grid; place-items: center; overflow: hidden; background: #FAFAF7; border-right: 1px solid var(--color-border); transition: background-color 300ms ease, border-color 300ms ease; }
+.ifc-tile .inv-ico { width: auto; height: auto; border-radius: 0; background: none; color: #2A2F2C; opacity: 0.82; transition: opacity 220ms ease, transform 220ms ease; }
+.ifc-tile .inv-ico svg { width: 5.7rem; height: 5.7rem; stroke-width: 1.05; }
+/* the extra pixel of overscan stops the pale tile showing as a seam where the
+   column width lands on a fraction */
+.ifc-vid { position: absolute; inset: 0 -1px 0 0; width: calc(100% + 1px); height: 100%; object-fit: cover; opacity: 0; transition: opacity 300ms ease; }
+/* the whole showcase, arrows included, is the hover target */
+/* keyed to :focus-visible, not :focus-within — clicking an arrow with the mouse
+   must not leave the clip frozen on screen after the pointer leaves */
+.inv-show:hover .inv-frame.is-active .ifc-vid, .inv-show:has(:focus-visible) .inv-frame.is-active .ifc-vid { opacity: 1; }
+.inv-show:hover .inv-frame.is-active .inv-ico, .inv-show:has(:focus-visible) .inv-frame.is-active .inv-ico { opacity: 0; transform: scale(0.9); }
+/* no bright divider once the clip is up */
+.inv-show:hover .inv-frame.is-active .ifc-tile, .inv-show:has(:focus-visible) .inv-frame.is-active .ifc-tile { background: #0C0E1A; border-right-color: transparent; }
+.inv-frame figcaption { align-self: center; max-width: none; padding: clamp(1.2rem, 2.4vw, 1.9rem); gap: 0.55rem; }
+.inv-frame h3 { font-size: var(--text-xl); }
+.inv-frame p { font-size: 0.9rem; line-height: 1.5; }
+.ifc-go { margin-top: 0.45rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); }
+.ifc-go .arr { display: inline-block; transition: transform 180ms ease; }
+.inv-show:hover .inv-frame.is-active .ifc-go, .inv-frame:hover .ifc-go { color: var(--color-text); }
+.inv-show:hover .inv-frame.is-active .ifc-go .arr, .inv-frame:hover .ifc-go .arr { transform: translate(2px, -2px); }
+.if-go { position: absolute; inset: 0; z-index: 3; padding: 0; }
+
+/* the background film dims as it slows */
+.inv-sec-bg video { transition: opacity 900ms ease; }
+.inv-sec-bg.is-resting video { opacity: 0.12; }
+
+@media (max-width: 620px) { .inv-frame { grid-template-columns: 1fr; grid-template-rows: 40% 1fr; } .ifc-tile { border-right: 0; border-bottom: 1px solid var(--color-border); } }
+@media (prefers-reduced-motion: reduce) { .inv-sec-bg video { transition: none } }

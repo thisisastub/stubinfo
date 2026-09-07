@@ -1,0 +1,15 @@
+:root {
+  --d-paper: #FFFFFF; /* Paper */
+  --d-bg: #FAFAF7; /* Ground */
+  --d-surface-2: #F1F3EE; /* Surface */
+  --d-line: #DBDFD6; /* Rule */
+  --d-line-2: #BEC5B7; /* Rule 2 */
+  --d-ink: #0C100D; /* Ink */
+  --d-ink-70: #474D46; /* Ink 70 */
+  --d-ink-45: #6A7068; /* Ink 45 */
+  --d-green: #0B3D2C; /* Green */
+  --d-green-mid: #14624A; /* Green mid */
+  --d-green-bright: #1E8A62; /* Green bright */
+  --d-sage: #93A896; /* Sage */
+  --d-brass: #A8873C; /* Brass */
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink" data-type="editorial">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dollarous Cost Calculator · Innovations · Tommy Stubblefield</title>
+<meta name="description" content="A lead-generation calculator that prices the cost of manual reconciliation, built for a fictitious FinTech brand and sourced to published benchmarks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="dollarous.css">
+<link rel="stylesheet" href="inv.css">
+<link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html#top" aria-label="Tommy Stubblefield home">
+      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
+      <span class="name">Tommy Stubblefield</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="../index.html#approach">About Me</a>
+      <a class="nav-link" href="../index.html#strategy">Content Strategy</a>
+      <a class="nav-link" href="index.html">Innovations</a>
+      <a class="nav-link" href="../index.html#work">Writing</a>
+      <a class="btn btn-solid" href="../index.html#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="inv-hero">
+  <div class="inv-hero-bg" aria-hidden="true"><video src="hero-calc.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video></div>
+  <div class="wrap">
+    <a class="inv-back" href="index.html">← All innovations</a>
+    <h1>Cost Calculator</h1>
+    <p class="inv-lead">A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</p>
+  </div>
+</section>
+
+<section class="cs-sec rule">
+  <div class="wrap">
+    <div class="cs-head">
+      <h2>The problem</h2>
+    </div>
+    <div class="cs-prose">
+      <p>Executives and decisionmakers in charge of operations and budgets often need more than big, beautiful datapoints and aesthetically pleasing reports. Somewhere in the Informational phase of the customer journey, they need to see a personalized case made for your business in scenarios where minds still have to be changed. A case study is fine, but they don&rsquo;t need to know how much money you made for someone else. They need to know your impact on their own bottom line.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec rule">
+  <div class="wrap">
+    <div class="cs-head">
+      <h2>The solution</h2>
+    </div>
+    <div class="cs-prose">
+      <p>Interactive ROI calculators are nothing new. But my calculator has a few features that make it worthwhile for busy execs with a lot riding on their daily decisions:</p>
+      <ul>
+        <li><strong>Usability:</strong> it is streamlined ruthlessly to save work on the user&rsquo;s end. It&rsquo;s responsive for phones and has clear pathing on desktop.</li>
+        <li><strong>Data mix:</strong> Depending on the industry, it relies on a mix of publicly available data (to prove you are speaking the same language) from trusted sources, and your internal data (to prove you are bringing unique value).</li>
+        <li>It makes a strong, quantitative case honestly. There are no built-in guardrails preventing it from saying &ldquo;No, this isn&rsquo;t for you.&rdquo; Otherwise, why are we calculating anything at all?</li>
+        <li>It demonstrates your strategic, consulative value and ends on a clear CTA for next steps. It&rsquo;s part of an inbound path for clients discovering you and learning what they need.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec rule" id="the-model">
+  <div class="wrap">
+    <div class="cs-head" style="margin-bottom:1.6rem;">
+      <h2>The model</h2>
+      <p style="margin-top:1rem;color:var(--ink-70);">Fully working. Change any input and every figure recalculates.</p>
+    </div>
+
+    <div class="dlr-frame dlr">
+      <div class="dlr-frame-bar">
+        <span class="dlr-lockup">
+          <span class="dlr-mark"><span class="dlr-glyph" aria-hidden="true"></span>Dollarous</span>
+          <span class="dlr-slogan">Fictitious FinTech</span>
+        </span>
+        <span class="dlr-frame-acts">
+          <span class="dlr-chip">Reconciliation cost</span>
+          <button class="dlr-fs" type="button" aria-pressed="false" aria-label="View this example full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M15 21h6v-6M9 21H3v-6"/></svg><span class="lb">Full screen</span></button>
+        </span>
+      </div>
+
+      <div class="dlr-frame-body">
+        <div class="calc">
+
+          <form class="calc-inputs" id="calc-form" autocomplete="off">
+            <h3>Tell us about your close</h3>
+            <div class="dlr-field">
+              <label for="i-vol">Invoices or transactions reconciled per month</label>
+              <input class="dlr-input" type="number" id="i-vol" min="1" max="500000" step="100" value="5000">
+            </div>
+            <div class="dlr-field">
+              <label for="i-cost">Fully loaded cost to process one manually</label>
+              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-cost" min="0" max="200" step="0.01" value="15.97"></div>
+              <p class="dlr-help">Benchmark: $15.97 per invoice.<sup><a href="#sources">1</a></sup></p>
+            </div>
+            <div class="dlr-field">
+              <label for="i-err">Share that contain an error needing correction</label>
+              <div class="calc-sliderrow">
+                <input class="calc-slider" type="range" id="i-err" min="0" max="10" step="0.1" value="3.6">
+                <output for="i-err" id="o-err">3.6%</output>
+              </div>
+              <p class="dlr-help">Benchmark: 3.6% of invoices.<sup><a href="#sources">1</a></sup></p>
+            </div>
+            <div class="dlr-field">
+              <label for="i-fix">Cost to identify, investigate, and fix one error</label>
+              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-fix" min="0" max="1000" step="0.5" value="53.50"></div>
+              <p class="dlr-help">Benchmark: $53.50 per error.<sup><a href="#sources">2</a></sup></p>
+            </div>
+            <hr class="dlr-rule">
+            <div class="dlr-field">
+              <label for="i-imp">Improvement you believe is achievable</label>
+              <div class="calc-sliderrow">
+                <input class="calc-slider" type="range" id="i-imp" min="0" max="90" step="5" value="60">
+                <output for="i-imp" id="o-imp">60%</output>
+              </div>
+              <p class="dlr-help">Your assumption, not ours. Applied to both processing and rework.</p>
+            </div>
+            <button type="button" class="calc-reset" id="calc-reset">Reset to benchmarks</button>
+          </form>
+
+          <div class="calc-out">
+            <div class="calc-hero">
+              <p class="lab">Your cost of inaction</p>
+              <p class="calc-big"><span class="cur">$</span><span id="o-day">0</span></p>
+              <p class="calc-per">per day · <b id="o-year">$0</b> per year · <span id="o-month">$0</span> per month</p>
+            </div>
+
+            <div class="calc-split">
+              <div class="calc-cell"><span class="k">Processing</span><span class="v" id="o-proc">$0</span></div>
+              <div class="calc-cell"><span class="k">Rework</span><span class="v" id="o-rework">$0</span></div>
+              <div class="calc-cell"><span class="k">Errors / yr</span><span class="v" id="o-errs">0</span></div>
+            </div>
+
+            <div class="calc-bar">
+              <div class="track"><span class="seg proc" id="seg-proc" style="width:70%"></span><span class="seg rework" id="seg-rework" style="width:30%"></span></div>
+              <div class="key"><span class="proc"><i></i>Processing labour</span><span class="rework"><i></i>Error rework</span></div>
+            </div>
+
+            <div class="calc-ba">
+              <div class="ba-card now">
+                <span class="k">Today</span>
+                <span class="v" id="o-now">$0</span>
+                <span class="n">Annual cost of the current manual process, all in.</span>
+              </div>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="ba-card next">
+                <span class="k">At your assumption</span>
+                <span class="v" id="o-next">$0</span>
+                <span class="n">Annual cost if you achieve the improvement you set.</span>
+              </div>
+            </div>
+
+            <div class="calc-lead">
+              <button type="button" class="dlr-btn" id="calc-send">Email me this breakdown</button>
+              <a class="dlr-btn ghost" href="#sources">See the sources</a>
+              <p class="dlr-help">Demo only. This button collects nothing and sends nothing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="dlr-frame-foot">
+        <p class="dlr-note">Dollarous is a fictitious FinTech brand created for this demonstration and is not a real company. The Dollarous mark uses "Money" by SANB from the Noun Project, CC BY 3.0. Outputs are illustrative estimates generated from figures you enter, not a forecast, quote, or professional advice.</p>
+      </div>
+    </div>
+
+    <details class="cs-fold" id="sources" style="margin-top:2.4rem;">
+      <summary>Where the default figures come from</summary>
+      <div class="cs-prose">
+      <p style="font-size:0.92rem;"><strong>1.</strong> Manual processing cost of $15.97 per invoice, automated cost of $3.24, and a 3.6% invoice error rate are attributed to the Institute of Finance &amp; Management's AP Benchmarking Report, as compiled in <a href="https://parsli.co/blog/data-entry-statistics" target="_blank" rel="noopener">Parsli's data entry statistics roundup</a> (2026). An older Aberdeen Group figure of roughly $15 per manually processed invoice is cited by <a href="https://fiscaltec.com/the-cost-of-errors-in-statement-reconciliation-what-ap-teams-must-know/" target="_blank" rel="noopener">Fiscaltec</a> and is consistent with it.</p>
+      <p style="font-size:0.92rem;"><strong>2.</strong> The $53.50 cost to identify, investigate, and rectify a single invoice error is attributed to IOFM, as reported by <a href="https://parsli.co/blog/true-cost-manual-data-entry-2026" target="_blank" rel="noopener">Parsli</a> (2026).</p>
+      <p style="font-size:0.92rem;"><strong>3.</strong> For context on how common the manual process still is: the Association for Financial Professionals found 44% of organisations still perform manual data entry for bank reconciliation, per the same Parsli compilation, and a 2025 Kani Payments survey of 250 financial institutions found 56% still reconcile in spreadsheets, as reported by <a href="https://tier2systems.com/en/blog/account-reconciliation-costs/" target="_blank" rel="noopener">Tier2 Systems</a>.</p>
+      <p style="font-size:0.86rem;color:var(--ink-55,var(--ink-70));">These are published industry benchmarks, cited so the tool's starting values are traceable. They describe the sector, not any client of mine, and no figure on this page is drawn from real client data.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="cs-sec rule">
+  <div class="wrap">
+    <div class="cs-head">
+      <h2>How I made this one</h2>
+    </div>
+    <div class="cs-prose">
+      <p>Using Claude Design and other tools to research authoritative data resources, the cost calculator has the flexibility to operate within a variety of frontend modes and styles. That&rsquo;s important when six digit budgets depend on the ability to display properly in the browser.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec rule">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+    <p style="font-family:var(--font-display);font-size:var(--text-2xl);">Next: <a href="thought-leadership.html">Thought Leadership Enhancements</a></p>
+    <a class="btn btn-ghost" href="index.html">All innovations</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="../index.html#top">
+      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
+      <span class="name" style="font-size:1rem;">Tommy Stubblefield</span>
+    </a>
+    <span class="tag">Thinking forward.</span>
+    <span class="legal">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var D = { vol: 5000, cost: 15.97, err: 3.6, fix: 53.50, imp: 60 };
+  var el = function (id) { return document.getElementById(id); };
+  var f = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var raw = function (n) { return Math.round(n).toLocaleString('en-US'); };
+
+  function calc() {
+    var vol = Math.max(0, +el('i-vol').value || 0);
+    var cost = Math.max(0, +el('i-cost').value || 0);
+    var err = Math.max(0, +el('i-err').value || 0);
+    var fix = Math.max(0, +el('i-fix').value || 0);
+    var imp = Math.max(0, +el('i-imp').value || 0);
+
+    el('o-err').textContent = err.toFixed(1) + '%';
+    el('o-imp').textContent = imp + '%';
+
+    var proc = vol * cost;
+    var errs = vol * (err / 100);
+    var rework = errs * fix;
+    var month = proc + rework;
+    var year = month * 12;
+
+    el('o-day').textContent = raw(year / 365);
+    el('o-year').textContent = f(year);
+    el('o-month').textContent = f(month);
+    el('o-proc').textContent = f(proc * 12);
+    el('o-rework').textContent = f(rework * 12);
+    el('o-errs').textContent = raw(errs * 12);
+
+    var total = proc + rework;
+    var pp = total > 0 ? (proc / total) * 100 : 50;
+    el('seg-proc').style.width = pp.toFixed(1) + '%';
+    el('seg-rework').style.width = (100 - pp).toFixed(1) + '%';
+
+    el('o-now').textContent = f(year);
+    el('o-next').textContent = f(year * (1 - imp / 100));
+  }
+
+  el('calc-form').addEventListener('input', calc);
+  el('calc-reset').addEventListener('click', function () {
+    el('i-vol').value = D.vol; el('i-cost').value = D.cost;
+    el('i-err').value = D.err; el('i-fix').value = D.fix; el('i-imp').value = D.imp;
+    calc();
+  });
+  el('calc-send').addEventListener('click', function () {
+    var b = el('calc-send');
+    b.disabled = true;
+    b.textContent = 'Demo only, nothing sent';
+    setTimeout(function () { b.disabled = false; b.textContent = 'Email me this breakdown'; }, 2400);
+  });
+  calc();
+})();
+</script>
+<script src="inv-nav.js"></script>
+<script src="inv-fs.js"></script>
+</body>
+</html>

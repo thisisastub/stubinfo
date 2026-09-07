@@ -489,3 +489,36 @@
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.in { opacity: 1; transform: none; }
 }
+/* ---------------- innovations ---------------- */
+.inv-stage { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(1.8rem, 4vw, 3.6rem); align-items: center; }
+@media (max-width: 900px) { .inv-stage { grid-template-columns: 1fr; } }
+.inv-copy .section-head { margin-bottom: clamp(1.4rem, 3vw, 2rem); }
+.inv-copy .btn { align-self: start; }
+.inv-show { display: grid; gap: 1rem; }
+.inv-frames { position: relative; min-height: clamp(300px, 34vw, 380px); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); overflow: hidden; }
+.inv-frame { position: absolute; inset: 0; margin: 0; display: grid; align-content: center; justify-items: center; gap: 1.25rem; padding: clamp(1.6rem, 3vw, 2.4rem); text-align: center; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
+.inv-frame.is-active { opacity: 1; transform: none; pointer-events: auto; }
+.inv-ico { display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 50%; background: color-mix(in oklch, var(--color-accent) 14%, transparent); color: var(--color-accent); }
+.inv-ico svg { width: 2rem; height: 2rem; }
+.inv-frame figcaption { display: grid; gap: 0.55rem; max-width: 30rem; }
+.inv-frame h3 { font-size: var(--text-2xl); line-height: 1.18; text-wrap: pretty; }
+.inv-frame p { color: var(--ink-70); font-size: 0.94rem; line-height: 1.55; text-wrap: pretty; }
+.inv-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.inv-count { font-family: var(--font-display); font-size: 0.9rem; color: var(--ink-70); }
+.inv-count .cnum { color: var(--color-text); }
+.inv-count .csep { opacity: 0.45; }
+.inv-frame .if-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; mix-blend-mode: screen; filter: saturate(0.7); pointer-events: none; -webkit-mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent), linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent), linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent); mask-composite: intersect; }
+.inv-frame .inv-ico, .inv-frame figcaption { position: relative; z-index: 1; }
+.if-go { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding: 1.1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
+.if-go .arr { display: inline-block; transition: transform 180ms ease; }
+.if-go:hover { color: var(--color-text); }
+.if-go:hover .arr { transform: translate(2px, -2px); }
+
+/* the section carries the same film treatment as the innovations pages */
+#innovations { position: relative; }
+#innovations > .wrap { position: relative; z-index: 1; }
+.inv-sec-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent), linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent), linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent); mask-composite: intersect; }
+.inv-sec-bg video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 68%; opacity: 0.22; mix-blend-mode: screen; filter: saturate(0.6); }
+.inv-sec-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(96deg, var(--color-bg) 0%, rgba(22,22,42,0.8) 26%, rgba(22,22,42,0.3) 56%, rgba(22,22,42,0.46) 100%); }
+@media (prefers-reduced-motion: reduce) { .inv-frame { transition: none; } .inv-sec-bg video, .inv-frame .if-bg { display: none; } }
+

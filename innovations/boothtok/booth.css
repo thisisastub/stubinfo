@@ -1,0 +1,120 @@
+/* BoothTok — the app. Vertical feed, phone-first, no chrome of its own. */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100dvh;overflow:hidden;overscroll-behavior:none;background:#000}
+body{font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* safe-area insets, so a notch and a home indicator never eat the chrome */
+:root{--sa-t:env(safe-area-inset-top,0px);--sa-b:env(safe-area-inset-bottom,0px);--sa-l:env(safe-area-inset-left,0px);--sa-r:env(safe-area-inset-right,0px)}
+
+#bt{position:fixed;inset:0;display:grid;grid-template-rows:1fr;overflow:hidden;background:#000}
+.stage{position:relative;width:100%;height:100%;overflow:hidden}
+
+/* ---- feed ---- */
+.feed{height:100%;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior-y:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+.feed::-webkit-scrollbar{display:none}
+.post{position:relative;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;background:radial-gradient(120% 80% at 50% 40%,#1b1f1d,#000)}
+.post video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.post .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5) 0,transparent 18% 52%,rgba(0,0,0,.34) 74%,rgba(0,0,0,.72) 100%)}
+
+/* ---- tap layer ---- */
+.tap{position:absolute;inset:0;z-index:2}
+.pausedot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.7);width:4.6rem;height:4.6rem;display:grid;place-items:center;opacity:0;transition:opacity 160ms ease,transform 200ms ease;pointer-events:none}
+.post.paused .pausedot{opacity:.92;transform:translate(-50%,-50%) scale(1)}
+.pausedot svg{width:2.6rem;height:2.6rem;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+
+/* flying heart on double tap */
+.pop{position:absolute;z-index:6;width:5.5rem;height:5.5rem;margin:-2.75rem 0 0 -2.75rem;pointer-events:none;color:#E23E4E;animation:pop 700ms cubic-bezier(.2,1.5,.4,1) forwards}
+.pop svg{width:100%;height:100%;filter:drop-shadow(0 3px 10px rgba(0,0,0,.4))}
+@keyframes pop{0%{opacity:0;transform:scale(.2) rotate(-14deg)}22%{opacity:1;transform:scale(1.12) rotate(-14deg)}70%{opacity:1;transform:scale(1) rotate(-14deg) translateY(-8px)}100%{opacity:0;transform:scale(.92) rotate(-14deg) translateY(-58px)}}
+
+/* ---- right rail ---- */
+.rail{position:absolute;z-index:4;right:calc(.55rem + var(--sa-r));bottom:calc(6.2rem + var(--sa-b));display:grid;justify-items:center;gap:1.15rem;user-select:none;-webkit-user-select:none}
+/* 44px minimum hit area without changing the drawn size */
+.rail .act{min-width:2.75rem;min-height:2.75rem;justify-content:center;align-content:center}
+.rail .act{display:grid;justify-items:center;gap:.28rem;line-height:1}
+.rail .act svg{width:2.1rem;height:2.1rem;filter:drop-shadow(0 1px 4px rgba(0,0,0,.45))}
+.rail .act span{font-size:.72rem;font-weight:700;letter-spacing:.01em;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.rail .act.hit svg{color:#E23E4E;animation:beat 380ms cubic-bezier(.2,1.6,.4,1)}
+.rail .act.rp.hit svg{color:#1E8A62}
+.rail .act.sh{cursor:default}
+@keyframes beat{0%{transform:scale(1)}40%{transform:scale(1.32)}100%{transform:scale(1)}}
+
+.av{position:relative;width:2.9rem;height:2.9rem;margin-bottom:.35rem;border-radius:50%;background:#1a1c1b;cursor:pointer;box-shadow:0 0 0 2px rgba(255,255,255,.92)}
+.av img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
+.av b{position:absolute;bottom:-.42rem;left:50%;transform:translateX(-50%);width:1.15rem;height:1.15rem;border-radius:50%;background:#1E8A62;color:#fff;font-size:.88rem;font-weight:400;line-height:1.2rem;text-align:center}
+.av.on b{background:#fff;color:#1E8A62;font-size:.7rem}
+
+@media(prefers-reduced-motion:reduce){.meta .snd i span{animation:none}}
+
+/* ---- caption block ---- */
+.meta{position:absolute;z-index:4;left:calc(.85rem + var(--sa-l));right:calc(5.1rem + var(--sa-r));bottom:calc(5.1rem + var(--sa-b));display:grid;grid-template-columns:minmax(0,1fr);gap:.4rem;user-select:none;-webkit-user-select:none}
+.meta .who{display:flex;align-items:center;gap:.4rem;min-width:0;font-size:.95rem;font-weight:800;text-shadow:0 1px 5px rgba(0,0,0,.55)}
+.meta .who .vf{width:.92rem;height:.92rem;flex-shrink:0;color:#5FC8E8}
+.meta .cap{font-size:.85rem;line-height:1.42;font-weight:500;text-shadow:0 1px 5px rgba(0,0,0,.55);text-wrap:pretty}
+.meta .cap em{font-style:normal;font-weight:700}
+.meta .snd{display:flex;align-items:center;gap:.38rem;font-size:.78rem;font-weight:600;text-shadow:0 1px 5px rgba(0,0,0,.55)}
+.meta .snd svg{width:.9rem;height:.9rem;flex-shrink:0}
+.meta .snd i{display:block;flex:1;min-width:0;overflow:hidden;font-style:normal}
+.meta .snd i span{display:inline-block;white-space:nowrap;animation:tick 13s linear infinite}
+@keyframes tick{0%,10%{transform:translateX(0)}90%,100%{transform:translateX(-50%)}}
+
+/* ---- progress ---- */
+.prog{position:absolute;z-index:5;left:0;right:0;bottom:calc(3.55rem + var(--sa-b));height:2px;background:rgba(255,255,255,.2)}
+.prog i{display:block;height:100%;background:#fff;width:0}
+
+/* ---- top bar ---- */
+.top{position:absolute;z-index:8;top:0;left:0;right:0;display:flex;align-items:center;gap:.9rem;padding:calc(.7rem + var(--sa-t)) calc(.85rem + var(--sa-r)) .55rem calc(.85rem + var(--sa-l));background:linear-gradient(180deg,rgba(0,0,0,.42),transparent)}
+.top .tabs{display:flex;align-items:center;gap:1.1rem;margin:0 auto}
+.top .tabs button{position:relative;white-space:nowrap;font-size:.92rem;font-weight:700;color:rgba(255,255,255,.62);padding-bottom:.3rem}
+.top .tabs button.on{color:#fff}
+.top .tabs button.on::after{content:"";position:absolute;left:15%;right:15%;bottom:0;height:2px;background:#fff}
+.top .ic{width:2.75rem;height:2.75rem;flex-shrink:0;display:grid;place-items:center;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
+.top .ic svg{width:1.35rem;height:1.35rem}
+
+/* ---- bottom nav ---- */
+.nav{position:absolute;z-index:8;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding:.3rem calc(var(--sa-r)) calc(.45rem + var(--sa-b)) calc(var(--sa-l));background:#000;border-top:1px solid #1b1b1b}
+.nav button{display:grid;justify-items:center;align-content:center;gap:.15rem;min-height:2.9rem;font-size:.6rem;font-weight:600;color:rgba(255,255,255,.5)}
+.nav button.on{color:#fff}
+.nav button svg{width:1.5rem;height:1.5rem}
+.nav .plus{display:grid;place-items:center;width:2.6rem;height:1.6rem;border-radius:.42rem;background:#fff;color:#000}
+.nav .plus svg{width:1.05rem;height:1.05rem}
+
+/* ---- toast ---- */
+.toast{position:absolute;z-index:20;left:50%;bottom:8.5rem;transform:translate(-50%,8px);max-width:76%;padding:.55rem .85rem;border-radius:.35rem;background:rgba(20,22,21,.94);font-size:.8rem;font-weight:600;line-height:1.4;text-align:center;opacity:0;visibility:hidden;transition:opacity 180ms ease,transform 180ms ease}
+.toast.up{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+/* ---- credits sheet ---- */
+.sheet{position:absolute;z-index:30;inset:0;pointer-events:none}
+.sheet .scrim{position:absolute;inset:0;background:rgba(0,0,0,.6);opacity:0;transition:opacity 220ms ease}
+.sheet .card{position:absolute;left:0;right:0;bottom:0;max-height:82%;display:grid;grid-template-rows:auto minmax(0,1fr);background:#141614;border-radius:.9rem .9rem 0 0;transform:translateY(101%);transition:transform 280ms cubic-bezier(.25,.9,.3,1)}
+.sheet.up{pointer-events:auto}
+.sheet.up .scrim{opacity:1}
+.sheet.up .card{transform:none}
+.sheet h2{padding:1rem 1.1rem .5rem;font-family:"Kaisei Opti",Georgia,serif;font-size:1.02rem;font-weight:600;text-align:center;border-bottom:1px solid #232523}
+.sheet .x{position:absolute;top:.55rem;right:.7rem;width:1.9rem;height:1.9rem;font-size:1.3rem;line-height:1;color:rgba(255,255,255,.6)}
+.sheet .body{overflow-y:auto;padding:.9rem 1.1rem calc(1.6rem + var(--sa-b));-webkit-overflow-scrolling:touch}
+.sheet .body p{font-size:.79rem;line-height:1.55;color:rgba(255,255,255,.62);margin-bottom:.9rem}
+.sheet .body p b{color:#fff;font-weight:700}
+.sheet ul{list-style:none;display:grid;gap:.5rem}
+.sheet li{font-size:.74rem;line-height:1.45;color:rgba(255,255,255,.55);padding-left:.75rem;border-left:1px solid #2c2f2c}
+.sheet li b{display:block;color:rgba(255,255,255,.85);font-weight:600}
+
+/* ---- first-run hint ---- */
+.hint{position:absolute;z-index:9;left:50%;top:40%;transform:translateX(-50%);display:grid;justify-items:center;gap:.3rem;font-size:.76rem;font-weight:700;letter-spacing:.02em;text-shadow:0 1px 6px rgba(0,0,0,.7);pointer-events:none;animation:hintOut 400ms 4.6s forwards}
+.hint svg{width:1.5rem;height:1.5rem;animation:swipe 1.6s ease-in-out infinite}
+@keyframes swipe{0%,100%{transform:translateY(3px);opacity:.6}50%{transform:translateY(-4px);opacity:1}}
+@keyframes hintOut{to{opacity:0;visibility:hidden}}
+.feed.moved~.hint{display:none}
+
+/* wider screens: keep the phone proportion, letterbox the rest */
+@media(min-aspect-ratio:3/4){#bt{justify-items:center;background:#0b0d0c}
+.stage{width:min(100vw,calc(100dvh * 0.4735));box-shadow:0 0 60px rgba(0,0,0,.6)}}
+/* embedded in a page, the frame supplies the bezel and there is no notch */
+@media(min-aspect-ratio:3/4){:root{--sa-t:0px;--sa-b:0px;--sa-l:0px;--sa-r:0px}}
+
+/* Short stages (the phone embedded on a laptop page) compress the rail rather
+   than pushing it off the top of the feed. Must sit after the base rules.
+   A real phone is taller than 700px, so it keeps the full 44px hit areas. */
+@media(max-height:700px){.rail{bottom:calc(5.4rem + var(--sa-b));gap:.5rem}.rail .act{min-width:2.3rem;min-height:2.3rem}.rail .act svg{width:1.85rem;height:1.85rem}.av{width:2.5rem;height:2.5rem;margin-bottom:.3rem}.top .ic{width:2.2rem;height:2.2rem}}
+@media(max-height:560px){.rail{bottom:calc(5rem + var(--sa-b));gap:.25rem}.rail .act{min-width:2rem;min-height:2rem}.rail .act svg{width:1.6rem;height:1.6rem}.rail .act span{font-size:.66rem}.av{width:2.2rem;height:2.2rem}}
