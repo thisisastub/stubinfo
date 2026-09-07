@@ -71,10 +71,12 @@
 
 /* try-it-here QR. The code needs a real white quiet zone to scan off a screen,
    so it keeps its own light card regardless of the page theme. */
-.bt-qr{display:flex;align-items:center;gap:.9rem;width:100%;padding:.85rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface)}
+.bt-qr{display:flex;flex-direction:column;align-items:center;gap:.75rem;width:100%;padding:1rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface);text-align:center}
 .bt-qr-code{flex:0 0 auto;background:#fff;padding:6px;border-radius:6px;line-height:0}
-.bt-qr-code svg{display:block;width:104px;height:104px}
+/* 39 modules: keep this box big enough that one module stays ~5 CSS px,
+   or phone cameras will not read it off a screen */
+.bt-qr-code svg{display:block;width:196px;height:196px}
 .bt-qr-say{min-width:0}
-.bt-qr-lead{font-family:var(--font-display);font-size:1rem;line-height:1.2;color:var(--color-text);margin:0;text-wrap:pretty}
+.bt-qr-lead{font-family:var(--font-display);font-size:1.05rem;line-height:1.2;color:var(--color-text);margin:0;text-wrap:pretty}
 .bt-qr-sub{font-family:var(--font-body);font-size:.78rem;line-height:1.55;color:var(--ink-55);margin:.35rem 0 0;text-wrap:pretty}
-@media (max-width:420px){.bt-qr{flex-direction:column;align-items:flex-start}}
+
