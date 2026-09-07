@@ -281,3 +281,50 @@ feed.addEventListener("keydown", function (e) { if (e.key === "ArrowDown" || e.k
 
 build(FEED);
 })();
+
+/* ---- launching from a QR scan ----------------------------------------
+   A page opened from a scan cannot put itself into a PWA's standalone mode:
+   the manifest's display:standalone applies only to an installed icon, and
+   the Fullscreen API needs a user gesture, so neither can fire on load.
+   The next best thing is to go fullscreen on the very first touch, which
+   the feed asks for anyway. Only ever runs as the top-level document, so
+   tapping the phone rig embedded on boothtok.html does not trigger it. */
+(function () {
+  if (window.self !== window.top) return;
+
+  var installed = (window.matchMedia && matchMedia("(display-mode: standalone)").matches)
+    || window.navigator.standalone === true;
+  if (installed) return;                       /* already chrome-less */
+
+  var root = document.documentElement;
+  var fs = root.requestFullscreen || root.webkitRequestFullscreen;
+
+  if (fs) {
+    var go = function () {
+      try {
+        var p = fs.call(root, { navigationUI: "hide" });
+        if (p && p.catch) p.catch(function () {});
+      } catch (e) {}
+      done();
+    };
+    var done = function () {
+      document.removeEventListener("pointerdown", go);
+      document.removeEventListener("keydown", go);
+    };
+    document.addEventListener("pointerdown", go);
+    document.addEventListener("keydown", go);
+    return;
+  }
+
+  /* iOS Safari exposes no Fullscreen API outside <video>, so the only route
+     to a chrome-less launch there is Add to Home Screen. Say so once. */
+  if (!/iP(hone|od|ad)/.test(navigator.platform || navigator.userAgent || "")) return;
+  var tip = document.createElement("div");
+  tip.className = "a2hs";
+  tip.innerHTML = "For the full-screen version, tap Share then <b>Add to Home Screen</b>";
+  document.getElementById("bt").appendChild(tip);
+  var drop = function () { tip.classList.add("out"); };
+  tip.addEventListener("click", drop);
+  document.addEventListener("pointerdown", drop, { once: true });
+  setTimeout(drop, 7000);
+})();

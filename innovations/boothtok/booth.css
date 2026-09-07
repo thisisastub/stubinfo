@@ -118,3 +118,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    A real phone is taller than 700px, so it keeps the full 44px hit areas. */
 @media(max-height:700px){.rail{bottom:calc(5.4rem + var(--sa-b));gap:.5rem}.rail .act{min-width:2.3rem;min-height:2.3rem}.rail .act svg{width:1.85rem;height:1.85rem}.av{width:2.5rem;height:2.5rem;margin-bottom:.3rem}.top .ic{width:2.2rem;height:2.2rem}}
 @media(max-height:560px){.rail{bottom:calc(5rem + var(--sa-b));gap:.25rem}.rail .act{min-width:2rem;min-height:2rem}.rail .act svg{width:1.6rem;height:1.6rem}.rail .act span{font-size:.66rem}.av{width:2.2rem;height:2.2rem}}
+
+/* Add to Home Screen tip, iOS only. Sits under the notch, above the feed
+   chrome, and clears itself on the first touch. */
+.a2hs{position:absolute;z-index:12;left:50%;top:calc(.6rem + var(--sa-t));transform:translateX(-50%);
+  max-width:min(21rem,calc(100% - 1.6rem));padding:.55rem .85rem;border-radius:999px;
+  background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  color:#fff;font-size:.74rem;line-height:1.35;text-align:center;text-wrap:pretty;
+  box-shadow:0 6px 20px rgba(0,0,0,.4);transition:opacity .3s ease,transform .3s ease}
+.a2hs b{font-weight:700}
+.a2hs.out{opacity:0;transform:translateX(-50%) translateY(-6px);pointer-events:none}
+@media (prefers-reduced-motion:reduce){.a2hs{transition:none}}
