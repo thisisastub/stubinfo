@@ -1,7 +1,7 @@
 /* Behaviour reference for case-study-content-strategy-library.html.
    DCLogic is a React-class-style base (state, setState, lifecycle). renderVals() returns the values bound to
    {{ name }} holes and data-dc-* attributes in the HTML. Port this into your own vanilla JS or React. */
-const CR = {0:{kind:'Footage',title:'Meeting, Creative, Artistic',href:'https://pixabay.com/videos/meeting-creative-artistic-88225/',by:'by Digital_Expert, via Pixabay'},2:{kind:'Photo',title:'Kristina Halvorson portrait',by:'photographer unconfirmed'},5:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'},7:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'},9:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'}};
+const CR = {0:{kind:'Footage',title:'Meeting, Creative, Artistic',href:'https://pixabay.com/videos/meeting-creative-artistic-88225/',by:'by Digital_Expert, via Pixabay'},2:{kind:'Photo',title:'Kristina Halvorson portrait',by:'credit: Kristina Halvorson'},5:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'},7:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'},9:{kind:'Screenshot',title:'contentstrategylibrary.com',href:'https://contentstrategylibrary.com',by:'own work'}};
 const INL = [3];
 const N = 10;
 const EXIT = '/content-strategy.html';
