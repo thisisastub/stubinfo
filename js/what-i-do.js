@@ -116,10 +116,19 @@ class Component extends DCLogic {
       if (/^\d+\./.test(l)) { c = { name: l.replace(/^\d+\.\s*/, ''), kids: [] }; out.push(c); }
       else if (l[0] === '•') { s = { name: l.slice(1).trim(), kids: [], hasKids: false }; c.kids.push(s); }
       else if (l[0] === '◦') { s.kids.push({ name: l.slice(1).trim() }); s.hasKids = true; } });
+    // labels for the phone list (what-i-do.html, data-r="skills-m")
+    out.forEach(c => { c.count = String(c.kids.length); c.kids.forEach(k => { k.subs = k.kids.map(x => x.name).join(' · '); }); });
     return (Component._t = out);
   }
-  componentDidMount() { this.initGraph(); }
-  componentWillUnmount() { clearInterval(this.idle); cancelAnimationFrame(this.raf); this.ro && this.ro.disconnect(); }
+  // Phones get the tappable list instead of the canvas map (see css/responsive.css).
+  // The map starts only once the viewport is wide enough, e.g. after rotating a tablet.
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 720px)');
+    this.onMq = () => { if (!this.mq.matches && !this.graphOn) { this.graphOn = true; this.initGraph(); } };
+    this.mq.addEventListener ? this.mq.addEventListener('change', this.onMq) : this.mq.addListener(this.onMq);
+    this.onMq();
+  }
+  componentWillUnmount() { clearInterval(this.idle); cancelAnimationFrame(this.raf); this.ro && this.ro.disconnect(); this.mq && (this.mq.removeEventListener ? this.mq.removeEventListener('change', this.onMq) : this.mq.removeListener(this.onMq)); }
   initGraph() {
     const cv = this.canvasRef.current, wrap = this.graphWrap.current, hero = this.heroRef.current; if (!cv) return;
     const ctx = cv.getContext('2d'), css = getComputedStyle(document.documentElement), v = (n, d) => (css.getPropertyValue(n).trim() || d);

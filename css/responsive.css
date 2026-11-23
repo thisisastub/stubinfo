@@ -1,0 +1,119 @@
+/* responsive.css — phone and small-tablet layer for the 4.0 pages.
+   The design's markup carries inline styles, so the overrides below use !important.
+   Hooks are data-r="…" attributes added to the page markup. */
+
+/* ---------- Mobile menu (≤ 820px) ---------- */
+.sf-burger { display: none; }
+
+@media (max-width: 820px) {
+  [data-r="header-bar"] { flex-wrap: nowrap !important; min-height: 64px !important; padding-top: 10px !important; padding-bottom: 10px !important; }
+  [data-r="header-bar"] .sf-wordmark { font-size: 20px !important; }
+
+  .sf-burger {
+    display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+    width: 44px; height: 44px; margin-right: -10px; padding: 0; border: 0; background: none; cursor: pointer;
+    color: var(--sf-text); flex: none;
+  }
+  .sf-burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px;
+    transition: transform 200ms var(--sf-ease, cubic-bezier(.2,.7,.2,1)), opacity 120ms; }
+  .nav-open .sf-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-open .sf-burger span:nth-child(2) { opacity: 0; }
+  .nav-open .sf-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .sf-burger:focus-visible { outline: 2px solid var(--sf-focus); outline-offset: 2px; }
+
+  [data-r="nav"] {
+    display: none !important;
+    /* absolute, not fixed: the header's backdrop-filter makes it the containing block */
+    position: absolute; left: 0; right: 0; top: 64px; height: calc(100vh - 64px); height: calc(100dvh - 64px); box-sizing: border-box;
+    flex-direction: column !important; align-items: stretch !important; flex-wrap: nowrap !important; gap: 0 !important;
+    padding: 8px clamp(20px,5vw,64px) 32px; background: var(--sf-canvas); overflow-y: auto;
+    border-top: 1px solid var(--sf-rule);
+  }
+  .nav-open [data-r="nav"] { display: flex !important; animation: sfNavIn 180ms var(--sf-ease, ease-out); }
+  [data-r="nav"] a[data-nav]:not(.sf-btn) {
+    display: flex !important; align-items: center; min-height: 56px; padding: 0 !important;
+    font-size: 22px !important; font-family: var(--sf-font-display); font-weight: 600; color: var(--sf-text) !important;
+    border-bottom: 1px solid var(--sf-rule) !important; background-image: none !important; animation: none !important;
+  }
+  [data-r="nav"] a[data-nav][aria-current="page"]:not(.sf-btn) { color: var(--sf-brand) !important; }
+  [data-r="nav"] a[data-contact] { margin-top: 24px; justify-content: center; min-height: 52px; font-size: 17px !important; }
+  .nav-open body { overflow: hidden; }
+  /* the header turns solid while the menu is open */
+  .nav-open [data-r="site-header"] { background: var(--sf-canvas) !important; }
+}
+@keyframes sfNavIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .nav-open [data-r="nav"] { animation: none; } .sf-burger span { transition: none; } }
+
+/* ---------- Homepage hero carousel ---------- */
+@media (max-width: 640px) {
+  [data-r="hero-bar"] { flex-wrap: wrap !important; justify-content: flex-start !important; gap: 4px !important; }
+  [data-r="hero-bar"] > a[data-cblock] { flex: 1 1 100% !important; width: 100% !important; padding: 16px 18px !important; }
+  [data-r="hero-bar"] > div { margin-right: 0 !important; margin-left: -12px !important; width: calc(100% + 12px); }
+  [data-r="hero-bar"] > div > div:first-child { justify-content: flex-start; }
+  /* keep the big headline clear of the panel and controls at the bottom */
+  [data-r="hero-title"] { align-items: flex-start !important; padding: 104px 0 0 !important; }
+  [data-hero] { touch-action: pan-y; }
+}
+
+/* ---------- Testimonials ---------- */
+@media (max-width: 640px) {
+  [data-r="quotes"] { min-height: 0 !important; touch-action: pan-y; }
+  [data-r="quotes"] blockquote { font-size: 24px !important; line-height: 32px !important; }
+}
+
+/* ---------- What I do: skills ---------- */
+.skills-m { display: none; }
+@media (max-width: 720px) {
+  [data-r="skills-graph"], [data-r="skills-sr"] { display: none !important; }
+  .skills-m {
+    display: grid; gap: 0; position: relative; z-index: 1;
+    width: 100%; box-sizing: border-box; padding: 0 clamp(20px,5vw,64px) 48px;
+  }
+  .skills-m__hint { margin: 0 0 12px; }
+  .skills-m__area { border-top: 1px solid var(--sf-rule); }
+  .skills-m__area:last-child { border-bottom: 1px solid var(--sf-rule); }
+  .skills-m__area summary {
+    list-style: none; display: flex; align-items: center; gap: 12px; min-height: 56px; cursor: pointer;
+    font: 600 18px/1.3 var(--sf-font-display); color: var(--sf-text);
+  }
+  .skills-m__area summary::-webkit-details-marker { display: none; }
+  .skills-m__name { flex: 1; }
+  .skills-m__count { font: 500 13px/1 var(--sf-font-body); color: var(--sf-text-muted); font-variant-numeric: tabular-nums; }
+  .skills-m__area summary::after {
+    content: ""; width: 8px; height: 8px; flex: none; margin-right: 4px;
+    border-right: 2px solid var(--sf-text-muted); border-bottom: 2px solid var(--sf-text-muted);
+    transform: rotate(45deg) translateY(-3px); transition: transform 180ms var(--sf-ease, ease);
+  }
+  .skills-m__area[open] summary::after { transform: rotate(-135deg) translateY(-2px); border-color: var(--sf-brand); }
+  .skills-m__area[open] summary { color: var(--sf-brand); }
+  .skills-m__area summary:focus-visible { outline: 2px solid var(--sf-focus); outline-offset: 2px; }
+  .skills-m__list { list-style: none; margin: 0; padding: 0 0 20px; display: grid; gap: 14px; }
+  .skills-m__list li { display: grid; gap: 4px; padding-left: 20px; position: relative; }
+  .skills-m__list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--sf-brand); }
+  .skills-m__skill { font: 500 16px/1.4 var(--sf-font-body); color: var(--sf-text); }
+  .skills-m__sub { font: 400 14px/1.5 var(--sf-font-body); color: var(--sf-text-muted); }
+}
+
+/* ---------- What I do: service rows stack (icon + text need ~830px side by side) ---------- */
+@media (max-width: 900px) {
+  [data-r="svc-row"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  [data-r="svc-row"] > svg { order: -1; justify-self: start !important; width: 56px !important; height: 56px !important; }
+}
+@media (max-width: 720px) {
+  section:has(> [data-r="skills-m"]) { min-height: 0 !important; }
+}
+
+/* ---------- Content strategy: case study cards ---------- */
+@media (max-width: 640px) {
+  a[id^="case-"] { aspect-ratio: auto !important; min-height: 400px; }
+}
+
+/* ---------- Case studies ---------- */
+@media (max-width: 640px) {
+  /* label | value rows stack instead of crushing the value column */
+  [data-r="kv"] { grid-template-columns: 1fr !important; gap: 4px !important; }
+  /* the arrow-key hint means nothing on a phone, and it pushed Next off-screen */
+  [data-r="key-hint"] { display: none !important; }
+  /* let the last lines of a slide scroll clear of the Credits toggle */
+  [data-scroll] { padding-bottom: 56px !important; box-sizing: border-box; }
+}

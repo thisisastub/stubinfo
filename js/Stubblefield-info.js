@@ -36,11 +36,17 @@ class Component extends DCLogic {
     });
   }
   restart() {}
+  swipe(e) { const t = e.changedTouches[0]; if (this.sx == null) return 0; const dx = t.clientX - this.sx, dy = t.clientY - this.sy; this.sx = null; return Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4 ? (dx < 0 ? 1 : -1) : 0; }
   renderVals() {
     const { f, q, sent, paused } = this.state;
     const v = {
       featCount: (f + 1) + ' of 5',
       featPrev: () => this.setState(s => ({ f: (s.f + 4) % 5 })), featNext: () => this.setState(s => ({ f: (s.f + 1) % 5 })),
+      // swipe: hero carousel and testimonials (horizontal flick of 50px+, mostly sideways)
+      heroTouchStart: e => { const t = e.touches[0]; this.sx = t.clientX; this.sy = t.clientY; },
+      heroTouchEnd: e => { const d = this.swipe(e); if (d) this.setState(s => ({ f: (s.f + (d > 0 ? 1 : 4)) % 5 })); },
+      qTouchStart: e => { const t = e.touches[0]; this.sx = t.clientX; this.sy = t.clientY; },
+      qTouchEnd: e => { const d = this.swipe(e); if (d) { this.setState(s => ({ q: (s.q + (d > 0 ? 1 : 7)) % 8 })); this.qTimer(); } },
       quoteRef: this.quoteRef,
       paused, playing: !paused, pausedAttr: paused ? 'true' : 'false', pauseLabel: paused ? 'Play carousel' : 'Pause carousel', togglePause: () => this.setState({ paused: !paused }),
       people: AV.map((a, i) => ({ name: NAMES[i], src: '/assets/avatars/' + a + '.png', sel: i === q ? 'true' : 'false', ring: i === q ? '2px solid var(--sf-text)' : '2px solid transparent', op: i === q ? 1 : 0.55, pick: () => { this.setState({ q: i }); this.qTimer(); } })),

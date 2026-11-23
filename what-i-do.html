@@ -12,18 +12,20 @@
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/css/site-chrome.css">
 <link rel="stylesheet" href="/css/what-i-do.css">
+<link rel="stylesheet" href="/css/responsive.css">
 <!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/what-i-do.js (behaviour reference). See README, "How to read the page files". -->
 </head>
 <body>
 <div data-dc-root style="display:contents">
 <div aria-hidden="true" style="height:88px"></div>
-<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
-  <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
+<header data-r="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
+  <div data-r="header-bar" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
     <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px">
       <span data-piece="" aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
       <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
     </a>
-    <nav style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
+    <button type="button" class="sf-burger" data-burger="" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav id="site-nav" data-r="nav" style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
       <a href="/" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Home</a>
       <a href="/what-i-do.html" class="sf-meta" data-nav="" aria-current="page" style="text-decoration:none;padding-bottom:6px">What I do</a>
       <a href="/content-strategy.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Content strategy</a>
@@ -34,7 +36,7 @@
 </header>
 
 <section data-screen-label="Intro" data-dc-ref="heroRef" style="position:relative;display:flex;flex-direction:column;min-height:560px;background:var(--sf-surface);overflow:hidden">
-  <div data-dc-ref="graphWrap" style="position:absolute;inset:0;z-index:0">
+  <div data-dc-ref="graphWrap" data-r="skills-graph" style="position:absolute;inset:0;z-index:0">
     <canvas data-dc-ref="canvasRef" role="img" aria-label="Interactive map of my skills, grouped into six connected areas" style="display:block;width:100%;height:100%;touch-action:pan-y;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect"></canvas>
   </div>
   <div style="position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:96px clamp(20px,5vw,64px) 48px;box-sizing:border-box;pointer-events:none">
@@ -43,7 +45,11 @@
       <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">I lead content from strategy through execution. I start by understanding what a brand needs and what its audience is asking for, then plan content that does the job. Every plan is built on established content strategy frameworks.</p>
     </div>
   </div>
-  <ul style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0">
+  <div data-r="skills-m" class="skills-m">
+    <p class="sf-label sf-muted skills-m__hint">Six areas of work. Tap one to see the skills inside it.</p>
+    <div data-dc-for="skillTree" data-dc-as="c" style="display:contents"><details class="skills-m__area"><summary><span class="skills-m__name">{{ c.name }}</span><span class="skills-m__count">{{ c.count }}</span></summary><ul class="skills-m__list"><div data-dc-for="c.kids" data-dc-as="s" style="display:contents"><li><span class="skills-m__skill">{{ s.name }}</span><div data-dc-if="s.hasKids" style="display:contents"><span class="skills-m__sub">{{ s.subs }}</span></div></li></div></ul></details></div>
+  </div>
+  <ul data-r="skills-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0">
       <div data-dc-for="skillTree" data-dc-as="c" style="display:contents"><li>{{ c.name }}<ul><div data-dc-for="c.kids" data-dc-as="s" style="display:contents"><li>{{ s.name }}<div data-dc-if="s.hasKids" style="display:contents"><ul><div data-dc-for="s.kids" data-dc-as="x" style="display:contents"><li>{{ x.name }}</li></div></ul></div></li></div></ul></li></div>
     </ul>
 </section>
@@ -53,7 +59,7 @@
 
   <section data-screen-label="Content Strategy" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Content Strategy</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">More than a promotion plan, more than a content calendar. Content should have real, targeted impact and answer defined business goals. I’m so passionate about this that I created the <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" class="sf-link">Content Strategy Library</a>.</p>
@@ -64,7 +70,7 @@
 
   <section data-screen-label="Content Operations" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Content Operations</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">A 30,000-foot view of how your written and designed marketing communications come together and accomplish your goals.</p>
@@ -75,7 +81,7 @@
 
   <section data-screen-label="Audience and market insights" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Audience and market insights</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">Marketing is a dialogue. So who is speaking to whom? Research and data analysis helps you know your customers and clients.</p>
@@ -86,7 +92,7 @@
 
   <section data-screen-label="Competitor Displacement" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Competitor Displacement</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">Content is a battlefield, not a broadcast. No longer a simple matter of page rank, this means actively identifying claims and statistics and building up your E-E-A-T to rise above competitors.</p>
@@ -97,7 +103,7 @@
 
   <section data-screen-label="Thought Leadership" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Thought Leadership</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">In a digital ecosystem where attention and trust are the currencies, real experts with real expertise still matter. But experts aren’t always writers. I provide the connective tissue for industry experts to rise to the top of digital discourse.</p>
@@ -108,7 +114,7 @@
 
   <section data-screen-label="Sales Enablement" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Sales Enablement</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">The teams directly driving conversions can’t go into battle unequipped. Content gives them the tools and leverage they need to accomplish their work.</p>
@@ -119,7 +125,7 @@
 
   <section data-screen-label="Search visibility" style="display:grid;gap:48px">
     <hr class="sf-perf" aria-hidden="true">
-    <div style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
+    <div data-r="svc-row" style="display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:32px 64px;align-items:center">
       <div style="display:grid;gap:24px;max-width:640px">
         <h2 class="sf-h2" style="margin:0">Search visibility</h2>
         <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">Search is evolving. Google’s AI mode passed 1 billion monthly users, <a href="https://www.getpassionfruit.com/blog/ai-search-statistics-the-numbers-marketers-need-updated-monthly" target="_blank" rel="noopener" class="sf-link">but only 22% of marketers track AI visibility</a>. What are AI platforms saying about your brand? And more importantly, how do you influence them?</p>
@@ -219,6 +225,7 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
 <script src="/js/dc-runtime.js"></script>
+<script src="/js/site.js"></script>
 <script src="/js/what-i-do.js"></script>
 <script>DC.mount(Component)</script>
 </body>
