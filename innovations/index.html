@@ -1,216 +1,160 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="ink" data-type="editorial">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Innovations · Tommy Stubblefield</title>
 <meta name="description" content="Content strategy and product concepts built to prove an idea: intake flows, booth interfaces, thought leadership modules, cost calculators, and content atomization.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="dollarous.css">
-<link rel="stylesheet" href="inv.css">
-<link rel="stylesheet" href="inv-previews.css">
+<link rel="icon" type="image/svg+xml" href="/logo/stubblefield-knight-ink.svg">
+<script>document.documentElement.classList.add("dc-pending");setTimeout(function(){document.documentElement.classList.remove("dc-pending")},3000)</script>
+<style>.dc-pending [data-dc-root]{visibility:hidden}</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/css/site-chrome.css">
+<link rel="stylesheet" href="/css/innovations.css">
+<!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/innovations.js (behaviour reference). See README, "How to read the page files". -->
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top" aria-label="Tommy Stubblefield home">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name">Tommy Stubblefield</span>
+<div data-dc-root style="display:contents">
+<div aria-hidden="true" style="height:88px"></div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
+  <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
+    <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <span data-piece="" aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+      <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="../index.html#approach">About Me</a>
-      <a class="nav-link" href="../index.html#strategy">Content Strategy</a>
-      <a class="nav-link" href="index.html" aria-current="page">Innovations</a>
-      <a class="nav-link" href="../index.html#work">Writing</a>
-      <a class="btn btn-solid" href="../index.html#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
+    <nav style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
+      <a href="/" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Home</a>
+      <a href="/what-i-do.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">What I do</a>
+      <a href="/content-strategy.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Content strategy</a>
+      <a href="/innovations/" class="sf-meta" data-nav="" aria-current="page" style="text-decoration:none;padding-bottom:6px">Innovations</a>
+      <a href="/#contact" class="sf-btn sf-btn--primary sf-btn--sm" data-contact="">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main style="max-width:1200px;margin:0 auto;padding:96px clamp(20px,5vw,64px) 128px;box-sizing:border-box;display:grid;gap:96px">
 
-<section class="inv-hero">
-  <div class="inv-hero-bg" aria-hidden="true"><video src="hero-lab.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video></div>
-  <div class="wrap">
-    <a class="inv-back" href="../index.html">← Back to stubblefield.info</a>
-    <h1>Innovations</h1>
-    <aside class="inv-meet">
-      <button class="inv-meet-btn" type="button" aria-haspopup="dialog" aria-controls="meetDlr">
-        <span class="mb-word">Meet</span>
-        <img src="../assets/dollarous-lockup-white.png" alt="Dollarous" width="1885" height="323">
-      </button>
-    </aside>
-    <p class="inv-lead">These are content and product concepts I designed to prove an idea. Each one solved a real problem I ran into, and each one was built far enough to be used rather than described.</p>
-    <p class="inv-lead">None of them shipped to a live business. What is here is the thinking, the interaction design, and a working model you can click through yourself.</p>
+  <section data-screen-label="Intro" style="display:grid;gap:32px;max-width:900px">
+    <h1 class="sf-display" style="margin:0">Innovations</h1>
+    <p class="sf-body sf-muted" style="margin:0;max-width:60ch;text-wrap:pretty">Tools and workflows I created to improve content operations.</p>
+    <button type="button" data-dc-on-click="open" class="sf-btn sf-btn--secondary sf-btn--md" style="justify-self:start;gap:12px">Meet <img src="/assets/dollarous-lockup-white.png" alt="Dollarous" style="height:20px;width:auto;display:block"></button>
+  </section>
 
-  </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="wrap">
-    <div class="inv-cards">
-
-      <a class="inv-item" href="boothtok.html">
-        <div class="inv-tile dlr">
-          <span class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="m11 9.5 4 2.5-4 2.5z"/><path d="M20 8v4M4 8v4"/></svg></span>
-          <div class="t-prev pv-tok" aria-hidden="true"><video class="on" src="boothtok/crowd.mp4" muted loop playsinline preload="auto"></video><video src="boothtok/skate.mp4" muted loop playsinline preload="auto"></video><video src="boothtok/concert.mp4" muted loop playsinline preload="auto"></video></div>
-        </div>
-        <div class="inv-item-body">
-          <h2>BoothTok</h2>
-          <p>A trade show touchscreen that needs no instructions, because every passerby already knows the gesture. Try it on your own phone.</p>
-          <span class="inv-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
-        </div>
-      </a>
-
-      <a class="inv-item" href="cost-calculator.html">
-        <div class="inv-tile dlr">
-          <span class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/><line x1="16" y1="18" x2="16" y2="18"/></svg></span>
-          <div class="t-prev" aria-hidden="true"><video src="hero-calc.mp4" muted loop playsinline preload="none"></video></div>
-        </div>
-        <div class="inv-item-body">
-          <h2>Cost Calculator</h2>
-          <p>A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</p>
-          <span class="inv-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
-        </div>
-      </a>
-
-      <a class="inv-item" href="thought-leadership.html">
-        <div class="inv-tile dlr">
-          <span class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11M4 9h16M4 13h16M4 17h9"/><circle cx="19" cy="5" r="2.4"/></svg></span>
-          <div class="t-prev" aria-hidden="true"><video src="hero-tl.mp4" muted loop playsinline preload="none"></video></div>
-        </div>
-        <div class="inv-item-body">
-          <h2>Thought Leadership Enhancements</h2>
-          <p>An all-text blog post and ten enhancements you can switch on one at a time, each with the reason it was worth recommending.</p>
-          <span class="inv-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
-        </div>
-      </a>
-
-      <a class="inv-item" href="content-intake.html">
-        <div class="inv-tile dlr">
-          <span class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg></span>
-          <div class="t-prev" aria-hidden="true"><video src="hero-intake.mp4" muted loop playsinline preload="none"></video></div>
-        </div>
-        <div class="inv-item-body">
-          <h2>Visual Content Intake</h2>
-          <p>A 214-field requirements document, the AI rewrite that made it worse, and the branching form that replaced both.</p>
-          <span class="inv-go">View Innovation <span class="arr" aria-hidden="true">↗</span></span>
-        </div>
-      </a>
-
+  <section data-screen-label="Cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px">
+    <a href="/innovations/thought-leadership.html" data-dc-on-mouse-enter="enter" data-dc-on-mouse-leave="leave" style="position:relative;aspect-ratio:16/11;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--sf-surface);border-radius:2px;text-decoration:none;color:var(--sf-text)">
+      <div data-zoom="" style="position:absolute;inset:0;transition:transform 900ms cubic-bezier(0.2,0.8,0.2,1)"><video muted data-t="0.1" src="/innovations/hero-tl.mp4#t=0.1" loop="" playsinline="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,19,21,0) 35%,rgba(17,19,21,0.9))"></div>
+      <span aria-hidden="true" style="position:absolute;bottom:clamp(24px,3vw,36px);right:clamp(24px,3vw,36px);z-index:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:2px;background:rgba(17,19,21,0.72);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);color:var(--sf-text)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:block;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>
+      <div style="position:relative;padding:clamp(24px,3vw,36px);padding-right:calc(clamp(24px,3vw,36px) + 64px);display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 clamp(26px,2.6vw,34px)/1.1 var(--sf-font-display);letter-spacing:-0.02em;color:var(--sf-text);text-wrap:balance">Thought Leadership Enhancements</span>
+        <span style="font:400 16px/1.5 var(--sf-font-body);color:var(--sf-text);max-width:440px;text-wrap:pretty">An all-text blog post and ten enhancements you can switch on one at a time, each with the reason it was worth recommending.</span>
+      </div>
+    </a>
+    <a href="/innovations/boothtok.html" data-dc-on-mouse-enter="enter" data-dc-on-mouse-leave="leave" style="position:relative;aspect-ratio:16/11;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--sf-surface);border-radius:2px;text-decoration:none;color:var(--sf-text)">
+      <div data-zoom="" style="position:absolute;inset:0;transition:transform 900ms cubic-bezier(0.2,0.8,0.2,1)"><video muted data-t="0.1" src="/innovations/boothtok/crowd.mp4#t=0.1" loop="" playsinline="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,19,21,0) 35%,rgba(17,19,21,0.9))"></div>
+      <span aria-hidden="true" style="position:absolute;bottom:clamp(24px,3vw,36px);right:clamp(24px,3vw,36px);z-index:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:2px;background:rgba(17,19,21,0.72);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);color:var(--sf-text)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:block;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>
+      <div style="position:relative;padding:clamp(24px,3vw,36px);padding-right:calc(clamp(24px,3vw,36px) + 64px);display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 clamp(26px,2.6vw,34px)/1.1 var(--sf-font-display);letter-spacing:-0.02em;color:var(--sf-text);text-wrap:balance">BoothTok</span>
+        <span style="font:400 16px/1.5 var(--sf-font-body);color:var(--sf-text);max-width:440px;text-wrap:pretty">A trade show touchscreen that needs no instructions, because every passerby already knows the gesture. Try it on your own phone.</span>
+      </div>
+    </a>
+    <a href="/innovations/cost-calculator.html" data-dc-on-mouse-enter="enter" data-dc-on-mouse-leave="leave" style="position:relative;aspect-ratio:16/11;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--sf-surface);border-radius:2px;text-decoration:none;color:var(--sf-text)">
+      <div data-zoom="" style="position:absolute;inset:0;transition:transform 900ms cubic-bezier(0.2,0.8,0.2,1)"><video muted data-t="0.1" src="/innovations/hero-calc.mp4#t=0.1" loop="" playsinline="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,19,21,0) 35%,rgba(17,19,21,0.9))"></div>
+      <span aria-hidden="true" style="position:absolute;bottom:clamp(24px,3vw,36px);right:clamp(24px,3vw,36px);z-index:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:2px;background:rgba(17,19,21,0.72);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);color:var(--sf-text)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:block;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>
+      <div style="position:relative;padding:clamp(24px,3vw,36px);padding-right:calc(clamp(24px,3vw,36px) + 64px);display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 clamp(26px,2.6vw,34px)/1.1 var(--sf-font-display);letter-spacing:-0.02em;color:var(--sf-text);text-wrap:balance">Cost Calculator</span>
+        <span style="font:400 16px/1.5 var(--sf-font-body);color:var(--sf-text);max-width:440px;text-wrap:pretty">A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</span>
+      </div>
+    </a>
+    <a href="/innovations/content-intake.html" data-dc-on-mouse-enter="enter" data-dc-on-mouse-leave="leave" style="position:relative;aspect-ratio:16/11;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--sf-surface);border-radius:2px;text-decoration:none;color:var(--sf-text)">
+      <div data-zoom="" style="position:absolute;inset:0;transition:transform 900ms cubic-bezier(0.2,0.8,0.2,1)"><video muted data-t="0.1" src="/innovations/hero-intake.mp4#t=0.1" loop="" playsinline="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,19,21,0) 35%,rgba(17,19,21,0.9))"></div>
+      <span aria-hidden="true" style="position:absolute;bottom:clamp(24px,3vw,36px);right:clamp(24px,3vw,36px);z-index:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:2px;background:rgba(17,19,21,0.72);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);color:var(--sf-text)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:block;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>
+      <div style="position:relative;padding:clamp(24px,3vw,36px);padding-right:calc(clamp(24px,3vw,36px) + 64px);display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 clamp(26px,2.6vw,34px)/1.1 var(--sf-font-display);letter-spacing:-0.02em;color:var(--sf-text);text-wrap:balance">Visual Content Intake</span>
+        <span style="font:400 16px/1.5 var(--sf-font-body);color:var(--sf-text);max-width:440px;text-wrap:pretty">A 214-field requirements document, the AI rewrite that made it worse, and the branching form that replaced both.</span>
+      </div>
+    </a>
+  </section>
+</main>
+<div data-dc-if="isOpen" style="display:contents">
+  <div data-dc-on-click="close" style="position:fixed;inset:0;z-index:100;background:var(--sf-canvas);display:grid;place-items:center;padding:24px">
+    <div role="dialog" aria-label="Meet Dollarous" data-dc-on-click="stop" style="width:100%;max-width:520px;box-sizing:border-box;background:var(--sf-surface);border:1px solid var(--sf-rule);border-radius:2px;padding:32px;display:grid;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <img data-dc-src="/assets/dollarous-lockup-white.png" alt="Dollarous" style="height:28px;width:auto;display:block">
+        <button type="button" data-dc-on-click="close" class="sf-btn sf-btn--ghost sf-btn--sm">Close</button>
+      </div>
+      <p class="sf-body" style="margin:0;text-wrap:pretty">Meet Dollarous, a fictitious FinTech brand that stands in for all my anonymized work examples. No identifiable information has been included.</p>
     </div>
   </div>
-</section>
+</div>
 
-<dialog class="inv-modal" id="meetDlr" aria-labelledby="meetDlrH">
-  <div class="inv-modal-card dlr">
-    <button class="inv-modal-x" type="button" aria-label="Close">&times;</button>
-    <img class="inv-meet-art" src="../assets/dollarous-lockup.png" alt="Dollarous" width="1885" height="323">
-    <p id="meetDlrH">Meet Dollarous, a fictitious FinTech brand that stands in for all my anonymized work examples. No identifiable information has been included.</p>
+
+<footer style="background:var(--sf-surface)"><div style="max-width:1200px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 48px;box-sizing:border-box;display:grid;gap:48px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
+    <div style="display:grid;gap:16px;align-content:start;max-width:420px">
+      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:12px">
+        <span aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+        <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
+      </a>
+      <p class="sf-small sf-muted" style="margin:0">Strategic marketer, builder, and thought leader.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:48px 96px">
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Pages</span>
+        <a href="/" class="sf-small ft1" style="color:var(--sf-text);text-decoration:none">Home</a>
+        <a href="/what-i-do.html" class="sf-small ft2" style="color:var(--sf-text);text-decoration:none">What I do</a>
+        <a href="/content-strategy.html" class="sf-small ft3" style="color:var(--sf-text);text-decoration:none">Content strategy</a>
+        <a href="/innovations/" class="sf-small ft4" style="color:var(--sf-text);text-decoration:none">Innovations</a>
+        <a href="/#contact" class="sf-small ft5" style="color:var(--sf-text);text-decoration:none">Contact</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Elsewhere</span>
+        <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" class="sf-small ft6" style="color:var(--sf-text);text-decoration:none">Content Strategy Library<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+        <a href="https://www.linkedin.com/in/thisisastub" target="_blank" rel="noopener" class="sf-small ft7" style="color:var(--sf-text);text-decoration:none">LinkedIn<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+      </div>
+    </div>
   </div>
-</dialog>
-
-<dialog class="inv-modal" id="invCredits" aria-labelledby="invCredH">
-  <div class="inv-modal-card dlr">
-    <button class="inv-modal-x" type="button" aria-label="Close">&times;</button>
-    <h2 id="invCredH">Credits and sources</h2>
-    <p class="cr-lede">The footage behind each innovation, with its source. All Pexels clips are used under the Pexels free licence.</p>
-    <ul>
-      <li><a href="https://www.pexels.com/video/a-person-using-a-calculator-8275990/" target="_blank" rel="noopener">A person using a calculator</a><span>Pexels 8275990 &middot; Cost Calculator</span></li>
-      <li><a href="https://www.pexels.com/video/corporate-woman-writing-on-the-sticky-notes-and-sticking-it-on-the-wall-6563895/" target="_blank" rel="noopener">Corporate woman writing on the sticky notes and sticking it on the wall</a><span>Pexels 6563895 &middot; Thought Leadership Enhancements</span></li>
-      <li><a href="https://www.pexels.com/video/woman-ordering-food-in-a-drive-thru-6529447/" target="_blank" rel="noopener">Woman ordering food in a drive-thru</a><span>Pexels 6529447 &middot; Visual Content Intake</span></li>
-    </ul>
-    <p class="cr-sub">The laboratory film on this page and the trade show booth on the BoothTok page are AI-generated. BoothTok's own feed keeps its seventeen clip credits behind the info button inside the app.</p>
+  <hr class="sf-perf" aria-hidden="true">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 48px">
+    <div style="display:grid;gap:4px;max-width:720px">
+      <p class="sf-label sf-muted" style="margin:0">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</p>
+      <p class="sf-label sf-muted" style="margin:0">Content on this site is not licensed for use in training AI or large language models.</p>
+    </div>
+    <button type="button" data-dc-on-click="open" class="sf-btn sf-btn--ghost sf-btn--sm">Imagery credits</button>
   </div>
-</dialog>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name" style="font-size:1rem;">Tommy Stubblefield</span>
-    </a>
-    <span class="tag">Thinking forward.</span>
-    <span class="legal">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</span>
-    <button class="inv-cred-open" type="button" aria-haspopup="dialog" aria-controls="invCredits">Credits and sources</button>
+</div></footer>
+<div data-dc-if="isOpen" style="display:contents">
+  <div data-dc-on-click="close" style="position:fixed;inset:0;z-index:100;background:var(--sf-canvas);display:grid;place-items:center;padding:24px">
+    <div role="dialog" aria-label="Imagery credits" data-dc-on-click="stop" style="width:100%;max-width:600px;max-height:85vh;overflow-y:auto;box-sizing:border-box;background:var(--sf-surface);border:1px solid var(--sf-rule);border-radius:2px;padding:32px;display:grid;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <h2 class="sf-h3" style="margin:0">Imagery credits</h2>
+        <button type="button" data-dc-on-click="close" class="sf-btn sf-btn--ghost sf-btn--sm">Close</button>
+      </div>
+      <dl style="display:grid;gap:0;margin:0">
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Midtown Atlanta skyline from Clara Meer in Piedmont Park</dt><dd class="sf-label sf-muted" style="margin:0">Daniel Mayer, licensed CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Midtown_Atlanta_skyline_from_Clara_Meer_in_Piedmont_Park.JPG" target="_blank" rel="noopener">Wikimedia Commons<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">A team discussing strategy around a table</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Portrait of Tommy Stubblefield</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Office phone call</dt><dd class="sf-label sf-muted" style="margin:0">maslme via Pixabay. <a href="https://pixabay.com/photos/phone-office-make-a-phone-call-4974179/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Man presenting with his colleagues (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/man-presenting-with-his-colleagues-7812404/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Downtown Atlanta architecture (video)</dt><dd class="sf-label sf-muted" style="margin:0">phlyingdoctor via Pixabay. <a href="https://pixabay.com/videos/architecture-city-building-downtown-290618/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Aerial view of Atlanta skyline at sunset (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/aerial-view-of-atlanta-skyline-at-sunset-33133596/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Queen check in chess (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/queen-check-in-chess-855386/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Professional podcast interview in studio setting (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/professional-podcast-interview-in-studio-setting-38630305/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark icon: Chess (knight)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Ilham Fitrotul Hayat from Noun Project. <a href="https://thenounproject.com/icon/chess-7876095/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark hover icons: Chess (pawn, rook, bishop, queen, king)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Uswa KDT from Noun Project. <a href="https://thenounproject.com/browse/collection-icon/chess-152566/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Brand logos</dt><dd class="sf-label sf-muted" style="margin:0">Property of their respective owners.</dd></div>
+      </dl>
+    </div>
   </div>
-</footer>
-
-<script>
-(function () {
-  /* the Meet panel and the credits link each open their own note */
-  document.querySelectorAll("[aria-controls]").forEach(function (btn) {
-    var dlg = document.getElementById(btn.getAttribute("aria-controls"));
-    if (!dlg || dlg.tagName !== "DIALOG") return;
-    btn.addEventListener("click", function () { dlg.showModal(); });
-    dlg.querySelector(".inv-modal-x").addEventListener("click", function () { dlg.close(); });
-    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
-  });
-  /* each tile plays only while its card is hovered. The BoothTok card holds
-     three clips stacked and cross-fades between them, so swapping never shows
-     a blank frame the way reloading one element's src does. */
-  /* the lab film behind the hero coasts to a stop while a card previews,
-     rather than cutting out */
-  var bg = document.querySelector(".inv-hero-bg");
-  var film = bg && bg.querySelector("video");
-  var raf = null, rate = 1, resting = false, SLOW = 0.06;
-  function ramp(target, done) {
-    cancelAnimationFrame(raf);
-    var t0 = performance.now(), from = rate, span = 900;
-    (function step(now) {
-      var k = Math.min(1, (now - t0) / span);
-      rate = from + (target - from) * (1 - Math.pow(1 - k, 3));
-      try { film.playbackRate = Math.max(SLOW, rate); } catch (e) {}
-      if (k < 1) raf = requestAnimationFrame(step);
-      else if (done) done();
-    })(t0);
-  }
-  function rest() {
-    if (!film || resting) return;
-    resting = true;
-    bg.classList.add("is-resting");
-    ramp(SLOW, function () { film.pause(); });
-  }
-  function revive() {
-    if (!film || !resting) return;
-    resting = false;
-    bg.classList.remove("is-resting");
-    var p = film.play(); if (p && p.catch) p.catch(function () {});
-    ramp(1);
-  }
-
-  document.querySelectorAll(".inv-item").forEach(function (card) {
-    var vids = [].slice.call(card.querySelectorAll(".t-prev video"));
-    if (!vids.length) return;
-    var i = 0, t = null;
-    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-    function start() {
-      if (t && vids.length > 1) return;
-      vids.forEach(play);
-      if (vids.length < 2) return;
-      t = setInterval(function () {
-        i = (i + 1) % vids.length;
-        vids.forEach(function (v, k) { v.classList.toggle("on", k === i); });
-      }, 2400);
-    }
-    function stop() {
-      clearInterval(t);
-      t = null;
-      vids.forEach(function (v) { v.pause(); });
-    }
-    card.addEventListener("mouseenter", function () { start(); rest(); });
-    card.addEventListener("mouseleave", function () { stop(); revive(); });
-    card.addEventListener("focus", function () { start(); rest(); });
-    card.addEventListener("blur", function () { stop(); revive(); });
-  });
-})();
-</script>
+</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/js/dc-runtime.js"></script>
+<script src="/js/innovations.js"></script>
+<script>DC.mount(Component)</script>
 </body>
 </html>

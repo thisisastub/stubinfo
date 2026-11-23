@@ -1,0 +1,65 @@
+/* Behaviour reference for Stubblefield.info.html.
+   DCLogic is a React-class-style base (state, setState, lifecycle). renderVals() returns the values bound to
+   {{ name }} holes and data-dc-* attributes in the HTML. Port this into your own vanilla JS or React. */
+const AV = ['ricardo','tj','john','paul','teresa','tara','mary','david'];
+const NAMES = ['Ricardo Gutierrez','TJ Jackson','John Ujda','Paul Sansone','Teresa Minnaugh','Tara Gilchrist','Mary Fajimi','David Papa'];
+class Component extends DCLogic {
+  state = { f: 0, q: 0, sent: false, paused: false };
+  quoteRef = React.createRef();
+  componentDidMount() {
+    this._q = this.state.q;
+    this.restart();
+    const el = this.quoteRef.current; if (!el) return;
+    this.check = () => { const r = el.getBoundingClientRect(); const vis = r.top < window.innerHeight * 0.8 && r.bottom > window.innerHeight * 0.15; if (vis === this.vis) return; this.vis = vis; if (vis && !this.seen) this.show(); this.qTimer(); };
+    window.addEventListener('scroll', this.check, { passive: true }); window.addEventListener('resize', this.check);
+    this.hideQuote(); this.check();
+    this.fb = setTimeout(() => { if (!this.seen && this.quoteRef.current) this.quoteRef.current.style.opacity = ''; }, 4000);
+  }
+  show() { this.seen = true; clearTimeout(this.fb); this.reveal(); }
+  qTimer() { clearInterval(this.qt); if (!this.vis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; this.qt = setInterval(() => { if (this.vis) this.setState(s => ({ q: (s.q + 1) % 8 })); }, 7000); }
+  componentDidUpdate() {
+    if (this._p !== this.state.paused || this._f !== this.state.f) { this._p = this.state.paused; this._f = this.state.f; requestAnimationFrame(() => document.querySelectorAll('[data-hero] video').forEach(v => { if (this.state.paused) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); } })); } if (this._q !== this.state.q) { this._q = this.state.q; if (this.seen) this.reveal(); else this.show(); } }
+  componentWillUnmount() { (this.lts || []).forEach(clearTimeout); clearInterval(this.t); clearInterval(this.qt); clearTimeout(this.fb); window.removeEventListener('scroll', this.check); window.removeEventListener('resize', this.check); }
+  hideQuote() { const el = this.quoteRef.current; if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) el.style.opacity = '0'; }
+  reveal() {
+    const el = this.quoteRef.current; if (!el) return; el.style.opacity = '';
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    requestAnimationFrame(() => {
+      const bq = el.querySelector('blockquote'), cap = el.querySelector('figcaption'); if (!bq) return;
+      if (!bq.dataset.split) { bq.dataset.split = '1'; const words = bq.textContent.split(/(\s+)/); bq.textContent = ''; words.forEach(w => { if (/^\s+$/.test(w) || !w) bq.appendChild(document.createTextNode(w)); else { const s = document.createElement('span'); s.textContent = w; s.style.display = 'inline-block'; bq.appendChild(s); } }); }
+      const spans = [...bq.querySelectorAll('span')]; const tops = []; spans.forEach(s => { const y = s.offsetTop; if (!tops.includes(y)) tops.push(y); });
+      clearTimeout(this.lt); (this.lts || []).forEach(clearTimeout); this.lts = [];
+      const groups = tops.map(y => spans.filter(s => s.offsetTop === y));
+      if (cap) { const kids = [...cap.children]; (kids.length ? kids : [cap]).forEach(k => groups.push([k])); }
+      groups.flat().forEach(n => { n.style.transition = 'none'; n.style.transform = 'none'; n.style.opacity = '0'; });
+      groups.forEach((g, i) => this.lts.push(setTimeout(() => g.forEach(n => { n.style.opacity = '1'; }), 150 + i * 220)));
+    });
+  }
+  restart() {}
+  renderVals() {
+    const { f, q, sent, paused } = this.state;
+    const v = {
+      featCount: (f + 1) + ' of 5',
+      featPrev: () => this.setState(s => ({ f: (s.f + 4) % 5 })), featNext: () => this.setState(s => ({ f: (s.f + 1) % 5 })),
+      quoteRef: this.quoteRef,
+      paused, playing: !paused, pausedAttr: paused ? 'true' : 'false', pauseLabel: paused ? 'Play carousel' : 'Pause carousel', togglePause: () => this.setState({ paused: !paused }),
+      people: AV.map((a, i) => ({ name: NAMES[i], src: '/assets/avatars/' + a + '.png', sel: i === q ? 'true' : 'false', ring: i === q ? '2px solid var(--sf-text)' : '2px solid transparent', op: i === q ? 1 : 0.55, pick: () => { this.setState({ q: i }); this.qTimer(); } })),
+      formOpen: !sent, formSent: sent,
+      send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again, or email hello@stubblefield.info directly.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr,
+      reset: () => this.setState({ sent: false })
+    };
+    const E = React.createElement;
+    v.cslIdent = E('span', { key: 'csl' + f, style: { display: 'grid', gap: '20px', width: '40%', maxWidth: '420px' } },
+      E('img', { src: 'assets/csl-logo-white.svg', alt: 'Content Strategy Library', 'data-csl-anim': '', style: { width: '100%', display: 'block', animation: 'cslWipe 5s cubic-bezier(.2,.7,.2,1) infinite', animationPlayState: paused ? 'paused' : 'running' } }),
+      E('span', { 'data-csl-anim': '', 'aria-hidden': 'true', style: { height: '1px', backgroundImage: 'repeating-linear-gradient(90deg,var(--sf-text) 0 3px,transparent 3px 6px)', transformOrigin: 'left', animation: 'cslRule 5s cubic-bezier(.2,.7,.2,1) infinite', animationPlayState: paused ? 'paused' : 'running' } }));
+    v.featProgress = E('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '4px' } }, [0, 1, 2, 3, 4].map(i => E('span', { key: i, style: { height: '2px', overflow: 'hidden', background: 'color-mix(in srgb,var(--sf-text) 18%,transparent)' } }, i < f ? E('span', { style: { display: 'block', height: '100%', background: 'var(--sf-text-muted)' } }) : i === f ? E('span', { key: 'p' + f, 'data-prog': '', onAnimationEnd: () => this.setState(s => ({ f: (s.f + 1) % 5 })), style: { display: 'block', height: '100%', background: 'var(--sf-text-muted)', transformOrigin: 'left', animation: 'sfProg ' + (f === 0 ? '4.8s' : '5s') + ' linear both', animationPlayState: paused ? 'paused' : 'running' } }) : null)));
+    v.featHref = ['/what-i-do.html', '/content-strategy.html', '/innovations/thought-leadership.html', '/innovations/', '/articles/content-strategy-library.html'][f];
+    v.fi = f === 0;
+    for (let i = 0; i < 4; i++) v['f' + i] = f === i + 1;
+    const words = (txt, tag, hold = 750) => { const ws = txt.split(' '); return E(tag, { style: { margin: 0, font: '800 clamp(44px,min(9.5vw,16vh),150px)/0.95 var(--sf-font-display)', letterSpacing: '-0.035em', color: 'var(--sf-text)', maxWidth: '11ch', display: 'flex', flexWrap: 'wrap', gap: '0 0.24em' } }, ws.map((w, i) => E('span', { key: i, 'data-word': '', style: { display: 'inline-block', animation: 'sfWord 1ms steps(1,end) ' + (950 + i * 220) + 'ms both, sfWordOut 1ms steps(1,end) ' + (950 + (ws.length - 1) * 220 + hold + i * 150) + 'ms forwards', animationPlayState: paused ? 'paused' : 'running' } }, w))); };
+    v.introWords = words('How many steps ahead is your content?', 'h1');
+    ['Changing the right minds', 'Beyond the wall of text', 'Brewing up new ideas', 'Strategy tools and frameworks'].forEach((s, k) => { v['words' + k] = words(s, 'p', 1750); });
+    for (let i = 0; i < 8; i++) v['q' + i] = q === i;
+    return v;
+  }
+}

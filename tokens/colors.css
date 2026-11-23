@@ -1,50 +1,24 @@
-/* ============================================================
-   Color tokens
-   Warm "paper" neutrals carry the surface; one brick-red accent.
-   Three themes ship: Paper (default), Ink (dark), Oxblood (warm).
-   ============================================================ */
-
-:root {
-  /* --- core palette (Paper, default theme) --- */
-  --color-bg:      #F5F0E8;   /* warm cream paper        */
-  --color-text:    #1A1A2E;   /* deep ink navy           */
-  --color-primary: #1A1A2E;   /* primary ink (= text)    */
-  --color-accent:  #C44B4B;   /* brick red — the accent  */
-  --color-surface: #EDE6D8;   /* sunken paper panel      */
-  --color-border:  #D8CDB9;   /* hairline rule           */
-
-  /* --- derived ink tints (text at reduced emphasis) --- */
-  --ink-70: rgba(26, 26, 46, 0.70);
-  --ink-55: rgba(26, 26, 46, 0.55);
-  --ink-12: rgba(26, 26, 46, 0.12);
-
-  /* --- logo recolor target --- */
-  --logo-color: var(--color-primary);
+:root{
+/* base: dark (default) */
+--sf-ink-900:#111315;--sf-ink-800:#1A1D20;--sf-ink-750:#202428;--sf-ink-700:#2A2E33;--sf-ink-500:#6B7077;--sf-ink-300:#A0A59E;--sf-ink-50:#F2F3F0;
+--sf-paper-100:#F4F5F2;--sf-paper-0:#FFFFFF;--sf-paper-muted:#5A5E56;--sf-olive-700:#476600;
+--sf-chartreuse:#C8F169;--sf-chartreuse-hover:#D6F58A;
+/* signature highlight stops */
+--sf-hl-1:#C8F169;--sf-hl-2:#92E58A;--sf-hl-3:#5CDDA0;--sf-hl-4:#29D3B0;--sf-hl-5:#33BDD6;--sf-hl-6:#38A8FF;
+--sf-highlight:linear-gradient(90deg,#C8F169 0%,#92E58A 20%,#5CDDA0 40%,#29D3B0 60%,#33BDD6 80%,#38A8FF 100%); /* @kind color */
+/* semantic */
+--sf-canvas:#111315;--sf-surface:#1A1D20;--sf-surface-hover:#202428;
+--sf-rule:#2A2E33;--sf-control-border:#6B7077;
+--sf-text:#F2F3F0;--sf-text-muted:#A0A59E;
+--sf-brand:#C8F169;--sf-link:#C8F169;--sf-brand-fill:#C8F169;--sf-brand-fill-hover:#D6F58A;--sf-on-brand:#111315;
+--sf-focus:#5CDDA0;--sf-perf-dot:#6B7077;
+color-scheme:dark;
 }
-
-/* --- Ink theme — dark, accent stays red --- */
-:root[data-theme="ink"] {
-  --color-bg:      #16162a;
-  --color-text:    #F2ECE0;
-  --color-primary: #F5F0E8;
-  --color-surface: #1f1f38;
-  --color-border:  rgba(245, 240, 232, 0.16);
-  --ink-70: rgba(242, 236, 224, 0.74);
-  --ink-55: rgba(242, 236, 224, 0.56);
-  --ink-12: rgba(245, 240, 232, 0.14);
-  --logo-color: var(--color-accent);
-}
-
-/* --- Oxblood theme — warm paper, oxblood primary --- */
-:root[data-theme="oxblood"] {
-  --color-bg:      #F5F0E8;
-  --color-text:    #2A1416;
-  --color-primary: #7C2B2B;
-  --color-accent:  #B23A3A;
-  --color-surface: #efe3da;
-  --color-border:  #e0cbc1;
-  --ink-70: rgba(42, 20, 22, 0.70);
-  --ink-55: rgba(42, 20, 22, 0.55);
-  --ink-12: rgba(42, 20, 22, 0.12);
-  --logo-color: var(--color-primary);
+[data-theme="light"]{
+--sf-canvas:#F4F5F2;--sf-surface:#FFFFFF;--sf-surface-hover:#FAFBF8;
+--sf-rule:#DADCD5;--sf-control-border:#7C8078;
+--sf-text:#111315;--sf-text-muted:#5A5E56;
+--sf-brand:#476600;--sf-link:#476600;--sf-brand-fill:#C8F169;--sf-brand-fill-hover:#BCE85A;--sf-on-brand:#111315;
+--sf-focus:#476600;--sf-perf-dot:#9A9E96;
+color-scheme:light;
 }

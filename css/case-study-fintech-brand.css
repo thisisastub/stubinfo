@@ -1,0 +1,27 @@
+/* Fintech brand case study: page-level styles. Load after styles.css. */
+html,body{margin:0;height:100%;overflow:hidden;background:var(--sf-canvas);color:var(--sf-text);font-family:var(--sf-font-body)}
+a:not(.sf-btn){color:var(--sf-link);text-decoration:none;transition:color var(--sf-dur-hover)}p a:not(.sf-btn):hover,li a:not(.sf-btn):hover{text-decoration:underline;text-underline-offset:3px}
+@keyframes sfContact{from{background-position-x:-57.143%}to{background-position-x:-171.429%}}[data-contact]{position:relative;isolation:isolate}[data-contact]:hover{border-color:transparent!important}[data-contact]::before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;pointer-events:none;background-image:linear-gradient(90deg,#C8F169,#92E58A,#5CDDA0,#29D3B0,#33BDD6,#38A8FF,#33BDD6,#29D3B0,#5CDDA0,#92E58A,#C8F169);background-size:800% 100%;background-position-x:-57.143%;opacity:0;transition:opacity 140ms ease-out}[data-contact]:hover::before{opacity:1;animation:sfContact 2.2s linear infinite}@media (prefers-reduced-motion:reduce){[data-contact]:hover::before{animation:none!important}}
+/* hover/focus states (were inline style-hover attributes) */
+.pg1:hover{border-color:#C6C5BB !important;color:#16160E !important;box-shadow:0 6px 20px rgba(22,22,14,0.12) !important;transform:translateY(-1px) !important}
+.pg2:hover{border-color:#C6C5BB !important;color:#16160E !important;box-shadow:0 6px 20px rgba(22,22,14,0.12) !important;transform:translateY(-1px) !important}
+.pg3:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg4:hover{text-decoration:underline !important;text-underline-offset:3px !important}
+.pg5:hover{color:var(--sf-text) !important}
+.pg6:hover{color:var(--sf-text) !important}
+.pg7:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg8:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg9:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg10:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg11:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg12:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg13:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg14:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg15:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg16:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg17:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg18:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg19:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg20:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg21:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg22:hover{color:var(--sf-brand-fill-hover,var(--sf-brand)) !important;text-decoration:underline !important;text-underline-offset:3px !important}

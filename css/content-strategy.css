@@ -1,0 +1,4 @@
+/* Content strategy: page-level styles. Load after styles.css. */
+html{scroll-behavior:smooth}body{margin:0;background:var(--sf-canvas);color:var(--sf-text);font-family:var(--sf-font-body)}a{color:var(--sf-link)}a:hover{color:var(--sf-text)}
+/* hover/focus states (were inline style-hover attributes) */
+

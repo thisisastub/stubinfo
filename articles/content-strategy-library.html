@@ -1,286 +1,73 @@
-<!DOCTYPE html>
-<html lang="en" class="dk" data-theme="paper" data-type="editorial">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>Everyone has a content strategy. · Tommy Stubblefield</title>
+<meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Content strategy is anyone's game right now. It also has a real definition, a formal craft, and a set of tools scattered across the internet. So I put them in one place.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/logo/stubblefield-knight-ink.svg">
+<script>document.documentElement.classList.add("dc-pending");setTimeout(function(){document.documentElement.classList.remove("dc-pending")},3000)</script>
+<style>.dc-pending [data-dc-root]{visibility:hidden}</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/css/case-study-content-strategy-library.css">
 <link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="../article.css">
-<link rel="stylesheet" href="../transformation.css">
-<link rel="stylesheet" href="../transformation-03.css">
-<!-- Pre-paint theme. The homepage is ink-only, so ink is the site default and the
-     fallback here: a visitor clicking through must not flip to light. An explicit
-     choice from the header toggle is stored as sf.theme and still wins. -->
-<script>(function(){var t=null;try{t=localStorage.getItem('sf.theme')}catch(e){}document.documentElement.setAttribute('data-theme',t==='paper'?'paper':'ink')})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&amp;family=Poppins:wght@600&amp;family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet">
+<!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/case-study-content-strategy-library.js (behaviour reference). See README, "How to read the page files". -->
 </head>
-<body class="dk-body">
-
-<header class="dk-head">
-  <a class="brand" href="../index.html" aria-label="Tommy Stubblefield home">
-    <span class="logo-mark"><span class="knight" aria-hidden="true"></span></span>
-    <span class="name">Tommy Stubblefield</span>
-  </a>
-  <span class="dk-crumb">Content Strategy Case Studies</span>
-  <span class="spacer"></span>
-  <button type="button" class="art-icon" id="art-theme" aria-label="Switch to dark mode">
-    <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-  </button>
-  <button type="button" class="art-icon" data-copy-link aria-label="Copy link to this piece">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-  </button>
-  <a class="btn btn-solid" href="../index.html#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
+<body>
+<div data-dc-root style="display:contents">
+<div style="position:fixed;inset:0;overflow:hidden;background:var(--sf-canvas)">
+<div data-dc-on-touch-start="touchStart" data-dc-on-touch-end="touchEnd" style="position:absolute;inset:0;display:flex;transform:{{ trackX }};transition:transform 720ms cubic-bezier(.65,0,.35,1)">
+<section data-slide="0" data-screen-label="01 Cover" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><video muted data-bgv="" autoplay="" src="https://cdn.pixabay.com/video/2021/09/11/88225-606079090_large.mp4" poster="https://cdn.pixabay.com/video/2021/09/11/88225-606079090_tiny.jpg" loop="" playsinline="" preload="auto" tabindex="-1" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0.5"></video><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,21,0.95) 0%,rgba(17,19,21,0.86) 45%,rgba(17,19,21,0.62) 100%),linear-gradient(to top,rgba(17,19,21,0.85),transparent 45%),linear-gradient(to bottom,rgba(17,19,21,0.7),transparent 25%)"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1240px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h1 data-rise="" style="margin:0;max-width:1000px;font:500 clamp(28px,min(4.6vw,7vh),68px)/1.05 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Everyone has a content strategy. Are they talking about the same thing?</h1><p data-rise="" style="margin:0;max-width:760px;font:400 clamp(16px,min(1.5vw,2.7vh),22px)/1.55 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Executives talk about it. Marketing talks about it. Biz devs talk about it. The loudest person in the room gets credit for having a strong content strategy because they used the term &ldquo;content strategy.&rdquo;</p><div data-rise="" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;padding-top:12px;padding-bottom:28px"><button type="button" class="sf-btn sf-btn--primary sf-btn--md" data-contact="" data-dc-on-click="next" style="overflow:visible">Start slides / press<kbd data-k="r" style="position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:28px;margin-left:4px;padding:0 7px;box-sizing:border-box;border-radius:4px;background:linear-gradient(to bottom,#2A2E33,#202428);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 3px 0 #0c0d0f,0 4px 8px rgba(0,0,0,0.35);font:500 14px/1 var(--sf-font-body);color:var(--sf-text)">→</kbd></button></div><div data-rise="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(10px,2vh,20px) 32px;max-width:900px;padding-top:clamp(8px,2vh,20px)"><div style="display:flex;flex-direction:column;gap:8px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Project</span><span style="font:400 15px/1.45 var(--sf-font-body);color:var(--sf-text)">The Content Strategy Library</span></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Role</span><span style="font:400 15px/1.45 var(--sf-font-body);color:var(--sf-text)">Creator</span></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Type</span><span style="font:400 15px/1.45 var(--sf-font-body);color:var(--sf-text)">Free public reference</span></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Started</span><span style="font:400 15px/1.45 var(--sf-font-body);color:var(--sf-text)">2026</span></div></div></div></div></section>
+<section data-slide="1" data-screen-label="02 Where you heard it" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Here&rsquo;s where you&rsquo;ve heard it... and what they meant.</h2><div style="display:flex;flex-direction:column;max-width:980px"><div data-rise="" style="display:grid;grid-template-columns:minmax(0,1.15fr) 28px minmax(0,1fr);gap:16px;align-items:center;padding:clamp(8px,1.6vh,14px) 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08)"><span style="font:400 clamp(16px,2.6vh,20px)/1.4 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">&ldquo;What&rsquo;s our content strategy for this blog post?&rdquo;</span><span aria-hidden="true" style="color:var(--sf-link);font:400 18px/1 var(--sf-font-body)">&rarr;</span><span style="font:400 clamp(15px,2.4vh,18px)/1.45 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">How are we promoting this on social?</span></div><div data-rise="" style="display:grid;grid-template-columns:minmax(0,1.15fr) 28px minmax(0,1fr);gap:16px;align-items:center;padding:clamp(8px,1.6vh,14px) 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08)"><span style="font:400 clamp(16px,2.6vh,20px)/1.4 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">&ldquo;Where do we keep our content strategy so I can know what&rsquo;s coming up?&rdquo;</span><span aria-hidden="true" style="color:var(--sf-link);font:400 18px/1 var(--sf-font-body)">&rarr;</span><span style="font:400 clamp(15px,2.4vh,18px)/1.45 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">I&rsquo;d like a link to our content calendar.</span></div><div data-rise="" style="display:grid;grid-template-columns:minmax(0,1.15fr) 28px minmax(0,1fr);gap:16px;align-items:center;padding:clamp(8px,1.6vh,14px) 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08)"><span style="font:400 clamp(16px,2.6vh,20px)/1.4 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">&ldquo;What&rsquo;s the content strategy for rolling this out?&rdquo;</span><span aria-hidden="true" style="color:var(--sf-link);font:400 18px/1 var(--sf-font-body)">&rarr;</span><span style="font:400 clamp(15px,2.4vh,18px)/1.45 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Is there GTM documentation and a clear content schedule?</span></div><div data-rise="" style="display:grid;grid-template-columns:minmax(0,1.15fr) 28px minmax(0,1fr);gap:16px;align-items:center;padding:clamp(8px,1.6vh,14px) 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08)"><span style="font:400 clamp(16px,2.6vh,20px)/1.4 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">&ldquo;We need a content strategy for LinkedIn.&rdquo;</span><span aria-hidden="true" style="color:var(--sf-link);font:400 18px/1 var(--sf-font-body)">&rarr;</span><span style="font:400 clamp(15px,2.4vh,18px)/1.45 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">It doesn't feel like posted on LinkedIn often enough, or on topic enough.</span></div><div data-rise="" style="display:grid;grid-template-columns:minmax(0,1.15fr) 28px minmax(0,1fr);gap:16px;align-items:center;padding:clamp(8px,1.6vh,14px) 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.08)"><span style="font:400 clamp(16px,2.6vh,20px)/1.4 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">&ldquo;Can you own the content strategy piece?&rdquo;</span><span aria-hidden="true" style="color:var(--sf-link);font:400 18px/1 var(--sf-font-body)">&rarr;</span><span style="font:400 clamp(15px,2.4vh,18px)/1.45 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Can you write the copy? 😭</span></div></div><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Every one of these is a reasonable request. None of them is a content strategy.</p></div></div></section>
+<section data-slide="2" data-screen-label="03 Definition" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><img src="/assets/cs/csl-halvorson-bw.png" alt="" style="position:absolute;top:0;right:0;height:100%;width:62%;object-fit:cover;object-position:center top;display:block;opacity:0.55"><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,21,0.95) 0%,rgba(17,19,21,0.86) 45%,rgba(17,19,21,0.62) 100%),linear-gradient(to top,rgba(17,19,21,0.85),transparent 45%),linear-gradient(to bottom,rgba(17,19,21,0.7),transparent 25%)"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Believe it or not, content strategy has a meaning.</h2><figure data-rise="" style="margin:0;max-width:760px;display:flex;flex-direction:column;gap:16px"><blockquote style="margin:0;font:400 clamp(20px,min(2.3vw,3.8vh),32px)/1.4 var(--sf-font-body);letter-spacing:-0.01em;color:var(--sf-text);text-wrap:pretty">&ldquo;The ongoing practice of planning for the creation, delivery, and governance of useful, usable, and effective content about a particular topic or set of topics.&rdquo;</blockquote><figcaption style="font:400 15px/1.5 var(--sf-font-body);color:var(--sf-text-muted)"><span style="color:var(--sf-text);font-weight:500">Kristina Halvorson</span>, <a class="pg1" href="https://www.pearson.com/en-us/subject-catalog/p/content-strategy-for-the-web/P200000000302/9780132883245" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none"><em>Content Strategy for the Web</em></a>, 2009</figcaption></figure></div></div></section>
+<section data-slide="3" data-screen-label="04 The plan" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div aria-hidden="true" style="position:absolute;inset:0;background:var(--gradient-smoke,var(--sf-canvas))"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">The plan that covers the purpose, the ownership, the structure, the publication of content that meets users&rsquo; needs and accomplishes business goals.</h2><p data-rise="" style="margin:0;max-width:760px;font:400 clamp(16px,min(1.5vw,2.7vh),22px)/1.55 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">In other words, the what, who, where and (crucially) the why.</p></div></div></section>
+<section data-slide="4" data-screen-label="05 Formal craft" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div aria-hidden="true" style="position:absolute;inset:-4% -2%;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:0.2em 0.7em;opacity:0.16;transform:rotate(-4deg)"><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Audit</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Governance Model</span><span style="font:500 clamp(34px,5.4vw,76px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Core Model</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Topic Clusters</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Message Architecture</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Taxonomy</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Editorial Calendar</span><span style="font:500 clamp(34px,5.4vw,76px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Pillars</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">RACI Matrix</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Jobs-to-be-Done</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Style Guide</span><span style="font:500 clamp(34px,5.4vw,76px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Voice &amp; Tone</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Lifecycle</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Competitive Gap Analysis</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Hero-Hub-Help</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Atomization Matrix</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Model</span><span style="font:500 clamp(34px,5.4vw,76px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Journey Map</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Persona Set</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Keyword Map</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Brand Archetypes</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Point of View</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Matrix</span><span style="font:500 clamp(34px,5.4vw,76px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Card Sort</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Value Prop Canvas</span><span style="font:500 clamp(16px,1.8vw,26px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Workflow Map</span><span style="font:500 clamp(26px,3.6vw,52px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Content Inventory</span><span style="font:500 clamp(20px,2.6vw,36px)/1.15 var(--sf-font-body);letter-spacing:-0.02em;color:var(--sf-text);white-space:nowrap">Pillar Map</span></div><div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(60% 70% at 30% 50%,rgba(17,19,21,0.92),rgba(17,19,21,0.55) 70%,rgba(17,19,21,0.3))"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><div style="display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px);max-width:820px;padding:clamp(24px,4vh,40px);box-sizing:border-box;border-radius:2px;background:rgba(17,19,21,0.55);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1)"><h2 data-rise="" style="margin:0;max-width:1000px;font:500 clamp(28px,min(4.6vw,7vh),68px)/1.05 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">There is a formal craft.</h2><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Content strategy doesn&rsquo;t need to be the practice of making decisions on the fly. There are tools, frameworks and workflows that help you make strategic decisions around content, and even help you make decisions about making decisions.</p><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">They&rsquo;re only a google away, but they&rsquo;re scattered across the internet.</p></div></div></div></section>
+<section data-slide="5" data-screen-label="06 Enter the library" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1240px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px"><div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Enter the <span style="color:var(--sf-link)">Content Strategy Library</span></h2><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">That&rsquo;s why I created the <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" style="font-weight:500;background-image:linear-gradient(90deg,#C8F169,#92E58A,#5CDDA0,#29D3B0,#33BDD6,#38A8FF,#33BDD6,#29D3B0,#5CDDA0,#92E58A,#C8F169);background-size:400% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:sfShimmerT 10s linear infinite;text-decoration:none">Content Strategy Library</a>, mission control for people making decisions about content. It&rsquo;s a free compilation of formal tools and frameworks that content strategists (and the rest of us) use to figure out how to connect content, purpose, and people.</p></div><figure data-rise="" style="flex:1 1 460px;min-width:0;max-width:calc(58vh * 1.5);margin:0;background:var(--sf-canvas)"><div style="height:28px;display:flex;align-items:center;gap:10px;padding:0 12px;background:var(--sf-surface)"><span style="display:flex;gap:5px"><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i></span><span style="font:400 11px/1 var(--sf-font-body);color:var(--sf-text-muted)">contentstrategylibrary.com/library</span></div><div style="max-height:52vh;overflow:hidden"><img src="/assets/cs/csl-library.png" alt="" style="display:block;width:100%;height:auto"></div></figure></div></div></div></section>
+<section data-slide="6" data-screen-label="07 Browse the tools" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1240px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Browse the tools</h2><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The tool library hosts a broad selection of tools to help point you in the right direction. Starting at the start? Try Content Pillars/Themes. Researching what&rsquo;s out there vs. what you&rsquo;ve got? Content Audit and Competitive Gap Analysis may help you get started.</p><div style="display:flex;flex-wrap:wrap;gap:20px"><a class="pg2" data-rise="" href="https://contentstrategylibrary.com/tools/content-pillars-themes/" target="_blank" rel="noopener" style="flex:1 1 280px;max-width:400px;display:flex;flex-direction:column;padding:clamp(18px,2.8vh,24px);box-sizing:border-box;background:#FFFFFF;border:0;border-radius:10px;box-shadow:0 1px 2px rgba(22,22,14,0.05);color:#16160E;transition:border-color 200ms ease,box-shadow 200ms ease,transform 200ms ease"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px"><span aria-hidden="true" style="display:inline-grid;place-items:center;width:26px;height:26px;color:#16160E"><svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 5.4v11.2M12 5.4v11.2M17.7 5.4v11.2M4 19.6h16"/></svg></span><span style="font:700 10px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.1em;text-transform:uppercase;color:#16160E;background:#F7C531;border-radius:4px;padding:6px 9px;white-space:nowrap">Start here</span></div><h4 style="margin:24px 0 0;font:700 17px/1.25 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:-0.01em;color:#16160E">Content Pillars / Themes</h4><p style="margin:7px 0 0;font:400 14.5px/1.55 'Plus Jakarta Sans',var(--sf-font-body);color:#52524A;text-wrap:pretty">The handful of subjects you intend to be known for, agreed before anything gets written.</p><span style="margin-top:auto;padding-top:16px"><span style="display:flex;align-items:center;gap:6px;padding-top:12px;border-top:1px solid #EDECE6;font:700 9.5px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.14em;text-transform:uppercase;color:#8A8A80">View on Content Strategy Library<svg viewBox="0 0 10 10" aria-hidden="true" style="width:9px;height:9px"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><a class="pg3" data-rise="" href="https://contentstrategylibrary.com/tools/content-audit/" target="_blank" rel="noopener" style="flex:1 1 280px;max-width:400px;display:flex;flex-direction:column;padding:clamp(18px,2.8vh,24px);box-sizing:border-box;background:#FFFFFF;border:0;border-radius:10px;box-shadow:0 1px 2px rgba(22,22,14,0.05);color:#16160E;transition:border-color 200ms ease,box-shadow 200ms ease,transform 200ms ease"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px"><span aria-hidden="true" style="display:inline-grid;place-items:center;width:26px;height:26px;color:#16160E"><svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.4H6.7a1.5 1.5 0 0 0-1.5 1.5v12.9a1.5 1.5 0 0 0 1.5 1.5h10.6a1.5 1.5 0 0 0 1.5-1.5V5.9a1.5 1.5 0 0 0-1.5-1.5H15"/><rect x="9" y="2.9" width="6" height="3" rx="1.1"/><path d="M8.8 11.2h6.4M8.8 14.9h4.2"/></svg></span><span style="font:700 10px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.1em;text-transform:uppercase;color:#16160E;background:#F7C531;border-radius:4px;padding:6px 9px;white-space:nowrap">Research</span></div><h4 style="margin:24px 0 0;font:700 17px/1.25 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:-0.01em;color:#16160E">Content Audit</h4><p style="margin:7px 0 0;font:400 14.5px/1.55 'Plus Jakarta Sans',var(--sf-font-body);color:#52524A;text-wrap:pretty">An inventory of what already exists, and an honest judgment about what each piece is still doing.</p><span style="margin-top:auto;padding-top:16px"><span style="display:flex;align-items:center;gap:6px;padding-top:12px;border-top:1px solid #EDECE6;font:700 9.5px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.14em;text-transform:uppercase;color:#8A8A80">View on Content Strategy Library<svg viewBox="0 0 10 10" aria-hidden="true" style="width:9px;height:9px"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><a class="pg4" data-rise="" href="https://contentstrategylibrary.com/tools/competitive-gap-analysis/" target="_blank" rel="noopener" style="flex:1 1 280px;max-width:400px;display:flex;flex-direction:column;padding:clamp(18px,2.8vh,24px);box-sizing:border-box;background:#FFFFFF;border:0;border-radius:10px;box-shadow:0 1px 2px rgba(22,22,14,0.05);color:#16160E;transition:border-color 200ms ease,box-shadow 200ms ease,transform 200ms ease"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px"><span aria-hidden="true" style="display:inline-grid;place-items:center;width:26px;height:26px;color:#16160E"><svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.3 15.3 20.6 20.6"/><path d="M8.3 12.4V9.6M10.6 12.4V7.9M12.9 12.4v-1.9"/></svg></span><span style="font:700 10px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.1em;text-transform:uppercase;color:#16160E;background:#F7C531;border-radius:4px;padding:6px 9px;white-space:nowrap">Research</span></div><h4 style="margin:24px 0 0;font:700 17px/1.25 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:-0.01em;color:#16160E">Competitive Gap Analysis</h4><p style="margin:7px 0 0;font:400 14.5px/1.55 'Plus Jakarta Sans',var(--sf-font-body);color:#52524A;text-wrap:pretty">What the field already covers well, and the questions nobody has answered yet.</p><span style="margin-top:auto;padding-top:16px"><span style="display:flex;align-items:center;gap:6px;padding-top:12px;border-top:1px solid #EDECE6;font:700 9.5px/1 'Plus Jakarta Sans',var(--sf-font-body);letter-spacing:0.14em;text-transform:uppercase;color:#8A8A80">View on Content Strategy Library<svg viewBox="0 0 10 10" aria-hidden="true" style="width:9px;height:9px"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a></div></div></div></section>
+<section data-slide="7" data-screen-label="08 Tool recommender" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1240px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px"><div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px"><h2 data-rise="" style="margin:0;max-width:900px;font:500 clamp(24px,min(3.3vw,5.4vh),48px)/1.1 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Don&rsquo;t know where to start?</h2><p data-rise="" style="margin:0;max-width:700px;font:400 clamp(15px,2.5vh,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The <a class="pg5" href="https://contentstrategylibrary.com/tool-recommender/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Tool Recommender</a> is a quick multiple choice to help you get the tools you need. You can learn more at the source, or rapidly pull together a slide deck to present your content strategy to your stakeholders.</p></div><figure data-rise="" style="flex:1 1 460px;min-width:0;max-width:calc(58vh * 1.5);margin:0;background:var(--sf-canvas)"><div style="height:28px;display:flex;align-items:center;gap:10px;padding:0 12px;background:var(--sf-surface)"><span style="display:flex;gap:5px"><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i><i style="width:8px;height:8px;border-radius:50%;background:var(--sf-control-border)"></i></span><span style="font:400 11px/1 var(--sf-font-body);color:var(--sf-text-muted)">contentstrategylibrary.com/tool-recommender</span></div><div style="max-height:52vh;overflow:hidden"><img src="/assets/cs/csl-recommender.png" alt="" style="display:block;width:100%;height:auto"></div></figure></div></div></div></section>
+<section data-slide="8" data-screen-label="09 Free to use" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div aria-hidden="true" style="position:absolute;inset:0;background:var(--gradient-ember,var(--sf-canvas))"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:1000px;font:500 clamp(28px,min(4.6vw,7vh),68px)/1.05 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Comprehensive, organized, free to use.</h2><p data-rise="" style="margin:0;max-width:760px;font:400 clamp(16px,min(1.5vw,2.7vh),22px)/1.55 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The site is purely informational, connecting you with the tools you need and the experts who invented them. Consider it your textbook.</p></div></div></section>
+<section data-slide="9" data-screen-label="10 Real" style="position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow:hidden;background:var(--sf-canvas)"><div aria-hidden="true" style="position:absolute;inset:-10% -6%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;transform:rotate(-6deg);opacity:0.3"><img src="/assets/cs/csl-tools-index.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><img src="/assets/cs/csl-topic-clusters.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><img src="/assets/cs/csl-raci.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><img src="/assets/cs/csl-atomization.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><img src="/assets/cs/csl-keyword-template.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><img src="/assets/cs/csl-channel-strategy.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,21,0.96) 0%,rgba(17,19,21,0.88) 50%,rgba(17,19,21,0.7) 100%)"></div><div data-scroll="" style="position:absolute;top:72px;bottom:88px;left:0;right:0;overflow-y:auto;display:flex;flex-direction:column;padding:12px clamp(24px,6vw,96px) 20px;box-sizing:border-box"><div style="margin:auto;width:100%;max-width:1120px;display:flex;flex-direction:column;gap:clamp(14px,2.6vh,24px)"><h2 data-rise="" style="margin:0;max-width:1000px;font:500 clamp(28px,min(4.6vw,7vh),68px)/1.05 var(--sf-font-display);letter-spacing:var(--sf-track-h1);color:var(--sf-text);text-wrap:balance">Content strategy is <span style="color:var(--sf-link)">real.</span></h2><p data-rise="" style="margin:0;max-width:760px;font:400 clamp(16px,min(1.5vw,2.7vh),22px)/1.55 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The term means something, and this project is to supply everyone with the tools they need to speak the same language.</p><div data-rise="" style="display:flex;flex-wrap:wrap;gap:12px;padding-top:8px"><button type="button" class="sf-btn sf-btn--primary sf-btn--md" data-dc-on-click="visit">Visit the library<span class="sf-btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span></button><a href="/#contact" class="sf-btn sf-btn--secondary sf-btn--md">Contact</a><a href="/content-strategy.html" class="sf-btn sf-btn--ghost sf-btn--md">Go back</a></div><div data-rise="" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:4px;font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)"><span>© 2026 Tommy Stubblefield</span></div></div></div></section>
+</div>
+<div style="position:absolute;left:clamp(16px,3vw,32px);bottom:92px;z-index:21;display:flex;flex-direction:column;align-items:flex-start;gap:8px;opacity:{{ navOp }};pointer-events:{{ navPe }};transition:opacity 320ms var(--sf-ease)">
+<div data-dc-if="crOpen" style="display:contents"><div style="display:flex;flex-direction:column;gap:6px;max-width:min(620px,calc(100vw - 48px));padding:14px 16px;border-radius:2px;background:rgba(26,29,32,0.72);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)"><div data-dc-if="crIn.s3" style="display:contents"><span style="text-wrap:pretty">Adapted from <a class="pg6" href="https://www.nngroup.com/articles/content-strategy/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Anna Kaley, Nielsen Norman Group</a>.</span></div><div data-dc-if="crHas" style="display:contents"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ cr.kind }}: <div data-dc-if="crLink" style="display:contents"><a class="pg7" href="{{ cr.href }}" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">{{ cr.title }}</a></div><div data-dc-if="crPlain" style="display:contents"><span style="color:var(--sf-text)">{{ cr.title }}</span></div> {{ cr.by }}</span></div><button class="pg8" type="button" data-dc-on-click="openAll" style="all:unset;cursor:pointer;color:var(--sf-link)">See all credits for assets used in this case study</button></div></div>
+<button class="pg9" type="button" aria-expanded="{{ crExp }}" data-dc-on-click="toggleCr" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:500 13px/1 var(--sf-font-body);color:var(--sf-text-muted);transition:color 160ms var(--sf-ease)"><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" style="flex:none;transform:rotate({{ crRot }});transition:transform 160ms var(--sf-ease)"><path d="M2.5 7.75 6 4.25l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>Credits</button>
+</div>
+<header style="position:absolute;top:0;left:0;right:0;height:72px;z-index:20;display:flex;align-items:center;gap:16px;padding:0 clamp(16px,3vw,32px);box-sizing:border-box;background:linear-gradient(to bottom,rgba(17,19,21,0.82),rgba(17,19,21,0))">
+<a class="pg10" href="/content-strategy.html" style="display:flex;align-items:center;gap:10px;font:500 14px/1 var(--sf-font-body);color:var(--sf-text-muted)"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(225deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>Content strategy</a>
+<span style="width:1px;height:16px;background:rgba(255,255,255,0.16)"></span>
+<span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted);color:var(--sf-text-muted)">Content Strategy Library</span>
+<span style="flex:1"></span>
+<span style="font:500 13px/1 var(--sf-font-body);color:var(--sf-text-muted);font-variant-numeric:tabular-nums">{{ counter }}</span>
+<button type="button" aria-label="Close case study" data-dc-on-click="exit" class="sf-btn sf-btn--ghost sf-btn--md" style="width:44px;font-size:24px;font-weight:400">×</button>
 </header>
-
-<nav class="dk-dots" data-dots aria-label="Deck progress"></nav>
-
-<main data-deck>
-
-<section class="pnl pnl-cover pnl-media pnl-bg-vid" data-screen-label="01">
-  <div class="pnl-bg" aria-hidden="true">
-    <video class="bg-vid" src="https://cdn.pixabay.com/video/2021/09/11/88225-606079090_large.mp4" poster="https://cdn.pixabay.com/video/2021/09/11/88225-606079090_tiny.jpg" autoplay muted loop playsinline preload="metadata"></video>
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h1 class="slab" data-rise>Everyone has a content strategy. Almost nobody means the same thing.</h1>
-    <div class="cover-lede" data-rise>
-      <p class="slab-sub">Executives talk about it. Marketing talks about it. Biz devs talk about it. The loudest person in the room gets credit for having a strong content strategy because they used the term &ldquo;content strategy.&rdquo;</p>
-    </div>
-    <div class="cover-meta" data-rise>
-      <div><span class="m-lab">Project</span><span class="m-val">The Content Strategy Library</span></div>
-      <div><span class="m-lab">Role</span><span class="m-val">Creator</span></div>
-      <div><span class="m-lab">Type</span><span class="m-val">Free public reference</span></div>
-      <div><span class="m-lab">Started</span><span class="m-val">2026</span></div>
-    </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true"><span class="sc-lab">Scroll <span class="sc-hint">- Hit the Down Arrow key</span></span><span class="sc-key"><span class="kc">↓</span></span><span class="sc-rail"><i></i></span></div>
-</section>
-
-<section class="pnl" data-screen-label="02">
-  <div class="in">
-    <h2 data-rise>Here's where you've heard it... and what they meant.</h2>
-    <div class="heard" data-rise>
-      <div class="hd-row">
-        <p class="hd-q">&ldquo;What's our content strategy for this blog post?&rdquo;</p>
-        <span class="hd-arr" aria-hidden="true">&rarr;</span>
-        <p class="hd-m">How are we promoting this on social?</p>
-      </div>
-      <div class="hd-row">
-        <p class="hd-q">&ldquo;Where do we keep our content strategy so I can know what's coming up?&rdquo;</p>
-        <span class="hd-arr" aria-hidden="true">&rarr;</span>
-        <p class="hd-m">I'd like a link to our content calendar.</p>
-      </div>
-      <div class="hd-row">
-        <p class="hd-q">&ldquo;What's the content strategy for rolling this out?&rdquo;</p>
-        <span class="hd-arr" aria-hidden="true">&rarr;</span>
-        <p class="hd-m">Is there GTM documentation and a clear content schedule?</p>
-      </div>
-      <div class="hd-row">
-        <p class="hd-q">&ldquo;We need a content strategy for LinkedIn.&rdquo;</p>
-        <span class="hd-arr" aria-hidden="true">&rarr;</span>
-        <p class="hd-m">We need somebody posting on LinkedIn.</p>
-      </div>
-      <div class="hd-row">
-        <p class="hd-q">&ldquo;Can you own the content strategy piece?&rdquo;</p>
-        <span class="hd-arr" aria-hidden="true">&rarr;</span>
-        <p class="hd-m">Can you write the copy?</p>
-      </div>
-    </div>
-    <p class="note" data-rise>Every one of these is a reasonable request. None of them is a content strategy.</p>
-  </div>
-</section>
-
-<section class="pnl pnl-media pnl-bg-full" data-screen-label="03">
-  <div class="pnl-bg pnl-bg-photo" aria-hidden="true">
-    <img src="../assets/kristina-halvorson-bw.png" alt="" loading="lazy" decoding="async">
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h2 class="slab" data-rise>Believe it or not, content strategy has a meaning.</h2>
-    <figure class="defq" data-rise>
-      <q>The ongoing practice of planning for the creation, delivery, and governance of useful, usable, and effective content about a particular topic or set of topics.</q>
-      <figcaption class="cite"><b>Kristina Halvorson</b>, <a href="https://www.pearson.com/en-us/subject-catalog/p/content-strategy-for-the-web/P200000000302/9780132883245" target="_blank" rel="noopener"><em>Content Strategy for the Web</em></a>, 2009</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="pnl" data-screen-label="04">
-  <div class="in">
-    <h2 data-rise>The plan that covers the purpose, the ownership, the structure, the publication of content that meets users' needs and accomplishes business goals.</h2>
-    <p class="body" data-rise>In other words, the what, who, where and (crucially) the why.</p>
-    <p class="note" data-rise>Adapted from <a href="https://www.nngroup.com/articles/content-strategy/" target="_blank" rel="noopener">Anna Kaley, Nielsen Norman Group</a>.</p>
-  </div>
-</section>
-
-<section class="pnl pnl-media" data-screen-label="05">
-  <div class="pnl-bg pnl-bg-cloud" aria-hidden="true">
-    <div class="wcloud">
-      <span class="s2">Content Audit</span><span class="s4">Governance Model</span><span class="s1">Core Model</span><span class="s3">Topic Clusters</span><span class="s2">Message Architecture</span><span class="s4">Taxonomy</span><span class="s3">Editorial Calendar</span><span class="s1 hi">Content Pillars</span><span class="s4">RACI Matrix</span><span class="s2">Jobs-to-be-Done</span><span class="s3">Style Guide</span><span class="s1">Voice &amp; Tone</span><span class="s4">Content Lifecycle</span><span class="s2">Competitive Gap Analysis</span><span class="s3">Hero-Hub-Help</span><span class="s4">Atomization Matrix</span><span class="s2">Content Model</span><span class="s1">Journey Map</span><span class="s3">Persona Set</span><span class="s4">Keyword Map</span><span class="s2">Brand Archetypes</span><span class="s3">Point of View</span><span class="s4">Content Matrix</span><span class="s1">Card Sort</span><span class="s3">Value Prop Canvas</span><span class="s4">Workflow Map</span><span class="s2">Content Inventory</span><span class="s3">Pillar Map</span>
-    </div>
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h2 class="slab" data-rise>There is a formal craft.</h2>
-    <p class="body" data-rise>Content strategy doesn't need to be the practice of making decisions on the fly. There are tools, frameworks and workflows that help you make strategic decisions around content, and even help you make decisions about making decisions.</p>
-    <p class="body" data-rise>They're only a google away, but they're scattered across the internet.</p>
-  </div>
-</section>
-
-<section class="pnl pnl-media pnl-split" data-screen-label="06">
-  <div class="pnl-bg pnl-bg-shot" aria-hidden="true">
-    <figure class="brw">
-      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">contentstrategylibrary.com/library</span></div>
-      <img src="../assets/csl-library.png" alt="" loading="lazy" decoding="async">
-    </figure>
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h2 class="slab" data-rise>Enter the <span class="accent">Content Strategy Library</span></h2>
-    <p class="body" data-rise>That's why I created the Content Strategy Library, mission control for people making decisions about content. It's a free compilation of formal tools and frameworks that content strategists (and the rest of us) use to figure out how to connect content, purpose, and people.</p>
-  </div>
-</section>
-
-<section class="pnl" data-screen-label="07">
-  <div class="in">
-    <h2 data-rise>Browse the tools</h2>
-    <p class="body" data-rise>The tool library hosts a broad selection of tools to help point you in the right direction. Starting at the start? Try Content Pillars/Themes. Researching what's out there? Content Audit and Competitive Gap Analysis may help you get started.</p>
-    <div class="tf-cards three" data-rise>
-      <a class="tf-card" href="https://contentstrategylibrary.com/tools/content-pillars-themes/" target="_blank" rel="noopener">
-        <div class="tf-card-top">
-          <span class="tf-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 5.4v11.2M12 5.4v11.2M17.7 5.4v11.2M4 19.6h16"/></svg></span>
-          <span class="tf-pill">Start here</span>
-        </div>
-        <h4>Content Pillars / Themes</h4>
-        <p>The handful of subjects you intend to be known for, agreed before anything gets written.</p>
-        <span class="tf-src">View on Content Strategy Library<svg class="src-arr" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="tf-card" href="https://contentstrategylibrary.com/tools/content-audit/" target="_blank" rel="noopener">
-        <div class="tf-card-top">
-          <span class="tf-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.4H6.7a1.5 1.5 0 0 0-1.5 1.5v12.9a1.5 1.5 0 0 0 1.5 1.5h10.6a1.5 1.5 0 0 0 1.5-1.5V5.9a1.5 1.5 0 0 0-1.5-1.5H15"/><rect x="9" y="2.9" width="6" height="3" rx="1.1"/><path d="M8.8 11.2h6.4M8.8 14.9h4.2"/></svg></span>
-          <span class="tf-pill">Research</span>
-        </div>
-        <h4>Content Audit</h4>
-        <p>An inventory of what already exists, and an honest judgment about what each piece is still doing.</p>
-        <span class="tf-src">View on Content Strategy Library<svg class="src-arr" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="tf-card" href="https://contentstrategylibrary.com/tools/competitive-gap-analysis/" target="_blank" rel="noopener">
-        <div class="tf-card-top">
-          <span class="tf-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.3 15.3 20.6 20.6"/><path d="M8.3 12.4V9.6M10.6 12.4V7.9M12.9 12.4v-1.9"/></svg></span>
-          <span class="tf-pill">Research</span>
-        </div>
-        <h4>Competitive Gap Analysis</h4>
-        <p>What the field already covers well, and the questions nobody has answered yet.</p>
-        <span class="tf-src">View on Content Strategy Library<svg class="src-arr" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2.2 7.8 7.8 2.2M3.7 2.2h4.1v4.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="pnl pnl-media pnl-split" data-screen-label="08">
-  <div class="pnl-bg pnl-bg-shot" aria-hidden="true">
-    <figure class="brw">
-      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">contentstrategylibrary.com/tool-recommender</span></div>
-      <img src="../assets/csl-recommender.png" alt="" loading="lazy" decoding="async">
-    </figure>
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h2 data-rise>Don't know where to start?</h2>
-    <p class="body" data-rise>The <a href="https://contentstrategylibrary.com/tool-recommender/" target="_blank" rel="noopener">Tool Recommender</a> is a quick multiple choice to help you get the tools you need. You can learn more at the source, or rapidly pull together a slide deck to present your content strategy to your stakeholders.</p>
-  </div>
-</section>
-
-<section class="pnl" data-screen-label="09">
-  <div class="in">
-    <h2 class="slab" data-rise>Comprehensive. Organized. Free to use.</h2>
-    <p class="body" data-rise>This is purely informational, connecting you with the tools you need and the experts who invented them.</p>
-  </div>
-</section>
-
-<section class="pnl pnl-media pnl-bg-full" data-screen-label="10">
-  <div class="pnl-bg pnl-bg-reel" aria-hidden="true">
-    <div class="reel">
-      <img src="../assets/csl-tools-index.png" alt="" decoding="async">
-      <img src="../assets/csl-topic-clusters.png" alt="" decoding="async">
-      <img src="../assets/csl-raci.png" alt="" decoding="async">
-      <img src="../assets/csl-atomization.png" alt="" decoding="async">
-      <img src="../assets/csl-keyword-template.png" alt="" decoding="async">
-      <img src="../assets/csl-channel-strategy.png" alt="" decoding="async">
-    </div>
-    <div class="bg-scrim"></div>
-  </div>
-  <div class="in">
-    <h2 class="slab" data-rise>Content strategy is <span class="accent">real.</span></h2>
-    <p class="body" data-rise>The term means something, and this project is to supply everyone with the tools they need to speak the same language.</p>
-    <div class="dk-close" data-rise>
-      <a class="btn btn-solid" href="https://contentstrategylibrary.com" target="_blank" rel="noopener">Visit the library <span class="arr" aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="../index.html#contact">Contact</a>
-      <a class="btn btn-ghost" href="../index.html">Go back</a>
-    </div>
-    <div class="dk-foot" data-rise>
-      <span>© 2026 Tommy Stubblefield</span>
-      <button class="dk-cred-open" type="button" data-credits>Credits and sources</button>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<dialog class="dk-cred" id="dk-credits" aria-labelledby="dk-cred-h">
-  <div class="cr-in">
-    <div class="cr-top">
-      <h2 id="dk-cred-h">Credits and sources</h2>
-      <button class="cr-x" type="button" data-credits-close aria-label="Close credits">&times;</button>
-    </div>
-    <p class="cr-lede">Every definition, framework and screenshot used in this case study, with its author and source. Panel numbers refer to the sequence above.</p>
-    <section class="cr-grp">
-      <h3>Definitions</h3>
-      <ul class="cr-list">
-        <li><a href="https://www.pearson.com/en-us/subject-catalog/p/content-strategy-for-the-web/P200000000302/9780132883245" target="_blank" rel="noopener">Content Strategy for the Web</a><span>Kristina Halvorson, New Riders, 2009 &middot; panel 3</span></li>
-        <li><a href="https://www.nngroup.com/articles/content-strategy/" target="_blank" rel="noopener">Content Strategy: The Practice</a><span>Anna Kaley, Nielsen Norman Group &middot; adapted for the plain-English translation &middot; panel 4</span></li>
-      </ul>
-    </section>
-    <section class="cr-grp">
-      <h3>Frameworks</h3>
-      <ul class="cr-list">
-        <li><a href="https://contentstrategylibrary.com/tools/content-pillars-themes/" target="_blank" rel="noopener">Content Pillars / Themes</a><span>Content Strategy Library &middot; panel 7</span></li>
-        <li><a href="https://contentstrategylibrary.com/tools/content-audit/" target="_blank" rel="noopener">Content Audit</a><span>Content Strategy Library &middot; panel 7</span></li>
-        <li><a href="https://contentstrategylibrary.com/tools/competitive-gap-analysis/" target="_blank" rel="noopener">Competitive Gap Analysis</a><span>Content Strategy Library &middot; panel 7</span></li>
-      </ul>
-      <p class="cr-sub">The tool names listed on panel 5 are the property of their originators. The library credits each one at its source.</p>
-    </section>
-    <section class="cr-grp">
-      <h3>Screenshots</h3>
-      <ul class="cr-list">
-        <li><a href="https://contentstrategylibrary.com" target="_blank" rel="noopener">contentstrategylibrary.com</a><span>Own work &middot; panels 6, 8 and 10</span></li>
-      </ul>
-    </section>
-    <section class="cr-grp">
-      <h3>Photography</h3>
-      <ul class="cr-list">
-        <li>Kristina Halvorson portrait<span>Photographer unconfirmed &middot; panel 3</span></li>
-      </ul>
-    </section>
-    <section class="cr-grp">
-      <h3>Footage</h3>
-      <ul class="cr-list">
-        <li><a href="https://pixabay.com/videos/meeting-creative-artistic-88225/" target="_blank" rel="noopener">Meeting, Creative, Artistic</a><span><a href="https://pixabay.com/users/digital_expert-22525715/" target="_blank" rel="noopener">Digital_Expert</a> via <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a> &middot; <a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener">Pixabay Content License</a> &middot; panel 1</span></li>
-      </ul>
-    </section>
-  </div>
-</dialog>
-
-<script src="../panel-deck.js"></script>
-<script>(function(){var d=document.getElementById('dk-credits');if(!d)return;document.querySelectorAll('[data-credits]').forEach(function(b){b.addEventListener('click',function(){d.showModal();});});d.querySelectorAll('[data-credits-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
-/* keep the deck's arrow-key navigation from firing behind the open dialog */
-d.addEventListener('keydown',function(e){e.stopPropagation();});
-d.addEventListener('click',function(e){if(e.target===d)d.close();});})();</script>
-<script>(function(){var v=document.querySelector('.bg-vid');if(!v)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();return;}var p=v.play();if(p&&p.catch)p.catch(function(){});})();</script>
+<footer style="position:absolute;left:0;right:0;bottom:0;height:88px;z-index:20;display:flex;align-items:center;gap:20px;padding:0 clamp(16px,3vw,32px);box-sizing:border-box;background:linear-gradient(to top,rgba(17,19,21,0.85),rgba(17,19,21,0));opacity:{{ navOp }};pointer-events:{{ navPe }};transform:translateY({{ navY }});transition:opacity 320ms var(--sf-ease),transform 320ms var(--sf-ease)">
+<button type="button" class="sf-btn sf-btn--secondary sf-btn--md" data-dc-on-click="prev"><span class="sf-btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(225deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span>Back</button>
+<div style="flex:1;display:flex;gap:4px;min-width:0">
+<div data-dc-for="segs" data-dc-as="s" style="display:contents">
+<button type="button" aria-label="{{ s.label }}" data-dc-on-click="s.go" style="all:unset;flex:1;height:24px;display:flex;align-items:center;cursor:pointer"><span style="display:block;width:100%;height:3px;background:{{ s.bg }};transition:background 320ms var(--sf-ease)"></span></button>
+</div>
+</div>
+<span data-dc-on-mouse-enter="hintKeys" style="display:flex;align-items:center;gap:8px;font:400 13px/1 var(--sf-font-body);color:var(--sf-text-muted);white-space:nowrap;padding-bottom:3px"><kbd data-k="l" style="display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:28px;padding:0 7px;box-sizing:border-box;border-radius:4px;background:linear-gradient(to bottom,#2A2E33,#202428);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 3px 0 #0c0d0f,0 4px 8px rgba(0,0,0,0.45);font:500 14px/1 var(--sf-font-body);color:var(--sf-text)">←</kbd><kbd data-k="r" style="display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:28px;padding:0 7px;box-sizing:border-box;border-radius:4px;background:linear-gradient(to bottom,#2A2E33,#202428);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 3px 0 #0c0d0f,0 4px 8px rgba(0,0,0,0.45);font:500 14px/1 var(--sf-font-body);color:var(--sf-text)">→</kbd><span style="padding-left:2px">to move</span></span>
+<span data-dc-on-mouse-enter="hintKeys" style="display:flex"><button type="button" class="sf-btn sf-btn--primary sf-btn--md" data-dc-on-click="next" disabled="{{ atEnd }}">Next<span class="sf-btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(45deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span></button></span>
+</footer>
+</div>
+<div data-dc-if="credOpen" style="display:contents"><div data-dc-on-click="closeCred" style="position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;background:rgba(17,19,21,0.82)"><div role="dialog" aria-label="Credits and sources" data-dc-on-click="stop" style="width:100%;max-width:640px;display:flex;flex-direction:column;gap:24px;padding:32px;background:rgba(26,29,32,0.82);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);border-radius:2px"><div style="display:flex;align-items:center;justify-content:space-between;gap:16px"><h2 style="margin:0;font:500 var(--sf-size-h3)/var(--sf-lh-h3) var(--sf-font-display);letter-spacing:var(--sf-track-h3);color:var(--sf-text)">Credits and sources</h2><button type="button" aria-label="Close" data-dc-on-click="closeCred" class="sf-btn sf-btn--ghost sf-btn--md" style="width:44px;font-size:24px;font-weight:400">×</button></div>
+<div style="display:flex;flex-direction:column;gap:24px;max-height:68vh;overflow-y:auto;padding-right:4px">
+<p style="margin:0;font:400 14px/1.6 var(--sf-font-body);color:var(--sf-text-muted)">Every definition, framework and screenshot used in this case study, with its author and source. Panel numbers refer to the sequence above.</p>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Definitions</span><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg11" href="https://www.pearson.com/en-us/subject-catalog/p/content-strategy-for-the-web/P200000000302/9780132883245" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Content Strategy for the Web</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Kristina Halvorson, New Riders, 2009 &middot; panel 3</span></div><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg12" href="https://www.nngroup.com/articles/content-strategy/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Content Strategy: The Practice</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Anna Kaley, Nielsen Norman Group &middot; adapted for the plain-English translation &middot; panel 4</span></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Frameworks</span><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg13" href="https://contentstrategylibrary.com/tools/content-pillars-themes/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Content Pillars / Themes</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Content Strategy Library &middot; panel 7</span></div><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg14" href="https://contentstrategylibrary.com/tools/content-audit/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Content Audit</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Content Strategy Library &middot; panel 7</span></div><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg15" href="https://contentstrategylibrary.com/tools/competitive-gap-analysis/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Competitive Gap Analysis</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Content Strategy Library &middot; panel 7</span></div><p style="margin:0;font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">The tool names listed on panel 5 are the property of their originators. The library credits each one at its source.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Screenshots</span><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg16" href="https://contentstrategylibrary.com" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">contentstrategylibrary.com</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Own work &middot; panels 6, 8 and 10</span></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Photography</span><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)">Kristina Halvorson portrait</span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Photographer unconfirmed &middot; panel 3</span></div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:500 14px/1.35 var(--sf-font-body);color:var(--sf-text-muted)">Footage</span><div style="display:flex;flex-direction:column;gap:3px;padding:10px 0;box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06)"><span style="font:500 14px/1.4 var(--sf-font-body);color:var(--sf-text)"><a class="pg17" href="https://pixabay.com/videos/meeting-creative-artistic-88225/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Meeting, Creative, Artistic</a></span><span style="font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)"><a class="pg18" href="https://pixabay.com/users/digital_expert-22525715/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Digital_Expert</a> via <a class="pg19" href="https://pixabay.com/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Pixabay</a> &middot; <a class="pg20" href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Pixabay Content License</a> &middot; panel 1</span></div></div>
+</div>
+</div></div></div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/js/dc-runtime.js"></script>
+<script src="/js/case-study-content-strategy-library.js"></script>
+<script>DC.mount(Component)</script>
 </body>
 </html>

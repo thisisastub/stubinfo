@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
+<link rel="stylesheet" href="dollarous.css">
+<link rel="stylesheet" href="frame.css">
+<link rel="stylesheet" href="calculator.css">
+<style>html,body{margin:0;background:transparent;overflow:hidden}</style>
+</head>
+<body>
+<div class="dlr-frame dlr">
+      <div class="dlr-frame-bar">
+        <span class="dlr-lockup">
+          <span class="dlr-mark"><span class="dlr-glyph" aria-hidden="true"></span>Dollarous</span>
+          <span class="dlr-slogan">Fictitious FinTech</span>
+        </span>
+        <span class="dlr-frame-acts">
+          <span class="dlr-chip">Reconciliation cost</span>
+          <button class="dlr-fs" type="button" aria-pressed="false" aria-label="View this example full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M15 21h6v-6M9 21H3v-6"/></svg><span class="lb">Full screen</span></button>
+        </span>
+      </div>
+
+      <div class="dlr-frame-body">
+        <div class="calc">
+
+          <form class="calc-inputs" id="calc-form" autocomplete="off">
+            <h3>Tell us about your close</h3>
+            <div class="dlr-field">
+              <label for="i-vol">Invoices or transactions reconciled per month</label>
+              <input class="dlr-input" type="number" id="i-vol" min="1" max="500000" step="100" value="5000">
+            </div>
+            <div class="dlr-field">
+              <label for="i-cost">Fully loaded cost to process one manually</label>
+              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-cost" min="0" max="200" step="0.01" value="15.97"></div>
+              <p class="dlr-help">Benchmark: $15.97 per invoice.<sup><a href="/innovations/cost-calculator.html#sources" target="_top">1</a></sup></p>
+            </div>
+            <div class="dlr-field">
+              <label for="i-err">Share that contain an error needing correction</label>
+              <div class="calc-sliderrow">
+                <input class="calc-slider" type="range" id="i-err" min="0" max="10" step="0.1" value="3.6">
+                <output for="i-err" id="o-err">3.6%</output>
+              </div>
+              <p class="dlr-help">Benchmark: 3.6% of invoices.<sup><a href="/innovations/cost-calculator.html#sources" target="_top">1</a></sup></p>
+            </div>
+            <div class="dlr-field">
+              <label for="i-fix">Cost to identify, investigate, and fix one error</label>
+              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-fix" min="0" max="1000" step="0.5" value="53.50"></div>
+              <p class="dlr-help">Benchmark: $53.50 per error.<sup><a href="/innovations/cost-calculator.html#sources" target="_top">2</a></sup></p>
+            </div>
+            <hr class="dlr-rule">
+            <div class="dlr-field">
+              <label for="i-imp">Improvement you believe is achievable</label>
+              <div class="calc-sliderrow">
+                <input class="calc-slider" type="range" id="i-imp" min="0" max="90" step="5" value="60">
+                <output for="i-imp" id="o-imp">60%</output>
+              </div>
+              <p class="dlr-help">Your assumption, not ours. Applied to both processing and rework.</p>
+            </div>
+            <button type="button" class="calc-reset" id="calc-reset">Reset to benchmarks</button>
+          </form>
+
+          <div class="calc-out">
+            <div class="calc-hero">
+              <p class="lab">Your cost of inaction</p>
+              <p class="calc-big"><span class="cur">$</span><span id="o-day">0</span></p>
+              <p class="calc-per">per day · <b id="o-year">$0</b> per year · <span id="o-month">$0</span> per month</p>
+            </div>
+
+            <div class="calc-split">
+              <div class="calc-cell"><span class="k">Processing</span><span class="v" id="o-proc">$0</span></div>
+              <div class="calc-cell"><span class="k">Rework</span><span class="v" id="o-rework">$0</span></div>
+              <div class="calc-cell"><span class="k">Errors / yr</span><span class="v" id="o-errs">0</span></div>
+            </div>
+
+            <div class="calc-bar">
+              <div class="track"><span class="seg proc" id="seg-proc" style="width:70%"></span><span class="seg rework" id="seg-rework" style="width:30%"></span></div>
+              <div class="key"><span class="proc"><i></i>Processing labour</span><span class="rework"><i></i>Error rework</span></div>
+            </div>
+
+            <div class="calc-ba">
+              <div class="ba-card now">
+                <span class="k">Today</span>
+                <span class="v" id="o-now">$0</span>
+                <span class="n">Annual cost of the current manual process, all in.</span>
+              </div>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="ba-card next">
+                <span class="k">At your assumption</span>
+                <span class="v" id="o-next">$0</span>
+                <span class="n">Annual cost if you achieve the improvement you set.</span>
+              </div>
+            </div>
+
+            <div class="calc-lead">
+              <button type="button" class="dlr-btn" id="calc-send">Email me this breakdown</button>
+              <a class="dlr-btn ghost" href="/innovations/cost-calculator.html#sources" target="_top">See the sources</a>
+              <p class="dlr-help">Demo only. This button collects nothing and sends nothing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="dlr-frame-foot">
+        <p class="dlr-note">Dollarous is a fictitious FinTech brand created for this demonstration and is not a real company. The Dollarous mark uses "Money" by SANB from the Noun Project, CC BY 3.0. Outputs are illustrative estimates generated from figures you enter, not a forecast, quote, or professional advice.</p>
+      </div>
+    </div>
+<script>
+(function () {
+  var D = { vol: 5000, cost: 15.97, err: 3.6, fix: 53.50, imp: 60 };
+  var el = function (id) { return document.getElementById(id); };
+  var f = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var raw = function (n) { return Math.round(n).toLocaleString('en-US'); };
+
+  function calc() {
+    var vol = Math.max(0, +el('i-vol').value || 0);
+    var cost = Math.max(0, +el('i-cost').value || 0);
+    var err = Math.max(0, +el('i-err').value || 0);
+    var fix = Math.max(0, +el('i-fix').value || 0);
+    var imp = Math.max(0, +el('i-imp').value || 0);
+
+    el('o-err').textContent = err.toFixed(1) + '%';
+    el('o-imp').textContent = imp + '%';
+
+    var proc = vol * cost;
+    var errs = vol * (err / 100);
+    var rework = errs * fix;
+    var month = proc + rework;
+    var year = month * 12;
+
+    el('o-day').textContent = raw(year / 365);
+    el('o-year').textContent = f(year);
+    el('o-month').textContent = f(month);
+    el('o-proc').textContent = f(proc * 12);
+    el('o-rework').textContent = f(rework * 12);
+    el('o-errs').textContent = raw(errs * 12);
+
+    var total = proc + rework;
+    var pp = total > 0 ? (proc / total) * 100 : 50;
+    el('seg-proc').style.width = pp.toFixed(1) + '%';
+    el('seg-rework').style.width = (100 - pp).toFixed(1) + '%';
+
+    el('o-now').textContent = f(year);
+    el('o-next').textContent = f(year * (1 - imp / 100));
+  }
+
+  el('calc-form').addEventListener('input', calc);
+  el('calc-reset').addEventListener('click', function () {
+    el('i-vol').value = D.vol; el('i-cost').value = D.cost;
+    el('i-err').value = D.err; el('i-fix').value = D.fix; el('i-imp').value = D.imp;
+    calc();
+  });
+  el('calc-send').addEventListener('click', function () {
+    var b = el('calc-send');
+    b.disabled = true;
+    b.textContent = 'Demo only, nothing sent';
+    setTimeout(function () { b.disabled = false; b.textContent = 'Email me this breakdown'; }, 2400);
+  });
+  calc();
+})();
+</script>
+<script src="inv-fs.js"></script>
+</body>
+</html>

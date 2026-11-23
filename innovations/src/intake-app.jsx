@@ -147,7 +147,7 @@ function TypePicker({ sel, setSel, onBegin, onDemo, demo, tap, press }) {
       : sel.map(id => { const t = byId(id); return React.createElement("span", { key: id, className: "ix-chip", style: { "--tc": t.accent } }, t.label,
           React.createElement("button", { type: "button", "aria-label": "Remove " + t.label, onClick: () => setSel(sel.filter(x => x !== id)) }, "×")); })),
     React.createElement("div", { className: "ix-nav" },
-      demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Fill out an example"),
+      demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Auto-fill an example"),
       React.createElement("button", { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: sel.length === 0, onClick: demo ? undefined : onBegin },
         sel.length === 0 ? "Select at least one" : "Begin " + sel.length + (sel.length === 1 ? " request" : " requests") + " →"))
   );
@@ -412,7 +412,7 @@ function IntakeApp() {
         React.createElement(Field, { f: T("who", "Your name and team", { ph: "Priya Raman, Field Marketing" }), val: meta.who, onChange: (i, val) => setMeta({ who: val, camp: meta.camp }) }),
         React.createElement(Field, { f: T("camp", "Campaign or project", { ph: "Close Faster, Q3" }), val: meta.camp, onChange: (i, val) => setMeta({ who: meta.who, camp: val }) }),
         React.createElement("div", { className: "ix-nav" },
-          React.createElement("button", { type: "button", className: "ix-btn demo", onClick: runDemo }, "Fill out an example"),
+          React.createElement("button", { type: "button", className: "ix-btn demo", onClick: runDemo }, "Auto-fill an example"),
           React.createElement("button", { type: "button", className: "ix-btn go", onClick: () => setPhase("pick") }, "Get started →"))));
   } else if (phase === "pick") {
     body = React.createElement(TypePicker, { key: "pick", sel, setSel, onDemo: runDemo, onBegin: () => { setPos([0, 0]); setPhase("run"); }, demo, tap, press });

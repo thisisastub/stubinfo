@@ -1,0 +1,14 @@
+/* Cost Calculator: page-level styles. Load after styles.css. */
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sf-canvas);color:var(--sf-text);font-family:var(--sf-font-body)}
+a:not(.sf-btn){color:var(--sf-text);text-decoration:none;transition:color 120ms}a:not(.sf-btn):hover{color:var(--sf-link)}a.sf-btn{text-decoration:none}a.sf-btn--primary,a.sf-btn--primary:hover{color:#111315}
+/* hover/focus states (were inline style-hover attributes) */
+.pg1:hover{color:var(--sf-link) !important}
+.pg2:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg3:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg4:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg5:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg6:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg7:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg8:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}
+.pg9:hover{color:var(--sf-link) !important;text-decoration:underline !important;text-underline-offset:3px !important}

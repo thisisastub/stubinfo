@@ -1,15 +1,10 @@
-/* ============================================================
-   Spacing, layout & radius tokens
-   Fluid page gutter, 1240px measure, small squared-ish radii.
-   ============================================================ */
-
-:root {
-  /* --- layout --- */
-  --gutter: clamp(1.25rem, 5vw, 5rem);
-  --maxw:   1240px;
-
-  /* --- corner radius --- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 14px;
+:root{
+--sf-space-1:4px;--sf-space-2:8px;--sf-space-3:12px;--sf-space-4:16px;--sf-space-5:24px;--sf-space-6:32px;--sf-space-7:48px;--sf-space-8:64px;--sf-space-9:96px;--sf-space-10:128px;
+--sf-radius-sm:2px;--sf-radius-md:6px;--sf-radius-lg:12px;
+--sf-hairline:1px;--sf-stroke:1.5px;--sf-highlight-line:2px;
+--sf-notch:12px;
+--sf-perf-gap:6px;--sf-perf-dot-size:1px;
+--sf-grid-max:1200px;--sf-grid-cols:12; /* @kind other */
+--sf-grid-gutter:24px;--sf-grid-margin:clamp(20px,5vw,64px);
+--sf-measure:64ch;
 }

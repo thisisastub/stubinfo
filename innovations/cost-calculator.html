@@ -1,279 +1,173 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="ink" data-type="editorial">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dollarous Cost Calculator · Innovations · Tommy Stubblefield</title>
 <meta name="description" content="A lead-generation calculator that prices the cost of manual reconciliation, built for a fictitious FinTech brand and sourced to published benchmarks.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="dollarous.css">
-<link rel="stylesheet" href="inv.css">
-<link rel="stylesheet" href="calculator.css">
+<link rel="icon" type="image/svg+xml" href="/logo/stubblefield-knight-ink.svg">
+<script>document.documentElement.classList.add("dc-pending");setTimeout(function(){document.documentElement.classList.remove("dc-pending")},3000)</script>
+<style>.dc-pending [data-dc-root]{visibility:hidden}</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/css/site-chrome.css">
+<link rel="stylesheet" href="/css/cost-calculator.css">
+<!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/cost-calculator.js (behaviour reference). See README, "How to read the page files". -->
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top" aria-label="Tommy Stubblefield home">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name">Tommy Stubblefield</span>
+<div data-dc-root style="display:contents">
+<div aria-hidden="true" style="height:88px"></div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
+  <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
+    <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <span data-piece="" aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+      <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="../index.html#approach">About Me</a>
-      <a class="nav-link" href="../index.html#strategy">Content Strategy</a>
-      <a class="nav-link" href="index.html">Innovations</a>
-      <a class="nav-link" href="../index.html#work">Writing</a>
-      <a class="btn btn-solid" href="../index.html#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
+    <nav style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
+      <a href="/" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Home</a>
+      <a href="/what-i-do.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">What I do</a>
+      <a href="/content-strategy.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Content strategy</a>
+      <a href="/innovations/" class="sf-meta" data-nav="" aria-current="page" style="text-decoration:none;padding-bottom:6px">Innovations</a>
+      <a href="/#contact" class="sf-btn sf-btn--primary sf-btn--sm" data-contact="">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-<section class="inv-hero">
-  <div class="inv-hero-bg" aria-hidden="true"><video src="hero-calc.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video></div>
-  <div class="wrap">
-    <a class="inv-back" href="index.html">← All innovations</a>
-    <h1>Cost Calculator</h1>
-    <p class="inv-lead">A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</p>
-  </div>
+<section style="position:relative;overflow:hidden;">
+<video muted src="/innovations/hero-calc.mp4" autoplay="" loop="" playsinline="" preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0.55"></video>
+<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,19,21,0.94) 0%,rgba(17,19,21,0.78) 40%,rgba(17,19,21,0.35) 100%),linear-gradient(to bottom,transparent 60%,var(--sf-canvas))"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:120px clamp(24px,5vw,40px) 104px;display:flex;flex-direction:column;gap:24px">
+<a class="pg1" href="/innovations/" style="align-self:flex-start;font:500 14px/1 var(--sf-font-body);color:var(--sf-text-muted)"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(225deg);margin-right:0.35em"><path d="M7 7h10v10M7 17 17 7"></path></svg>All innovations</a>
+<h1 style="margin:0;max-width:880px;font:500 clamp(40px,4.6vw,64px)/1.06 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">Cost Calculator</h1>
+<p style="margin:0;font:400 18px/1.65 var(--sf-font-body);color:var(--sf-text-muted);max-width:640px;text-wrap:pretty">A few numbers in, one uncomfortable number out: what the problem you have not fixed costs you per day.</p>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>The problem</h2>
-    </div>
-    <div class="cs-prose">
-      <p>Executives and decisionmakers in charge of operations and budgets often need more than big, beautiful datapoints and aesthetically pleasing reports. Somewhere in the Informational phase of the customer journey, they need to see a personalized case made for your business in scenarios where minds still have to be changed. A case study is fine, but they don&rsquo;t need to know how much money you made for someone else. They need to know your impact on their own bottom line.</p>
-    </div>
-  </div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">The problem</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Executives and decision makers in charge of operations and budgets often need more than big, beautiful datapoints and aesthetically pleasing reports. Somewhere in the Informational phase of the customer journey, they need to see a personalized case made for your business in scenarios where minds still have to be changed. A case study is fine, but they don&rsquo;t need to know how much money you made for someone else. They need to know your impact on their own bottom line.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>The solution</h2>
-    </div>
-    <div class="cs-prose">
-      <p>Interactive ROI calculators are nothing new. But my calculator has a few features that make it worthwhile for busy execs with a lot riding on their daily decisions:</p>
-      <ul>
-        <li><strong>Usability:</strong> it is streamlined ruthlessly to save work on the user&rsquo;s end. It&rsquo;s responsive for phones and has clear pathing on desktop.</li>
-        <li><strong>Data mix:</strong> Depending on the industry, it relies on a mix of publicly available data (to prove you are speaking the same language) from trusted sources, and your internal data (to prove you are bringing unique value).</li>
-        <li>It makes a strong, quantitative case honestly. There are no built-in guardrails preventing it from saying &ldquo;No, this isn&rsquo;t for you.&rdquo; Otherwise, why are we calculating anything at all?</li>
-        <li>It demonstrates your strategic, consulative value and ends on a clear CTA for next steps. It&rsquo;s part of an inbound path for clients discovering you and learning what they need.</li>
-      </ul>
-    </div>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">The solution</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Interactive ROI calculators are nothing new. But my calculator has a few features that make it worthwhile for busy execs with a lot riding on their daily decisions:</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span><strong style="font-weight:500;color:var(--sf-text)">Usability:</strong> it is streamlined ruthlessly to save work on the user&rsquo;s end. It&rsquo;s responsive for phones and has clear pathing on desktop.</span></li>
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span><strong style="font-weight:500;color:var(--sf-text)">Data mix:</strong> Depending on the industry, it relies on a mix of publicly available data (to prove you are speaking the same language) from trusted sources, and your internal data (to prove you are bringing unique value).</span></li>
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span>It makes a strong, quantitative case honestly. There are no built-in guardrails preventing it from saying &ldquo;No, this isn&rsquo;t for you.&rdquo; Otherwise, why are we calculating anything at all?</span></li>
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span>It demonstrates your strategic, consultative value and ends on a clear CTA for next steps. It&rsquo;s part of an inbound path for clients discovering you and learning what they need.</span></li>
+</ul>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule" id="the-model">
-  <div class="wrap">
-    <div class="cs-head" style="margin-bottom:1.6rem;">
-      <h2>The model</h2>
-      <p style="margin-top:1rem;color:var(--ink-70);">Fully working. Change any input and every figure recalculates.</p>
-    </div>
-
-    <div class="dlr-frame dlr">
-      <div class="dlr-frame-bar">
-        <span class="dlr-lockup">
-          <span class="dlr-mark"><span class="dlr-glyph" aria-hidden="true"></span>Dollarous</span>
-          <span class="dlr-slogan">Fictitious FinTech</span>
-        </span>
-        <span class="dlr-frame-acts">
-          <span class="dlr-chip">Reconciliation cost</span>
-          <button class="dlr-fs" type="button" aria-pressed="false" aria-label="View this example full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M15 21h6v-6M9 21H3v-6"/></svg><span class="lb">Full screen</span></button>
-        </span>
-      </div>
-
-      <div class="dlr-frame-body">
-        <div class="calc">
-
-          <form class="calc-inputs" id="calc-form" autocomplete="off">
-            <h3>Tell us about your close</h3>
-            <div class="dlr-field">
-              <label for="i-vol">Invoices or transactions reconciled per month</label>
-              <input class="dlr-input" type="number" id="i-vol" min="1" max="500000" step="100" value="5000">
-            </div>
-            <div class="dlr-field">
-              <label for="i-cost">Fully loaded cost to process one manually</label>
-              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-cost" min="0" max="200" step="0.01" value="15.97"></div>
-              <p class="dlr-help">Benchmark: $15.97 per invoice.<sup><a href="#sources">1</a></sup></p>
-            </div>
-            <div class="dlr-field">
-              <label for="i-err">Share that contain an error needing correction</label>
-              <div class="calc-sliderrow">
-                <input class="calc-slider" type="range" id="i-err" min="0" max="10" step="0.1" value="3.6">
-                <output for="i-err" id="o-err">3.6%</output>
-              </div>
-              <p class="dlr-help">Benchmark: 3.6% of invoices.<sup><a href="#sources">1</a></sup></p>
-            </div>
-            <div class="dlr-field">
-              <label for="i-fix">Cost to identify, investigate, and fix one error</label>
-              <div class="calc-num"><span class="pre">$</span><input class="dlr-input" type="number" id="i-fix" min="0" max="1000" step="0.5" value="53.50"></div>
-              <p class="dlr-help">Benchmark: $53.50 per error.<sup><a href="#sources">2</a></sup></p>
-            </div>
-            <hr class="dlr-rule">
-            <div class="dlr-field">
-              <label for="i-imp">Improvement you believe is achievable</label>
-              <div class="calc-sliderrow">
-                <input class="calc-slider" type="range" id="i-imp" min="0" max="90" step="5" value="60">
-                <output for="i-imp" id="o-imp">60%</output>
-              </div>
-              <p class="dlr-help">Your assumption, not ours. Applied to both processing and rework.</p>
-            </div>
-            <button type="button" class="calc-reset" id="calc-reset">Reset to benchmarks</button>
-          </form>
-
-          <div class="calc-out">
-            <div class="calc-hero">
-              <p class="lab">Your cost of inaction</p>
-              <p class="calc-big"><span class="cur">$</span><span id="o-day">0</span></p>
-              <p class="calc-per">per day · <b id="o-year">$0</b> per year · <span id="o-month">$0</span> per month</p>
-            </div>
-
-            <div class="calc-split">
-              <div class="calc-cell"><span class="k">Processing</span><span class="v" id="o-proc">$0</span></div>
-              <div class="calc-cell"><span class="k">Rework</span><span class="v" id="o-rework">$0</span></div>
-              <div class="calc-cell"><span class="k">Errors / yr</span><span class="v" id="o-errs">0</span></div>
-            </div>
-
-            <div class="calc-bar">
-              <div class="track"><span class="seg proc" id="seg-proc" style="width:70%"></span><span class="seg rework" id="seg-rework" style="width:30%"></span></div>
-              <div class="key"><span class="proc"><i></i>Processing labour</span><span class="rework"><i></i>Error rework</span></div>
-            </div>
-
-            <div class="calc-ba">
-              <div class="ba-card now">
-                <span class="k">Today</span>
-                <span class="v" id="o-now">$0</span>
-                <span class="n">Annual cost of the current manual process, all in.</span>
-              </div>
-              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              <div class="ba-card next">
-                <span class="k">At your assumption</span>
-                <span class="v" id="o-next">$0</span>
-                <span class="n">Annual cost if you achieve the improvement you set.</span>
-              </div>
-            </div>
-
-            <div class="calc-lead">
-              <button type="button" class="dlr-btn" id="calc-send">Email me this breakdown</button>
-              <a class="dlr-btn ghost" href="#sources">See the sources</a>
-              <p class="dlr-help">Demo only. This button collects nothing and sends nothing.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="dlr-frame-foot">
-        <p class="dlr-note">Dollarous is a fictitious FinTech brand created for this demonstration and is not a real company. The Dollarous mark uses "Money" by SANB from the Noun Project, CC BY 3.0. Outputs are illustrative estimates generated from figures you enter, not a forecast, quote, or professional advice.</p>
-      </div>
-    </div>
-
-    <details class="cs-fold" id="sources" style="margin-top:2.4rem;">
-      <summary>Where the default figures come from</summary>
-      <div class="cs-prose">
-      <p style="font-size:0.92rem;"><strong>1.</strong> Manual processing cost of $15.97 per invoice, automated cost of $3.24, and a 3.6% invoice error rate are attributed to the Institute of Finance &amp; Management's AP Benchmarking Report, as compiled in <a href="https://parsli.co/blog/data-entry-statistics" target="_blank" rel="noopener">Parsli's data entry statistics roundup</a> (2026). An older Aberdeen Group figure of roughly $15 per manually processed invoice is cited by <a href="https://fiscaltec.com/the-cost-of-errors-in-statement-reconciliation-what-ap-teams-must-know/" target="_blank" rel="noopener">Fiscaltec</a> and is consistent with it.</p>
-      <p style="font-size:0.92rem;"><strong>2.</strong> The $53.50 cost to identify, investigate, and rectify a single invoice error is attributed to IOFM, as reported by <a href="https://parsli.co/blog/true-cost-manual-data-entry-2026" target="_blank" rel="noopener">Parsli</a> (2026).</p>
-      <p style="font-size:0.92rem;"><strong>3.</strong> For context on how common the manual process still is: the Association for Financial Professionals found 44% of organisations still perform manual data entry for bank reconciliation, per the same Parsli compilation, and a 2025 Kani Payments survey of 250 financial institutions found 56% still reconcile in spreadsheets, as reported by <a href="https://tier2systems.com/en/blog/account-reconciliation-costs/" target="_blank" rel="noopener">Tier2 Systems</a>.</p>
-      <p style="font-size:0.86rem;color:var(--ink-55,var(--ink-70));">These are published industry benchmarks, cited so the tool's starting values are traceable. They describe the sector, not any client of mine, and no figure on this page is drawn from real client data.</p>
-      </div>
-    </details>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">The model</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Fully working. Change any input and every figure recalculates.</p>
+</div>
+</div>
+<iframe data-autoh="" src="/innovations/model-calc.html" title="Dollarous cost calculator" allow="fullscreen; autoplay" style="display:block;width:100%;height:1100px;border:0;background:transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 4px 12px rgba(0,0,0,0.35),0 1px 2px rgba(0,0,0,0.3)"></iframe>
+<details id="sources" style="scroll-margin-top:96px;background:var(--sf-surface);padding:20px 24px">
+<summary style="cursor:pointer;font:500 16px/1.4 var(--sf-font-body);color:var(--sf-text)">Where the default figures come from</summary>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;max-width:760px">
+<p style="margin:0;font:400 14px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">1.</strong> Manual processing cost of $15.97 per invoice, automated cost of $3.24, and a 3.6% invoice error rate are attributed to the Institute of Finance &amp; Management's AP Benchmarking Report, as compiled in <a class="pg2" href="https://parsli.co/blog/data-entry-statistics" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Parsli's data entry statistics roundup</a> (2026). An older Aberdeen Group figure of roughly $15 per manually processed invoice is cited by <a class="pg3" href="https://fiscaltec.com/the-cost-of-errors-in-statement-reconciliation-what-ap-teams-must-know/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Fiscaltec</a> and is consistent with it.</p>
+<p style="margin:0;font:400 14px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">2.</strong> The $53.50 cost to identify, investigate, and rectify a single invoice error is attributed to IOFM, as reported by <a class="pg4" href="https://parsli.co/blog/true-cost-manual-data-entry-2026" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Parsli</a> (2026).</p>
+<p style="margin:0;font:400 14px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">3.</strong> For context on how common the manual process still is: the Association for Financial Professionals found 44% of organisations still perform manual data entry for bank reconciliation, per the same Parsli compilation, and a 2025 Kani Payments survey of 250 financial institutions found 56% still reconcile in spreadsheets, as reported by <a class="pg5" href="https://tier2systems.com/en/blog/account-reconciliation-costs/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Tier2 Systems</a>.</p>
+<p style="margin:0;font:400 14px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">These are published industry benchmarks, cited so the tool's starting values are traceable. They describe the sector, not any client of mine, and no figure on this page is drawn from real client data.</p>
+</div>
+</details>
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<span aria-hidden="true" style="flex:1 1 260px"></span>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">1.</strong> Manual processing cost of $15.97 per invoice, automated cost of $3.24, and a 3.6% invoice error rate are attributed to the Institute of Finance &amp; Management's AP Benchmarking Report, as compiled in <a class="pg6" href="https://parsli.co/blog/data-entry-statistics" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Parsli's data entry statistics roundup</a> (2026). An older Aberdeen Group figure of roughly $15 per manually processed invoice is cited by <a class="pg7" href="https://fiscaltec.com/the-cost-of-errors-in-statement-reconciliation-what-ap-teams-must-know/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Fiscaltec</a> and is consistent with it.</p>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">2.</strong> The $53.50 cost to identify, investigate, and rectify a single invoice error is attributed to IOFM, as reported by <a class="pg8" href="https://parsli.co/blog/true-cost-manual-data-entry-2026" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Parsli</a> (2026).</p>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><strong style="font-weight:500;color:var(--sf-text)">3.</strong> For context on how common the manual process still is: the Association for Financial Professionals found 44% of organisations still perform manual data entry for bank reconciliation, per the same Parsli compilation, and a 2025 Kani Payments survey of 250 financial institutions found 56% still reconcile in spreadsheets, as reported by <a class="pg9" href="https://tier2systems.com/en/blog/account-reconciliation-costs/" target="_blank" rel="noopener" style="color:var(--sf-link);text-decoration:none">Tier2 Systems</a>.</p>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">These are published industry benchmarks, cited so the tool's starting values are traceable. They describe the sector, not any client of mine, and no figure on this page is drawn from real client data.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>How I made this one</h2>
-    </div>
-    <div class="cs-prose">
-      <p>Using Claude Design and other tools to research authoritative data resources, the cost calculator has the flexibility to operate within a variety of frontend modes and styles. That&rsquo;s important when six digit budgets depend on the ability to display properly in the browser.</p>
-    </div>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">How I made this one</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Using Claude Design and other tools to research authoritative data resources, the cost calculator has the flexibility to operate within a variety of frontend modes and styles. That&rsquo;s important when six digit budgets depend on the ability to display properly in the browser.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
-    <p style="font-family:var(--font-display);font-size:var(--text-2xl);">Next: <a href="thought-leadership.html">Thought Leadership Enhancements</a></p>
-    <a class="btn btn-ghost" href="index.html">All innovations</a>
-  </div>
-</section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name" style="font-size:1rem;">Tommy Stubblefield</span>
-    </a>
-    <span class="tag">Thinking forward.</span>
-    <span class="legal">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</span>
+
+<footer style="background:var(--sf-surface)"><div style="max-width:1200px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 48px;box-sizing:border-box;display:grid;gap:48px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
+    <div style="display:grid;gap:16px;align-content:start;max-width:420px">
+      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:12px">
+        <span aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+        <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
+      </a>
+      <p class="sf-small sf-muted" style="margin:0">Strategic marketer, builder, and thought leader.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:48px 96px">
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Pages</span>
+        <a href="/" class="sf-small ft1" style="color:var(--sf-text);text-decoration:none">Home</a>
+        <a href="/what-i-do.html" class="sf-small ft2" style="color:var(--sf-text);text-decoration:none">What I do</a>
+        <a href="/content-strategy.html" class="sf-small ft3" style="color:var(--sf-text);text-decoration:none">Content strategy</a>
+        <a href="/innovations/" class="sf-small ft4" style="color:var(--sf-text);text-decoration:none">Innovations</a>
+        <a href="/#contact" class="sf-small ft5" style="color:var(--sf-text);text-decoration:none">Contact</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Elsewhere</span>
+        <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" class="sf-small ft6" style="color:var(--sf-text);text-decoration:none">Content Strategy Library<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+        <a href="https://www.linkedin.com/in/thisisastub" target="_blank" rel="noopener" class="sf-small ft7" style="color:var(--sf-text);text-decoration:none">LinkedIn<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+      </div>
+    </div>
   </div>
-</footer>
-
-<script>
-(function () {
-  var D = { vol: 5000, cost: 15.97, err: 3.6, fix: 53.50, imp: 60 };
-  var el = function (id) { return document.getElementById(id); };
-  var f = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
-  var raw = function (n) { return Math.round(n).toLocaleString('en-US'); };
-
-  function calc() {
-    var vol = Math.max(0, +el('i-vol').value || 0);
-    var cost = Math.max(0, +el('i-cost').value || 0);
-    var err = Math.max(0, +el('i-err').value || 0);
-    var fix = Math.max(0, +el('i-fix').value || 0);
-    var imp = Math.max(0, +el('i-imp').value || 0);
-
-    el('o-err').textContent = err.toFixed(1) + '%';
-    el('o-imp').textContent = imp + '%';
-
-    var proc = vol * cost;
-    var errs = vol * (err / 100);
-    var rework = errs * fix;
-    var month = proc + rework;
-    var year = month * 12;
-
-    el('o-day').textContent = raw(year / 365);
-    el('o-year').textContent = f(year);
-    el('o-month').textContent = f(month);
-    el('o-proc').textContent = f(proc * 12);
-    el('o-rework').textContent = f(rework * 12);
-    el('o-errs').textContent = raw(errs * 12);
-
-    var total = proc + rework;
-    var pp = total > 0 ? (proc / total) * 100 : 50;
-    el('seg-proc').style.width = pp.toFixed(1) + '%';
-    el('seg-rework').style.width = (100 - pp).toFixed(1) + '%';
-
-    el('o-now').textContent = f(year);
-    el('o-next').textContent = f(year * (1 - imp / 100));
-  }
-
-  el('calc-form').addEventListener('input', calc);
-  el('calc-reset').addEventListener('click', function () {
-    el('i-vol').value = D.vol; el('i-cost').value = D.cost;
-    el('i-err').value = D.err; el('i-fix').value = D.fix; el('i-imp').value = D.imp;
-    calc();
-  });
-  el('calc-send').addEventListener('click', function () {
-    var b = el('calc-send');
-    b.disabled = true;
-    b.textContent = 'Demo only, nothing sent';
-    setTimeout(function () { b.disabled = false; b.textContent = 'Email me this breakdown'; }, 2400);
-  });
-  calc();
-})();
-</script>
-<script src="inv-nav.js"></script>
-<script src="inv-fs.js"></script>
+  <hr class="sf-perf" aria-hidden="true">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 48px">
+    <div style="display:grid;gap:4px;max-width:720px">
+      <p class="sf-label sf-muted" style="margin:0">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</p>
+      <p class="sf-label sf-muted" style="margin:0">Content on this site is not licensed for use in training AI or large language models.</p>
+    </div>
+    <button type="button" data-dc-on-click="open" class="sf-btn sf-btn--ghost sf-btn--sm">Imagery credits</button>
+  </div>
+</div></footer>
+<div data-dc-if="isOpen" style="display:contents">
+  <div data-dc-on-click="close" style="position:fixed;inset:0;z-index:100;background:var(--sf-canvas);display:grid;place-items:center;padding:24px">
+    <div role="dialog" aria-label="Imagery credits" data-dc-on-click="stop" style="width:100%;max-width:600px;max-height:85vh;overflow-y:auto;box-sizing:border-box;background:var(--sf-surface);border:1px solid var(--sf-rule);border-radius:2px;padding:32px;display:grid;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <h2 class="sf-h3" style="margin:0">Imagery credits</h2>
+        <button type="button" data-dc-on-click="close" class="sf-btn sf-btn--ghost sf-btn--sm">Close</button>
+      </div>
+      <dl style="display:grid;gap:0;margin:0">
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Midtown Atlanta skyline from Clara Meer in Piedmont Park</dt><dd class="sf-label sf-muted" style="margin:0">Daniel Mayer, licensed CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Midtown_Atlanta_skyline_from_Clara_Meer_in_Piedmont_Park.JPG" target="_blank" rel="noopener">Wikimedia Commons<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">A team discussing strategy around a table</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Portrait of Tommy Stubblefield</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Office phone call</dt><dd class="sf-label sf-muted" style="margin:0">maslme via Pixabay. <a href="https://pixabay.com/photos/phone-office-make-a-phone-call-4974179/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Man presenting with his colleagues (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/man-presenting-with-his-colleagues-7812404/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Downtown Atlanta architecture (video)</dt><dd class="sf-label sf-muted" style="margin:0">phlyingdoctor via Pixabay. <a href="https://pixabay.com/videos/architecture-city-building-downtown-290618/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Aerial view of Atlanta skyline at sunset (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/aerial-view-of-atlanta-skyline-at-sunset-33133596/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Queen check in chess (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/queen-check-in-chess-855386/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Professional podcast interview in studio setting (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/professional-podcast-interview-in-studio-setting-38630305/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark icon: Chess (knight)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Ilham Fitrotul Hayat from Noun Project. <a href="https://thenounproject.com/icon/chess-7876095/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark hover icons: Chess (pawn, rook, bishop, queen, king)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Uswa KDT from Noun Project. <a href="https://thenounproject.com/browse/collection-icon/chess-152566/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Brand logos</dt><dd class="sf-label sf-muted" style="margin:0">Property of their respective owners.</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/js/dc-runtime.js"></script>
+<script src="/js/cost-calculator.js"></script>
+<script>DC.mount(Component)</script>
 </body>
 </html>

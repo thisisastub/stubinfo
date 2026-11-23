@@ -187,7 +187,7 @@ function TypePicker({ sel, setSel, onBegin, onDemo, demo, tap, press }) {
     React.createElement(
       "div",
       { className: "ix-nav" },
-      demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Fill out an example"),
+      demo ? null : React.createElement("button", { type: "button", className: "ix-btn demo", onClick: onDemo }, "Auto-fill an example"),
       React.createElement(
         "button",
         { type: "button", className: "ix-btn go" + (press === "go" ? " press" : ""), disabled: sel.length === 0, onClick: demo ? void 0 : onBegin },
@@ -527,7 +527,7 @@ function IntakeApp() {
         React.createElement(
           "div",
           { className: "ix-nav" },
-          React.createElement("button", { type: "button", className: "ix-btn demo", onClick: runDemo }, "Fill out an example"),
+          React.createElement("button", { type: "button", className: "ix-btn demo", onClick: runDemo }, "Auto-fill an example"),
           React.createElement("button", { type: "button", className: "ix-btn go", onClick: () => setPhase("pick") }, "Get started \u2192")
         )
       )

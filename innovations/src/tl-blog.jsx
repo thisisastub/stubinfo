@@ -1,172 +1,123 @@
-/* Thought Leadership Enhancer · the Dollarous article and its enhancements.
-   Every enhancement is either a class on .tl-post or a block rendered here
-   when its switch is on. The off state is the wall of text we started with. */
-
-const TL_AUTHOR = { name: "Dev Raghunathan", role: "Director of Financial Controls, Dollarous", shot: "dev-headshot.png" };
+/* NOTE (Nov 2026): Claude Design edited this demo in compiled form. This file is that compiled
+   output, so recompiling src/ -> js/ keeps the November changes. Edit here as plain React.createElement. */
+const TL_AUTHOR = { name: "Dev Raghunathan", role: "Director of Financial Controls, Dollarous", shot: "/innovations/dev-headshot.png" };
 const TL_SME = { name: "Marisol Ferreira", role: "VP, Financial Operations, Dollarous", initial: "M" };
-
 const TL_SLICES = [
   { k: "Clearing exceptions", v: 44, c: "#0B3D2C" },
   { k: "Matching and posting", v: 24, c: "#1E8A62" },
   { k: "Review and sign-off", v: 19, c: "#14624A" },
   { k: "Reporting and variance notes", v: 13, c: "#93A896" }
 ];
-
 const TL_SLIDES = [
-  { tone: "l", h: "The close is not one job.", p: "It is two. One half is arithmetic and the other half is judgment, and only one of them can be handed to software.", src: "Dollarous Financial Operations Benchmark, 2026" },
-  { tone: "g", big: "44%", cap: "of close time goes to clearing exceptions", p: "Not to matching. Not to posting. To deciding what to do about the things that did not match.", src: "Dollarous Financial Operations Benchmark, 2026" },
-  { tone: "l", big: "41%", cap: "of teams automated the matching first", p: "The matching was already the fast part. Automating it made a fast thing faster and left the slow thing alone.", src: "Dollarous Financial Operations Benchmark, 2026" },
-  { tone: "k", h: "You cannot automate a judgment nobody has written down.", p: "If the rule takes a paragraph to explain, you are not automating a process. You are automating an argument.", src: "Dollarous Financial Operations Benchmark, 2026" },
-  { tone: "l", h: "Write the rule. Then automate it.", p: "Sample fifty exceptions. Sort them by why they broke. Write the decision for the top three in one sentence each. Automate those.", src: "Dollarous Financial Operations Benchmark, 2026" }
+  { tone: "dg", h: "The close is not one job.", p: "One half is arithmetic and the other half is judgment, and only one of them can be handed to software.", src: "Dollarous Financial Operations Benchmark, 2026" },
+  { tone: "mg", h: "44% of close time goes to clearing exceptions", p: "Not to matching. Not to posting. To deciding what to do about the things that did not match.", src: "Dollarous Financial Operations Benchmark, 2026" },
+  { tone: "cr", h: "41% of teams automated the matching first", p: "The matching was already the fast part.", src: "Dollarous Financial Operations Benchmark, 2026" },
+  { tone: "ink", h: "You cannot automate a judgment nobody has written down.", p: "If the rule takes a paragraph to explain, you are automating an argument.", src: "Dollarous Financial Operations Benchmark, 2026" },
+  { tone: "bg", h: "Write the rule. Then automate it.", p: "Sort fifty exceptions by why they broke. Write the top three decisions in one sentence each.", src: "Dollarous Financial Operations Benchmark, 2026" }
 ];
-
-const V = ({ t, def }) => <span className="tl-vocab" data-def={def} tabIndex={0}>{t}</span>;
-const S = ({ children }) => <span className="tl-stat">{children}</span>;
-
-const TlIcon = ({ d, fill }) => <svg viewBox="0 0 24 24" fill={fill ? "currentColor" : "none"} stroke={fill ? "none" : "currentColor"} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>;
-
-/* ---------------- listen bar ---------------- */
+const TL_SLIDE_VIS = ["<svg viewBox=\"0 0 260 120\" aria-hidden=\"true\"><rect x=\"8\" y=\"10\" width=\"116\" height=\"100\" fill=\"#FFFFFF\"/><rect x=\"137.5\" y=\"11.5\" width=\"113\" height=\"97\" fill=\"none\" stroke=\"#E2B75A\" stroke-width=\"3\" stroke-dasharray=\"6 5\"/><g font-family=\"Archivo, system-ui, sans-serif\" text-anchor=\"middle\"><text x=\"66\" y=\"58\" font-size=\"11\" font-weight=\"700\" letter-spacing=\"1.2\" fill=\"#0B3D2C\">ARITHMETIC</text><text x=\"66\" y=\"74\" font-size=\"9.5\" fill=\"#14624A\">Software can do it</text><text x=\"194\" y=\"58\" font-size=\"11\" font-weight=\"700\" letter-spacing=\"1.2\" fill=\"#E2B75A\">JUDGMENT</text><text x=\"194\" y=\"74\" font-size=\"9.5\" fill=\"rgba(255,255,255,0.7)\">People still do it</text></g></svg>","<svg viewBox=\"0 0 260 130\" aria-hidden=\"true\"><circle cx=\"130\" cy=\"65\" r=\"52\" fill=\"none\" stroke=\"rgba(255,255,255,0.18)\" stroke-width=\"18\"/><circle cx=\"130\" cy=\"65\" r=\"52\" fill=\"none\" stroke=\"#E2B75A\" stroke-width=\"18\" stroke-dasharray=\"143.8 326.7\" transform=\"rotate(-90 130 65)\"/><text x=\"130\" y=\"76\" text-anchor=\"middle\" font-family=\"panoptica, IBM Plex Mono, monospace\" font-size=\"32\" fill=\"#FFFFFF\">44%</text></svg>","<svg viewBox=\"0 0 260 128\" aria-hidden=\"true\"><g font-family='Archivo, system-ui, sans-serif' font-size=\"10.5\"><text x=\"0\" y=\"17\" fill=\"#0C100D\" font-weight=\"700\">Matching</text><rect x=\"86\" y=\"6\" width=\"141\" height=\"16\" fill=\"#A8873C\"/><text x=\"233\" y=\"18\" fill=\"#0C100D\" font-weight=\"700\">41%</text><text x=\"0\" y=\"49\" fill=\"#474D46\">Posting</text><rect x=\"86\" y=\"38\" width=\"90\" height=\"16\" fill=\"#14624A\"/><text x=\"182\" y=\"50\" fill=\"#474D46\">26%</text><text x=\"0\" y=\"81\" fill=\"#474D46\">Reporting</text><rect x=\"86\" y=\"70\" width=\"65\" height=\"16\" fill=\"#14624A\"/><text x=\"157\" y=\"82\" fill=\"#474D46\">19%</text><text x=\"0\" y=\"113\" fill=\"#474D46\">Exceptions</text><rect x=\"86\" y=\"102\" width=\"34\" height=\"16\" fill=\"#14624A\"/><text x=\"126\" y=\"114\" fill=\"#474D46\">10%</text></g></svg>","<svg viewBox=\"0 0 260 128\" aria-hidden=\"true\"><path d=\"M92 6 H152 L172 26 V122 H92 Z\" fill=\"none\" stroke=\"rgba(255,255,255,0.75)\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M152 6 V26 H172\" fill=\"none\" stroke=\"rgba(255,255,255,0.75)\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><g stroke=\"rgba(255,255,255,0.28)\" stroke-width=\"2.5\" stroke-dasharray=\"4 5\"><line x1=\"104\" y1=\"44\" x2=\"160\" y2=\"44\"/><line x1=\"104\" y1=\"58\" x2=\"148\" y2=\"58\"/></g><text x=\"132\" y=\"110\" text-anchor=\"middle\" font-family=\"Newsreader, Georgia, serif\" font-size=\"48\" font-weight=\"600\" fill=\"#E2B75A\">?</text></svg>","<svg viewBox=\"0 0 260 110\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"6\" y=\"14\" width=\"50\" height=\"50\" fill=\"rgba(255,255,255,0.12)\" stroke=\"none\"/><circle cx=\"28\" cy=\"36\" r=\"9\"/><line x1=\"35\" y1=\"43\" x2=\"43\" y2=\"51\"/><rect x=\"74\" y=\"14\" width=\"50\" height=\"50\" fill=\"rgba(255,255,255,0.12)\" stroke=\"none\"/><path d=\"M87 29h24M87 39h18M87 49h11\"/><rect x=\"142\" y=\"14\" width=\"50\" height=\"50\" fill=\"rgba(255,255,255,0.12)\" stroke=\"none\"/><path d=\"M157 51l3-11 14-14 8 8-14 14z\"/><rect x=\"204\" y=\"14\" width=\"50\" height=\"50\" fill=\"#E2B75A\" stroke=\"none\"/><path d=\"M219 39l7 7 14-15\" stroke=\"#0B3D2C\" stroke-width=\"2.6\"/><path d=\"M59 39h12M127 39h12M195 39h6\" stroke=\"rgba(255,255,255,0.55)\"/></g><g font-family='Archivo, system-ui, sans-serif' font-size=\"9.5\" font-weight=\"700\" fill=\"#FFFFFF\" text-anchor=\"middle\"><text x=\"31\" y=\"84\">Sample 50</text><text x=\"99\" y=\"84\">Sort by cause</text><text x=\"167\" y=\"84\">Write the rule</text><text x=\"229\" y=\"84\">Automate</text></g></svg>"];
+const V = ({ t, def }) => /* @__PURE__ */ React.createElement("span", { className: "tl-vocab", "data-def": def, tabIndex: 0 }, t);
+const S = ({ children }) => /* @__PURE__ */ React.createElement("span", { className: "tl-stat" }, children);
+const TlIcon = ({ d, fill }) => /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: fill ? "currentColor" : "none", stroke: fill ? "none" : "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("path", { d }));
 function TlListen() {
   const [playing, setPlaying] = React.useState(false);
   const [at, setAt] = React.useState(0);
   const [len, setLen] = React.useState(0);
   const audio = React.useRef(null);
-
-  React.useEffect(() => () => { if (audio.current) audio.current.pause(); }, []);
-
+  React.useEffect(() => () => {
+    if (audio.current) audio.current.pause();
+  }, []);
   const toggle = () => {
     const a = audio.current;
     if (!a) return;
-    if (a.paused) { a.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); }
-    else { a.pause(); setPlaying(false); }
+    if (a.paused) {
+      a.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    } else {
+      a.pause();
+      setPlaying(false);
+    }
   };
-  const clock = t => {
+  const clock = (t) => {
     if (!t || !isFinite(t)) return "0:00";
     const m = Math.floor(t / 60), sec = Math.floor(t % 60);
     return m + ":" + String(sec).padStart(2, "0");
   };
-  const seek = e => {
+  const seek = (e) => {
     const a = audio.current;
     if (!a || !len) return;
     const b = e.currentTarget.getBoundingClientRect();
-    a.currentTime = ((e.clientX - b.left) / b.width) * len;
+    a.currentTime = (e.clientX - b.left) / b.width * len;
   };
-
-  return (
-    <div className="tl-tts" data-tlwhy="A recorded read of the article, so it can be listened to on a commute or at a desk. The script is curated before it goes to voice: figure captions are read as sentences, the stat markup is skipped rather than spelled out, and nothing arrives as punctuation soup.">
-      <audio ref={audio} src="dollarous-article.mp3" preload="metadata"
-        onLoadedMetadata={e => setLen(e.target.duration)}
-        onTimeUpdate={e => setAt(e.target.currentTime)}
-        onEnded={() => { setPlaying(false); setAt(0); if (audio.current) audio.current.currentTime = 0; }} />
-      <button type="button" className="pl" onClick={toggle} aria-label={playing ? "Pause" : "Listen to this article"}>
-        {playing ? <TlIcon fill d="M7 5h4v14H7zM13 5h4v14h-4z" /> : <TlIcon fill d="M8 5v14l11-7z" />}
-      </button>
-      <span className="lab">Listen to this article<span>Curated for screen readers</span></span>
-      <span className="bar" onClick={seek} role="presentation"><i style={{ width: (len ? (at / len) * 100 : 0) + "%" }} /></span>
-      <span className="dur">{playing || at ? clock(at) + " / " : ""}{clock(len)}</span>
-    </div>
-  );
+  return /* @__PURE__ */ React.createElement("div", { className: "tl-tts", "data-tlwhy": "A recorded read of the article, so it can be listened to on a commute or at a desk. The script is curated before it goes to voice: figure captions are read as sentences, the stat markup is skipped rather than spelled out, and nothing arrives as punctuation soup." }, /* @__PURE__ */ React.createElement(
+    "audio",
+    {
+      ref: audio,
+      src: "/innovations/dollarous-article.mp3",
+      preload: "metadata",
+      onLoadedMetadata: (e) => setLen(e.target.duration),
+      onTimeUpdate: (e) => setAt(e.target.currentTime),
+      onEnded: () => {
+        setPlaying(false);
+        setAt(0);
+        if (audio.current) audio.current.currentTime = 0;
+      }
+    }
+  ), /* @__PURE__ */ React.createElement("button", { type: "button", className: "pl", onClick: toggle, "aria-label": playing ? "Pause" : "Listen to this article" }, playing ? /* @__PURE__ */ React.createElement(TlIcon, { fill: true, d: "M7 5h4v14H7zM13 5h4v14h-4z" }) : /* @__PURE__ */ React.createElement(TlIcon, { fill: true, d: "M8 5v14l11-7z" })), /* @__PURE__ */ React.createElement("span", { className: "lab" }, "Listen to this article", /* @__PURE__ */ React.createElement("span", null, "Curated for screen readers")), /* @__PURE__ */ React.createElement("span", { className: "bar", onClick: seek, role: "presentation" }, /* @__PURE__ */ React.createElement("i", { style: { width: (len ? at / len * 100 : 0) + "%" } })), /* @__PURE__ */ React.createElement("span", { className: "dur" }, playing || at ? clock(at) + " / " : "", clock(len)));
 }
-
-/* ---------------- key takeaways ---------------- */
-const TlTakeaways = () => (
-  <div className="tl-take" data-tlwhy="Two or three summary points above the article. A reader who bounces at the third paragraph still leaves holding the argument, and the block gives search engines a clean answer to lift.">
-    <h3>Key takeaways</h3>
-    <ul>
-      <li>Close time is not spent on matching. It is spent deciding what to do about the items that did not match.</li>
-      <li>Most teams automate the matching first because it is the easiest half to specify, not because it is the expensive half.</li>
-      <li>An exception rule you cannot write in one sentence is not ready to automate.</li>
-    </ul>
-  </div>
-);
-
-/* ---------------- the donut ---------------- */
+const TlTakeaways = () => /* @__PURE__ */ React.createElement("div", { className: "tl-take", "data-tlwhy": "Two or three summary points above the article. A reader who bounces at the third paragraph still leaves holding the argument, and the block gives search engines a clean answer to lift." }, /* @__PURE__ */ React.createElement("h3", null, "Key takeaways"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Close time is not spent on matching. It is spent deciding what to do about the items that did not match."), /* @__PURE__ */ React.createElement("li", null, "Most teams automate the matching first because it is the easiest half to specify, not because it is the expensive half."), /* @__PURE__ */ React.createElement("li", null, "An exception rule you cannot write in one sentence is not ready to automate.")));
 function TlChart() {
   const [hot, setHot] = React.useState(null);
   const R = 60, C = 2 * Math.PI * R;
   let acc = 0;
   const focus = hot !== null;
-  return (
-    <div className="tl-chart" data-tlwhy="Hover a slice or a legend row and the rest recede. Light interaction, but it acknowledges that a reader is present rather than being read at, and it lets someone answer their own question instead of reading four sentences to find one number.">
-      <h4>Where the close actually goes</h4>
-      <p className="sub">Share of total close hours, mid-market finance teams</p>
-      <div className="tl-chart-body">
-        <div className={"tl-donut" + (focus ? " focus" : "")}>
-          <svg viewBox="0 0 160 160" role="img" aria-label="Share of close hours by activity">
-            {TL_SLICES.map((s, i) => {
-              const len = (s.v / 100) * C;
-              const off = -(acc / 100) * C;
-              acc += s.v;
-              return <circle key={s.k} className={hot === i ? "on" : ""} cx="80" cy="80" r={R} stroke={s.c}
-                strokeDasharray={len + " " + (C - len)} strokeDashoffset={off}
-                onMouseEnter={() => setHot(i)} onMouseLeave={() => setHot(null)} />;
-            })}
-          </svg>
-          <span className="mid">{focus && <React.Fragment><b>{TL_SLICES[hot].v}%</b><span>{TL_SLICES[hot].k}</span></React.Fragment>}</span>
-        </div>
-        <div className={"tl-legend" + (focus ? " focus" : "")}>
-          {TL_SLICES.map((s, i) => (
-            <button key={s.k} type="button" className={hot === i ? "on" : ""}
-              onMouseEnter={() => setHot(i)} onMouseLeave={() => setHot(null)} onFocus={() => setHot(i)} onBlur={() => setHot(null)}>
-              <i style={{ background: s.c }} /><span className="k">{s.k}</span><span className="v">{s.v}%</span>
-            </button>
-          ))}
-        </div>
-      </div>
-      <p className="tl-src">Source: Dollarous Financial Operations Benchmark, 2026. Illustrative sample of 240 mid-market finance teams. Figures are representative of the sample, not population estimates.</p>
-    </div>
-  );
+  return /* @__PURE__ */ React.createElement("div", { className: "tl-chart", "data-tlwhy": "Hover a slice or a legend row and the rest recede. Light interaction, but it acknowledges that a reader is present rather than being read at, and it lets someone answer their own question instead of reading four sentences to find one number." }, /* @__PURE__ */ React.createElement("h4", null, "Where the close actually goes"), /* @__PURE__ */ React.createElement("p", { className: "sub" }, "Share of total close hours, mid-market finance teams"), /* @__PURE__ */ React.createElement("div", { className: "tl-chart-body" }, /* @__PURE__ */ React.createElement("div", { className: "tl-donut" + (focus ? " focus" : "") }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 160 160", role: "img", "aria-label": "Share of close hours by activity" }, TL_SLICES.map((s, i) => {
+    const len = s.v / 100 * C;
+    const off = -(acc / 100) * C;
+    acc += s.v;
+    return /* @__PURE__ */ React.createElement(
+      "circle",
+      {
+        key: s.k,
+        className: hot === i ? "on" : "",
+        cx: "80",
+        cy: "80",
+        r: R,
+        stroke: s.c,
+        strokeDasharray: len + " " + (C - len),
+        strokeDashoffset: off,
+        onMouseEnter: () => setHot(i),
+        onMouseLeave: () => setHot(null)
+      }
+    );
+  })), /* @__PURE__ */ React.createElement("span", { className: "mid" }, focus && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("b", null, TL_SLICES[hot].v, "%"), /* @__PURE__ */ React.createElement("span", null, TL_SLICES[hot].k)))), /* @__PURE__ */ React.createElement("div", { className: "tl-legend" + (focus ? " focus" : "") }, TL_SLICES.map((s, i) => /* @__PURE__ */ React.createElement(
+    "button",
+    {
+      key: s.k,
+      type: "button",
+      className: hot === i ? "on" : "",
+      onMouseEnter: () => setHot(i),
+      onMouseLeave: () => setHot(null),
+      onFocus: () => setHot(i),
+      onBlur: () => setHot(null)
+    },
+    /* @__PURE__ */ React.createElement("i", { style: { background: s.c } }),
+    /* @__PURE__ */ React.createElement("span", { className: "k" }, s.k),
+    /* @__PURE__ */ React.createElement("span", { className: "v" }, s.v, "%")
+  )))), /* @__PURE__ */ React.createElement("p", { className: "tl-src" }, "Source: Dollarous Financial Operations Benchmark, 2026. Illustrative sample of 240 mid-market finance teams. Figures are representative of the sample, not population estimates."));
 }
-
-const TlChartPlain = () => (
-  <div className="tl-chart-plain">
-    <p>Broken out by activity, clearing exceptions accounts for <S>44%</S> of total close hours, matching and posting for <S>24%</S>, review and sign-off for <S>19%</S>, and reporting and variance notes for the remaining <S>13%</S>, according to our 2026 benchmark of <S>240</S> mid-market finance teams.</p>
-  </div>
-);
-
-/* ---------------- mini slides ---------------- */
+const TlChartPlain = () => /* @__PURE__ */ React.createElement("div", { className: "tl-chart-plain" }, /* @__PURE__ */ React.createElement("p", null, "Broken out by activity, clearing exceptions accounts for ", /* @__PURE__ */ React.createElement(S, null, "44%"), " of total close hours, matching and posting for ", /* @__PURE__ */ React.createElement(S, null, "24%"), ", review and sign-off for ", /* @__PURE__ */ React.createElement(S, null, "19%"), ", and reporting and variance notes for the remaining ", /* @__PURE__ */ React.createElement(S, null, "13%"), ", according to our 2026 benchmark of ", /* @__PURE__ */ React.createElement(S, null, "240"), " mid-market finance teams."));
 function TlSlides() {
   const [i, setI] = React.useState(0);
   const s = TL_SLIDES[i];
-  const go = n => setI((n + TL_SLIDES.length) % TL_SLIDES.length);
-  return (
-    <div className="tl-slides" data-tlwhy="A short summary deck built with real design hierarchy, downloadable so a reader can drop it straight into their own deck. People do not share articles with their boss. They share slides.">
-      <div className="tl-slides-bar">
-        <span className="mk" aria-hidden="true" /><span className="who">DOLLAROUS</span><span className="n">{i + 1} / {TL_SLIDES.length}</span>
-      </div>
-      <div className="tl-stage">
-        <div className={"tl-slide " + s.tone}>
-          <span className="rule" aria-hidden="true" />
-          {s.big ? <React.Fragment><span className="big">{s.big}</span><span className="cap">{s.cap}</span></React.Fragment> : <h5>{s.h}</h5>}
-          <p>{s.p}</p>
-          <span className="src">Source: {s.src}</span>
-        </div>
-        <button type="button" className="tl-zone l" onClick={() => go(i - 1)} aria-label="Previous slide" />
-        <button type="button" className="tl-zone r" onClick={() => go(i + 1)} aria-label="Next slide" />
-      </div>
-      <div className="tl-slides-foot">
-        <div className="tl-dots">
-          {TL_SLIDES.map((_, n) => <button key={n} type="button" className={n === i ? "on" : ""} onClick={() => setI(n)} aria-label={"Slide " + (n + 1)} />)}
-        </div>
-        <button type="button" className="dl"><TlIcon d="M12 3v12M7 11l5 5 5-5M4 21h16" />Download all five</button>
-        <div className="tl-arrows">
-          <button type="button" onClick={() => go(i - 1)} aria-label="Previous slide"><TlIcon d="M15 18l-6-6 6-6" /></button>
-          <button type="button" onClick={() => go(i + 1)} aria-label="Next slide"><TlIcon d="M9 6l6 6-6 6" /></button>
-        </div>
-      </div>
-    </div>
-  );
+  const go = (n) => setI((n + TL_SLIDES.length) % TL_SLIDES.length);
+  return /* @__PURE__ */ React.createElement("div", { className: "tl-slides", "data-tlwhy": "A short summary deck built with real design hierarchy, downloadable so a reader can drop it straight into their own deck. People do not share articles with their boss. They share slides." }, /* @__PURE__ */ React.createElement("div", { className: "tl-slides-bar" }, /* @__PURE__ */ React.createElement("span", { className: "mk", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("span", { className: "who" }, "DOLLAROUS"), /* @__PURE__ */ React.createElement("span", { className: "n" }, i + 1, " / ", TL_SLIDES.length)), /* @__PURE__ */ React.createElement("div", { className: "tl-stage" }, /* @__PURE__ */ React.createElement("div", { className: "tl-slide " + s.tone, key: i }, /* @__PURE__ */ React.createElement("div", { className: "vis", dangerouslySetInnerHTML: { __html: TL_SLIDE_VIS[i] } }), /* @__PURE__ */ React.createElement("span", { className: "rule", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("h5", null, s.h), /* @__PURE__ */ React.createElement("p", null, s.p), /* @__PURE__ */ React.createElement("span", { className: "src" }, "Source: ", s.src)), /* @__PURE__ */ React.createElement("button", { type: "button", className: "tl-zone l", onClick: () => go(i - 1), "aria-label": "Previous slide" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "tl-zone r", onClick: () => go(i + 1), "aria-label": "Next slide" })), /* @__PURE__ */ React.createElement("div", { className: "tl-slides-foot" }, /* @__PURE__ */ React.createElement("div", { className: "tl-dots" }, TL_SLIDES.map((_, n) => /* @__PURE__ */ React.createElement("button", { key: n, type: "button", className: n === i ? "on" : "", onClick: () => setI(n), "aria-label": "Slide " + (n + 1) }))), /* @__PURE__ */ React.createElement("button", { type: "button", className: "dl" }, /* @__PURE__ */ React.createElement(TlIcon, { d: "M12 3v12M7 11l5 5 5-5M4 21h16" }), "Download all five"), /* @__PURE__ */ React.createElement("div", { className: "tl-arrows" }, /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => go(i - 1), "aria-label": "Previous slide" }, /* @__PURE__ */ React.createElement(TlIcon, { d: "M15 18l-6-6 6-6" })), /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => go(i + 1), "aria-label": "Next slide" }, /* @__PURE__ */ React.createElement(TlIcon, { d: "M9 6l6 6-6 6" })))));
 }
-
-/* ---------------- testimonial ---------------- */
 const TL_QUOTE = "\u201CThe matching was never what kept us late. It was the forty items nobody had written a rule for, and the argument about who owned the decision.\u201D";
-
 function TlQuote() {
   const ref = React.useRef(null);
   const [seen, setSeen] = React.useState(false);
   const [n, setN] = React.useState(0);
   const reduce = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -179,42 +130,27 @@ function TlQuote() {
     check();
     const t = setInterval(check, 200);
     if (pane) pane.addEventListener("scroll", check, { passive: true });
-    return () => { clearInterval(t); if (pane) pane.removeEventListener("scroll", check); };
+    return () => {
+      clearInterval(t);
+      if (pane) pane.removeEventListener("scroll", check);
+    };
   }, []);
-
-  /* typewriter: one character at a time once it is on screen */
   React.useEffect(() => {
     if (!seen) return;
     if (reduce) return setN(TL_QUOTE.length);
-    const id = setInterval(() => setN(v => {
-      if (v >= TL_QUOTE.length) { clearInterval(id); return v; }
+    const id = setInterval(() => setN((v) => {
+      if (v >= TL_QUOTE.length) {
+        clearInterval(id);
+        return v;
+      }
       return v + 1;
     }), 22);
     return () => clearInterval(id);
   }, [seen, reduce]);
-
   const done = n >= TL_QUOTE.length;
-  return (
-    <div ref={ref} className={"tl-quote" + (seen ? " in" : "") + (done ? " done" : "")} data-tlwhy="Strong brand ground, and the quote types itself out as it scrolls into view. It earns a stop in a way a grey box with a vertical rule never does, and it puts a named human in the middle of the argument.">
-      <blockquote aria-label={TL_QUOTE}>
-        <span aria-hidden="true">{TL_QUOTE.slice(0, n)}</span><span className="caret" aria-hidden="true" />
-      </blockquote>
-      <div className="attr">
-        <span className="shot" aria-hidden="true">{TL_SME.initial}</span>
-        <span className="n">{TL_SME.name}<span>{TL_SME.role}</span></span>
-      </div>
-    </div>
-  );
+  return /* @__PURE__ */ React.createElement("div", { ref, className: "tl-quote" + (seen ? " in" : "") + (done ? " done" : ""), "data-tlwhy": "Strong brand ground, and the quote types itself out as it scrolls into view. It earns a stop in a way a grey box with a vertical rule never does, and it puts a named human in the middle of the argument." }, /* @__PURE__ */ React.createElement("blockquote", { "aria-label": TL_QUOTE }, /* @__PURE__ */ React.createElement("span", { "aria-hidden": "true" }, TL_QUOTE.slice(0, n)), /* @__PURE__ */ React.createElement("span", { className: "caret", "aria-hidden": "true" })), /* @__PURE__ */ React.createElement("div", { className: "attr" }, /* @__PURE__ */ React.createElement("span", { className: "shot", "aria-hidden": "true" }, TL_SME.initial), /* @__PURE__ */ React.createElement("span", { className: "n" }, TL_SME.name, /* @__PURE__ */ React.createElement("span", null, TL_SME.role))));
 }
-
-const TlQuotePlain = () => (
-  <div className="tl-quote-plain">
-    <p>"The matching was never what kept us late. It was the forty items nobody had written a rule for, and the argument about who owned the decision."</p>
-    <p className="attr">{TL_SME.name}, {TL_SME.role}</p>
-  </div>
-);
-
-/* ---------------- share row ---------------- */
+const TlQuotePlain = () => /* @__PURE__ */ React.createElement("div", { className: "tl-quote-plain" }, /* @__PURE__ */ React.createElement("p", null, '"The matching was never what kept us late. It was the forty items nobody had written a rule for, and the argument about who owned the decision."'), /* @__PURE__ */ React.createElement("p", { className: "attr" }, TL_SME.name, ", ", TL_SME.role));
 const TL_SOCIAL = [
   ["LinkedIn", "M4 9h3v11H4zM5.5 4a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5M10 20V9h3v1.5A3.5 3.5 0 0 1 20 13.5V20h-3v-6a1.75 1.75 0 0 0-3.5 0v6z"],
   ["Facebook", "M14 9V7a2 2 0 0 1 2-2h2V2h-3a5 5 0 0 0-5 5v2H8v3h2v9h4v-9h3l1-3z"],
@@ -225,90 +161,24 @@ function TlShare() {
   const [poke, setPoke] = React.useState(false);
   React.useEffect(() => {
     if (!poke) return;
-    const t = setTimeout(() => setPoke(false), 6000);
+    const t = setTimeout(() => setPoke(false), 6e3);
     return () => clearTimeout(t);
   }, [poke]);
-  return (
-    <div className="tl-share">
-      <span className="lab">Share</span>
-      {TL_SOCIAL.map(([n, d]) => (
-        <a key={n} href="#" aria-label={"Share on " + n} onClick={e => { e.preventDefault(); setPoke(true); }}><TlIcon fill d={d} /></a>
-      ))}
-      <span className={"tl-poke" + (poke ? " up" : "")} role="status">
-        <b>Another enhancement:</b> Removing social icons entirely. When was the last time you clicked one of these?
-        <button type="button" onClick={() => setPoke(false)} aria-label="Dismiss">×</button>
-      </span>
-    </div>
-  );
+  return /* @__PURE__ */ React.createElement("div", { className: "tl-share" }, /* @__PURE__ */ React.createElement("span", { className: "lab" }, "Share"), TL_SOCIAL.map(([n, d]) => /* @__PURE__ */ React.createElement("a", { key: n, href: "#", "aria-label": "Share on " + n, onClick: (e) => {
+    e.preventDefault();
+    setPoke(true);
+  } }, /* @__PURE__ */ React.createElement(TlIcon, { fill: true, d }))), /* @__PURE__ */ React.createElement("span", { className: "tl-poke" + (poke ? " up" : ""), role: "status" }, /* @__PURE__ */ React.createElement("b", null, "Another enhancement:"), " Removing social icons entirely. When was the last time you clicked one of these?", /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => setPoke(false), "aria-label": "Dismiss" }, "\xD7")));
 }
-
-/* ---------------- the article ---------------- */
 function TlBlog({ on, why }) {
-  const cls = ["tl-post",
-    on.dropcap && "on-dropcap", on.stats && "on-stats", on.vocab && "on-vocab",
-    on.bands && "on-bands", on.lists && "on-lists", !why && "no-why"].filter(Boolean).join(" ");
-
-  return (
-    <article className={cls}>
-      <header className="tl-head">
-        <h1>Your close is not slow. Your exceptions are.</h1>
-        <div className="tl-byline">
-          <span className="face"><img src={TL_AUTHOR.shot} alt={TL_AUTHOR.name} width="88" height="88" /></span>
-          <span className="who">{TL_AUTHOR.name}</span>
-          <span className="role">{TL_AUTHOR.role}</span>
-          <span className="meta">September 2026 · 7 min read</span>
-        </div>
-      </header>
-
-      {on.tts && <TlListen />}
-      {on.takeaways && <TlTakeaways />}
-
-      <section className="tl-band">
-        <p className="tl-lede">Every finance team we speak to describes the month-end close the same way. It takes too long, and nobody can say precisely where the time goes. Ask a controller to name the slowest step and you will usually hear a guess rather than a number.</p>
-        <p>The guess is almost always the same one, and it is almost always wrong. Teams point at the <V t="three-way match" def="Reconciling a purchase order, a receiving document, and a supplier invoice against one another before payment is released." />, the arithmetic step where invoices, receipts, and purchase orders are lined up against one another. It feels like the bottleneck because it is the part with the most rows in it.</p>
-        <p>In our 2026 benchmark of <S>240</S> mid-market finance teams, <S>62%</S> of controllers reported that resolving <V t="exceptions" def="Any item that fails an automated match and has to be decided by a person: a price variance, a partial receipt, a duplicate, a missing document." /> consumed more of their close than matching did. Median close length across the same sample was <S>8.4 days</S>. Among teams running more than one general ledger, exception volume was <S>3.2×</S> higher, and their median close ran two full days longer.</p>
-      </section>
-
-      <section className="tl-band alt">
-        <h2>Where the time actually goes</h2>
-        <p>We asked finance leaders to allocate their close hours across four activities. The result is not close.</p>
-        {on.chart ? <TlChart /> : <TlChartPlain />}
-      </section>
-
-      <section className="tl-band">
-        <h2>Why teams automate the wrong half</h2>
-        <p>This is not a failure of intelligence. It is a failure of specification, and it happens for four reasons that are individually reasonable.</p>
-        <ol>
-          <li><b>Matching is easy to write down.</b> A rule that compares three numbers can be handed to a vendor in an afternoon. A rule that decides what to do about a partial receipt from a supplier you are already in dispute with cannot.</li>
-          <li><b>The demo shows matching.</b> Every reconciliation tool leads with the volume it can process. None of them lead with the exception queue, because the exception queue is where the software stops and a person starts.</li>
-          <li><b>Exceptions are unevenly distributed.</b> They cluster in a handful of suppliers and a handful of <V t="subledgers" def="A detailed ledger that feeds summary totals into the general ledger: accounts payable, accounts receivable, fixed assets, inventory." />, which makes them look like edge cases rather than the main event.</li>
-          <li><b>Nobody owns the queue.</b> <S>41%</S> of the teams in our sample had automated matching before anyone had been made accountable for exception throughput. The queue belonged to whoever noticed it.</li>
-        </ol>
-        <p>The result is a close where the fast half got faster and the slow half stayed exactly where it was. At an average of <S>$18</S> in fully loaded handling cost per exception, a team clearing four hundred of them a month is spending real money on a problem it has never priced.</p>
-      </section>
-
-      {on.slides && <section className="tl-band alt"><TlSlides /></section>}
-
-      <section className="tl-band">
-        <h2>What the people doing it say</h2>
-        {on.quote ? <TlQuote /> : <TlQuotePlain />}
-      </section>
-
-      <section className="tl-band alt">
-        <h2>What to do instead</h2>
-        <p>The work here is unglamorous and it is not technical. It is writing things down.</p>
-        <ul>
-          <li><b>Sample fifty exceptions from last close.</b> Not a report on them. The actual items, read one at a time, sorted by why they broke.</li>
-          <li><b>Write the decision for the top three causes in one sentence each.</b> If a sentence will not hold it, the rule is not ready and automating it will only move the argument downstream.</li>
-          <li><b>Give the queue an owner and a number.</b> Exception throughput per day, visible to the same people who see days-to-close. A queue nobody measures is a queue nobody clears.</li>
-          <li><b>Set a <V t="cut-off" def="The point at which a period is closed to new entries, after which transactions post to the following period." /> you will actually hold.</b> Most exception backlogs are not accuracy problems. They are late-arriving documents that were allowed to arrive late.</li>
-        </ul>
-        <p>Do those four things and the automation conversation becomes a much shorter one, because you will finally be able to say what you want automated. Skip them and you will buy a faster version of the half that was never the problem.</p>
-      </section>
-
-      <TlShare />
-    </article>
-  );
+  const cls = [
+    "tl-post",
+    on.dropcap && "on-dropcap",
+    on.stats && "on-stats",
+    on.vocab && "on-vocab",
+    on.bands && "on-bands",
+    on.lists && "on-lists",
+    !why && "no-why"
+  ].filter(Boolean).join(" ");
+  return /* @__PURE__ */ React.createElement("article", { className: cls }, /* @__PURE__ */ React.createElement("header", { className: "tl-head" }, /* @__PURE__ */ React.createElement("h1", null, "Your close is not slow. Your exceptions are."), /* @__PURE__ */ React.createElement("div", { className: "tl-byline" }, /* @__PURE__ */ React.createElement("span", { className: "face" }, /* @__PURE__ */ React.createElement("img", { src: TL_AUTHOR.shot, alt: TL_AUTHOR.name, width: "88", height: "88" })), /* @__PURE__ */ React.createElement("span", { className: "who" }, TL_AUTHOR.name), /* @__PURE__ */ React.createElement("span", { className: "role" }, TL_AUTHOR.role), /* @__PURE__ */ React.createElement("span", { className: "meta", style: { display: "flex", gap: "1rem" } }, React.createElement("span", null, "September 2026"), React.createElement("span", null, "7 min read")))), on.tts && React.createElement("div", { "data-enh": "tts" }, React.createElement(TlListen, null)), on.takeaways && React.createElement("div", { "data-enh": "takeaways" }, React.createElement(TlTakeaways, null)), /* @__PURE__ */ React.createElement("section", { className: "tl-band" }, /* @__PURE__ */ React.createElement("p", { className: "tl-lede" }, "Every finance team we speak to describes the month-end close the same way. It takes too long, and nobody can say precisely where the time goes. Ask a controller to name the slowest step and you will usually hear a guess rather than a number."), /* @__PURE__ */ React.createElement("p", null, "The guess is almost always the same one, and it is almost always wrong. Teams point at the ", /* @__PURE__ */ React.createElement(V, { t: "three-way match", def: "Reconciling a purchase order, a receiving document, and a supplier invoice against one another before payment is released." }), ", the arithmetic step where invoices, receipts, and purchase orders are lined up against one another. It feels like the bottleneck because it is the part with the most rows in it."), /* @__PURE__ */ React.createElement("p", null, "In our 2026 benchmark of ", /* @__PURE__ */ React.createElement(S, null, "240"), " mid-market finance teams, ", /* @__PURE__ */ React.createElement(S, null, "62%"), " of controllers reported that resolving ", /* @__PURE__ */ React.createElement(V, { t: "exceptions", def: "Any item that fails an automated match and has to be decided by a person: a price variance, a partial receipt, a duplicate, a missing document." }), " consumed more of their close than matching did. Median close length across the same sample was ", /* @__PURE__ */ React.createElement(S, null, "8.4 days"), ". Among teams running more than one general ledger, exception volume was ", /* @__PURE__ */ React.createElement(S, null, "3.2\xD7"), " higher, and their median close ran two full days longer.")), /* @__PURE__ */ React.createElement("section", { className: "tl-band alt" }, /* @__PURE__ */ React.createElement("h2", null, "Where the time actually goes"), /* @__PURE__ */ React.createElement("p", null, "We asked finance leaders to allocate their close hours across four activities. The result is not close."), on.chart ? React.createElement("div", { "data-enh": "chart" }, React.createElement(TlChart, null)) : React.createElement("div", { "data-enh-plain": "chart" }, React.createElement(TlChartPlain, null))), /* @__PURE__ */ React.createElement("section", { className: "tl-band" }, /* @__PURE__ */ React.createElement("h2", null, "Why teams automate the wrong half"), /* @__PURE__ */ React.createElement("p", null, "This is not a failure of intelligence. It is a failure of specification, and it happens for four reasons that are individually reasonable."), /* @__PURE__ */ React.createElement("ol", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Matching is easy to write down."), " A rule that compares three numbers can be handed to a vendor in an afternoon. A rule that decides what to do about a partial receipt from a supplier you are already in dispute with cannot."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "The demo shows matching."), " Every reconciliation tool leads with the volume it can process. None of them lead with the exception queue, because the exception queue is where the software stops and a person starts."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Exceptions are unevenly distributed."), " They cluster in a handful of suppliers and a handful of ", /* @__PURE__ */ React.createElement(V, { t: "subledgers", def: "A detailed ledger that feeds summary totals into the general ledger: accounts payable, accounts receivable, fixed assets, inventory." }), ", which makes them look like edge cases rather than the main event."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Nobody owns the queue."), " ", /* @__PURE__ */ React.createElement(S, null, "41%"), " of the teams in our sample had automated matching before anyone had been made accountable for exception throughput. The queue belonged to whoever noticed it.")), /* @__PURE__ */ React.createElement("p", null, "The result is a close where the fast half got faster and the slow half stayed exactly where it was. At an average of ", /* @__PURE__ */ React.createElement(S, null, "$18"), " in fully loaded handling cost per exception, a team clearing four hundred of them a month is spending real money on a problem it has never priced.")), on.slides && React.createElement("section", { className: "tl-band alt", "data-enh": "slides" }, /* @__PURE__ */ React.createElement(TlSlides, null)), /* @__PURE__ */ React.createElement("section", { className: "tl-band" }, /* @__PURE__ */ React.createElement("h2", null, "What the people doing it say"), on.quote ? React.createElement("div", { "data-enh": "quote" }, React.createElement(TlQuote, null)) : React.createElement("div", { "data-enh-plain": "quote" }, React.createElement(TlQuotePlain, null))), /* @__PURE__ */ React.createElement("section", { className: "tl-band alt" }, /* @__PURE__ */ React.createElement("h2", null, "What to do instead"), /* @__PURE__ */ React.createElement("p", null, "The work here is unglamorous and it is not technical. It is writing things down."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Sample fifty exceptions from last close."), " Not a report on them. The actual items, read one at a time, sorted by why they broke."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Write the decision for the top three causes in one sentence each."), " If a sentence will not hold it, the rule is not ready and automating it will only move the argument downstream."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Give the queue an owner and a number."), " Exception throughput per day, visible to the same people who see days-to-close. A queue nobody measures is a queue nobody clears."), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("b", null, "Set a ", /* @__PURE__ */ React.createElement(V, { t: "cut-off", def: "The point at which a period is closed to new entries, after which transactions post to the following period." }), " you will actually hold."), " Most exception backlogs are not accuracy problems. They are late-arriving documents that were allowed to arrive late.")), /* @__PURE__ */ React.createElement("p", null, "Do those four things and the automation conversation becomes a much shorter one, because you will finally be able to say what you want automated. Skip them and you will buy a faster version of the half that was never the problem.")), /* @__PURE__ */ React.createElement(TlShare, null));
 }
-
 Object.assign(window, { TlBlog, TlListen, TlChart, TlSlides, TlQuote, TlShare, TL_SLICES, TL_SLIDES });

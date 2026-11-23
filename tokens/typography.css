@@ -1,26 +1,25 @@
-/* ============================================================
-   Typography tokens
-   Display: Kaisei Opti (serif). Body/UI: Manrope (sans).
-   Two display alternates swap via [data-type].
-   Fluid type scale (clamp) for display & headings.
-   ============================================================ */
-
-:root {
-  /* --- families --- */
-  --font-display: 'Kaisei Opti', Georgia, serif;
-  --font-body:    'Manrope', system-ui, sans-serif;
-
-  /* --- scale --- */
-  --text-sm:      0.875rem;
-  --text-base:    1.0625rem;
-  --text-lg:      1.1875rem;
-  --text-xl:      1.375rem;
-  --text-2xl:     1.75rem;
-  --text-3xl:     clamp(1.6rem, 1rem + 2vw, 2.25rem);
-  --text-4xl:     clamp(2rem, 1rem + 3.4vw, 3rem);
-  --text-display: clamp(2.6rem, 0.6rem + 6.6vw, 5.5rem);
+:root{
+--sf-font-display:'Funnel Display',ui-sans-serif,system-ui,sans-serif;
+--sf-font-body:'Instrument Sans',ui-sans-serif,system-ui,sans-serif;
+--sf-size-display:72px;--sf-lh-display:76px;--sf-track-display:-0.035em;
+--sf-size-h1:48px;--sf-lh-h1:54px;--sf-track-h1:-0.03em;
+--sf-size-h2:32px;--sf-lh-h2:40px;--sf-track-h2:-0.02em;
+--sf-size-h3:22px;--sf-lh-h3:30px;--sf-track-h3:-0.01em;
+--sf-size-body:17px;--sf-lh-body:28px;
+--sf-size-small:15px;--sf-lh-small:24px;
+--sf-size-label:14px;--sf-lh-label:20px;--sf-track-label:0em;
+--sf-size-meta:15px;--sf-lh-meta:24px;
+--sf-size-min:14px;
+--sf-weight-display:500;--sf-weight-heading:500;--sf-weight-body:400;--sf-weight-strong:600;
 }
-
-/* --- display alternates --- */
-:root[data-type="contrast"] { --font-display: 'Libre Caslon Display', Georgia, serif; }
-:root[data-type="modern"]   { --font-display: 'Space Grotesk', system-ui, sans-serif; }
+.sf-display{font-family:var(--sf-font-display);font-size:var(--sf-size-display);line-height:var(--sf-lh-display);letter-spacing:var(--sf-track-display);font-weight:var(--sf-weight-display);text-wrap:balance}
+.sf-h1{font-family:var(--sf-font-display);font-size:var(--sf-size-h1);line-height:var(--sf-lh-h1);letter-spacing:var(--sf-track-h1);font-weight:var(--sf-weight-heading);text-wrap:balance}
+.sf-h2{font-family:var(--sf-font-display);font-size:var(--sf-size-h2);line-height:var(--sf-lh-h2);letter-spacing:var(--sf-track-h2);font-weight:var(--sf-weight-heading);text-wrap:balance}
+.sf-h3{font-family:var(--sf-font-display);font-size:var(--sf-size-h3);line-height:var(--sf-lh-h3);letter-spacing:var(--sf-track-h3);font-weight:var(--sf-weight-heading)}
+.sf-body{font-family:var(--sf-font-body);font-size:var(--sf-size-body);line-height:var(--sf-lh-body);text-wrap:pretty}
+.sf-small{font-family:var(--sf-font-body);font-size:var(--sf-size-small);line-height:var(--sf-lh-small)}
+.sf-label{font-family:var(--sf-font-body);font-size:var(--sf-size-label);line-height:var(--sf-lh-label);font-weight:500;font-variant-numeric:tabular-nums}
+.sf-num{font-family:var(--sf-font-display);font-size:var(--sf-size-label);line-height:var(--sf-lh-label);font-weight:500;letter-spacing:0;font-variant-numeric:tabular-nums}
+.sf-meta{font-family:var(--sf-font-body);font-size:var(--sf-size-meta);line-height:var(--sf-lh-meta);font-weight:500}
+.sf-muted{color:var(--sf-text-muted)}
+@media (max-width:720px){:root{--sf-size-display:48px;--sf-lh-display:52px;--sf-size-h1:36px;--sf-lh-h1:42px;--sf-size-h2:26px;--sf-lh-h2:34px}}

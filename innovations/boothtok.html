@@ -1,210 +1,179 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="ink" data-type="editorial">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BoothTok · Innovations · Tommy Stubblefield</title>
 <meta name="description" content="A trade show touchscreen that needs no instructions, because every passerby already knows the gesture. A working vertical video feed you can run fullscreen on your own phone.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/jki4uwz.css">
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="dollarous.css">
-<link rel="stylesheet" href="inv.css">
-<link rel="stylesheet" href="boothtok.css">
+<link rel="icon" type="image/svg+xml" href="/logo/stubblefield-knight-ink.svg">
+<script>document.documentElement.classList.add("dc-pending");setTimeout(function(){document.documentElement.classList.remove("dc-pending")},3000)</script>
+<style>.dc-pending [data-dc-root]{visibility:hidden}</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/css/site-chrome.css">
+<link rel="stylesheet" href="/css/boothtok.css">
+<!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/boothtok.js (behaviour reference). See README, "How to read the page files". -->
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top" aria-label="Tommy Stubblefield home">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name">Tommy Stubblefield</span>
+<div data-dc-root style="display:contents">
+<div aria-hidden="true" style="height:88px"></div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
+  <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
+    <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <span data-piece="" aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+      <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="../index.html#approach">About Me</a>
-      <a class="nav-link" href="../index.html#strategy">Content Strategy</a>
-      <a class="nav-link" href="index.html">Innovations</a>
-      <a class="nav-link" href="../index.html#work">Writing</a>
-      <a class="btn btn-solid" href="../index.html#contact">Contact <span class="arr" aria-hidden="true">↗</span></a>
+    <nav style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
+      <a href="/" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Home</a>
+      <a href="/what-i-do.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">What I do</a>
+      <a href="/content-strategy.html" class="sf-meta" data-nav=""  style="text-decoration:none;padding-bottom:6px">Content strategy</a>
+      <a href="/innovations/" class="sf-meta" data-nav="" aria-current="page" style="text-decoration:none;padding-bottom:6px">Innovations</a>
+      <a href="/#contact" class="sf-btn sf-btn--primary sf-btn--sm" data-contact="">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-<section class="bt-hero">
-  <div class="bt-frame">
-    <div class="bt-stage">
-      <img src="boothtok/booth-stand.png" alt="A Dollarous trade show booth with a vertical touchscreen mounted on the wall at the corner of the stand, running the BoothTok feed." width="1344" height="768">
-      <div class="bt-screen" id="btScreen"><iframe src="boothtok/mini.html" title="BoothTok running in idle mode on the booth screen" tabindex="-1" scrolling="no" aria-hidden="true" allow="autoplay"></iframe></div>
-    </div>
-    <div class="bt-stage-copy">
-      <a class="inv-back" href="index.html">← All innovations</a>
-      <h1>BoothTok</h1>
-      <p class="inv-lead">A trade show screen that needs no instructions, because every passerby already knows the gesture. Working app. Run it fullscreen on your own phone.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <p class="bt-stage-note">Concept render of the “BoothTok” interactive booth video playing at a trade show. Dollarous is a fictitious brand.</p>
-  </div>
+<section style="position:relative;background:#0b0d0c">
+<div style="position:relative;aspect-ratio:1344/768;overflow:hidden;container-type:inline-size">
+<img src="/innovations/boothtok/booth-stand.png" alt="A Dollarous trade show booth with a vertical touchscreen mounted on the wall at the corner of the stand, running the BoothTok feed." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<div data-bt-screen="" style="position:absolute;left:75.15%;top:39.9%;width:7.9%;height:28.8%;overflow:hidden;background:#000"><iframe src="/innovations/boothtok/mini.html" title="BoothTok running in idle mode on the booth screen" tabindex="-1" scrolling="no" aria-hidden="true" allow="autoplay" style="width:180px;height:377px;border:0;transform-origin:0 0;filter:saturate(.94) brightness(.9);pointer-events:none"></iframe><div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 6px rgba(0,0,0,.55);background:linear-gradient(112deg,rgba(255,255,255,.11) 0,rgba(255,255,255,0) 42%)"></div></div>
+<div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(17,19,21,.94) 0,rgba(17,19,21,.82) 24%,rgba(17,19,21,.44) 44%,rgba(17,19,21,0) 60%)"></div>
+<div style="position:absolute;left:max(24px,calc(50% - 560px));top:16%;width:min(40%,30rem);display:flex;flex-direction:column;gap:clamp(10px,1.6cqw,24px)">
+<a class="pg1" href="/innovations/" style="align-self:flex-start;font:500 14px/1 var(--sf-font-body);color:var(--sf-text-muted)"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(225deg);margin-right:0.35em"><path d="M7 7h10v10M7 17 17 7"></path></svg>All innovations</a>
+<h1 style="margin:0;font:500 clamp(28px,5cqw,64px)/1.04 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">BoothTok</h1>
+<p style="margin:0;font:400 clamp(13px,1.35cqw,18px)/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">A customizable trade show screen that doesn't require instructions. Try it now on your phone.</p>
+</div>
+</div>
+<p style="max-width:1120px;margin:0 auto;padding:16px 24px 24px;box-sizing:border-box;font:400 13px/1.5 var(--sf-font-body);color:var(--sf-text-muted)">Concept render of the “BoothTok” interactive booth video playing at a trade show. Dollarous is a fictitious brand.</p>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>The Problem</h2>
-    </div>
-    <div class="cs-prose">
-      <p>The &ldquo;pay attention to me&rdquo; arms race is escalating, and it&rsquo;s playing out tangibly on B2B show floors. As a valuable source of qualified leads, brands have their work cut out for them at trade shows: Get noticed, and be remembered.</p>
-      <p>Raffles, stunts, activations, photobooths... it&rsquo;s a cutthroat scene when you&rsquo;re trying to flag people down in person and your competition is louder, flashier, and right next to you.</p>
-    </div>
-  </div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">The Problem</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The &ldquo;pay attention to me&rdquo; arms race is escalating, and it&rsquo;s playing out tangibly on B2B show floors. As a valuable source of qualified leads, brands have their work cut out for them at trade shows: Get noticed, and be remembered.</p>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Raffles, stunts, activations, photobooths... it&rsquo;s a cutthroat scene when you&rsquo;re trying to flag people down in person and your competition is louder, flashier, and right next to you.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>The complication</h2>
-    </div>
-    <div class="cs-prose">
-      <p>So let&rsquo;s say you do attract a potential client. You&rsquo;ve spent a ton of budget on a puppy pen, a champagne-enhanced ballpit, an AI-powered VR lottery with the chance to win $5,000 on the spot. You got their interest, and more importantly you got their contact information. Will they remember you as the &ldquo;ballpit booth&rdquo;? Without relevance, your booth presence was an noisy, birefly exciting commercial that&rsquo;s now over. The lead sits on your customer journey drip campaign collecting dust.</p>
-    </div>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">The complication</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">So let&rsquo;s say you do attract a potential client. You&rsquo;ve spent a ton of budget on a puppy pen, a champagne-enhanced ballpit, an AI-powered VR lottery with the chance to win $5,000 on the spot. You got their interest, and more importantly you got their contact information. Will they remember you as the &ldquo;ballpit booth&rdquo;? Without relevance, your booth presence was a noisy, briefly exciting commercial that&rsquo;s now over. The lead sits on your customer journey drip campaign collecting dust.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>The solution</h2>
-    </div>
-    <div class="bt-split">
-      <div class="cs-prose">
-      <p>Eye-tracking research suggests that strolling conference attendees take 1-3 seconds before deciding to engage or walk right past your expensive display and smiling representatives. Those numbers sure look familiar, don&rsquo;t they? Those are social timespans. They may be cruising, but they&rsquo;re doing the same mental work as a phone-scroll.</p>
-      <p>BoothTok harnesses the inexplicable human desire to scroll through stuff, riding the lightweight mental work of curiosity and the need for entertainment, plus the ability to say &ldquo;No. Next?&rdquo; People scroll because they like to scroll, and they&rsquo;re hoping the next thing will wow them. They give platforms many chances when on this journey in search of engagement.</p>
-      <h3>Why the TikTok format?</h3>
-      <ul>
-        <li>People take one look at it and know what to do with it.</li>
-        <li>It&rsquo;s cross generationally inclusive</li>
-        <li>It draws the user in and lets them engage, laugh, wonder, and enjoy.</li>
-      </ul>
-      <p>The &ldquo;branded UGC&rdquo; that makes up the library is up to you and your content strategy. The brand plays the part of director and cinematographer, showing what you want to be experienced, speaking in the language of video.</p>
-      </div>
-
-      <div class="bt-rig">
-      <div class="bt-phone" id="btPhone">
-        <iframe src="boothtok/app.html" title="BoothTok app" allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="bt-acts">
-        <button class="btn btn-solid" id="btFull" type="button">Fullscreen this <span class="arr" aria-hidden="true">↗</span></button>
-        <a class="btn btn-ghost" href="boothtok/app.html" target="_blank" rel="noopener">Open in a new tab</a>
-      </div>
-      <div class="bt-qr">
-        <div class="bt-qr-code"><svg role="img" aria-label="QR code linking to the BoothTok feed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h39v39H0z"/><path stroke="#000000" d="M3 3.5h7m4 0h2m3 0h1m1 0h3m2 0h1m2 0h7M3 4.5h1m5 0h1m2 0h1m1 0h1m3 0h1m6 0h1m1 0h1m1 0h1m5 0h1M3 5.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m1 0h1m1 0h3m1 0h1M3 6.5h1m1 0h3m1 0h1m1 0h3m6 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M3 7.5h1m1 0h3m1 0h1m1 0h3m2 0h8m2 0h1m2 0h1m1 0h3m1 0h1M3 8.5h1m5 0h1m1 0h1m1 0h1m2 0h2m3 0h1m2 0h2m1 0h1m1 0h1m5 0h1M3 9.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M11 10.5h5m1 0h1m1 0h1m4 0h1M3 11.5h1m1 0h5m2 0h1m1 0h4m2 0h1m1 0h1m2 0h1m1 0h1m1 0h5M3 12.5h1m3 0h2m2 0h1m4 0h2m1 0h4m3 0h1m2 0h2m1 0h2m1 0h1M3 13.5h1m1 0h3m1 0h2m2 0h1m2 0h3m8 0h1m3 0h1m1 0h2M5 14.5h2m4 0h1m4 0h1m2 0h1m3 0h5m1 0h1m1 0h3M3 15.5h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m7 0h1m1 0h3m1 0h1M3 16.5h1m2 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m2 0h1m4 0h2M3 17.5h2m2 0h3m3 0h2m3 0h3m3 0h2m1 0h3m1 0h4M4 18.5h2m4 0h1m2 0h1m2 0h1m1 0h1m2 0h5m1 0h3m1 0h3M5 19.5h2m2 0h1m1 0h2m3 0h3m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M4 20.5h1m1 0h1m3 0h1m8 0h5m2 0h1m1 0h3m1 0h4M3 21.5h2m1 0h4m2 0h1m1 0h1m3 0h2m5 0h1m2 0h4m1 0h2M7 22.5h2m3 0h2m4 0h1m2 0h1m1 0h3m2 0h7M5 23.5h2m1 0h5m2 0h3m3 0h2m2 0h1m1 0h2m1 0h3M3 24.5h1m2 0h1m1 0h1m5 0h6m1 0h2m1 0h1m1 0h1m2 0h2m1 0h1m2 0h1M3 25.5h1m1 0h2m2 0h1m4 0h2m1 0h1m2 0h1m4 0h1m1 0h1m3 0h2m1 0h1M3 26.5h1m1 0h3m2 0h1m1 0h1m1 0h2m3 0h1m1 0h1m2 0h1m3 0h3m1 0h4M3 27.5h1m5 0h1m2 0h2m3 0h1m2 0h1m4 0h1m1 0h5m2 0h1M11 28.5h1m1 0h1m1 0h1m1 0h1m1 0h6m1 0h2m3 0h1m1 0h1m1 0h1M3 29.5h7m2 0h2m2 0h5m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2M3 30.5h1m5 0h1m1 0h4m4 0h3m1 0h5m3 0h3m1 0h1M3 31.5h1m1 0h3m1 0h1m1 0h3m1 0h2m2 0h1m3 0h1m1 0h1m1 0h6m1 0h1M3 32.5h1m1 0h3m1 0h1m1 0h1m5 0h2m1 0h4m1 0h1m1 0h2m2 0h2m1 0h2M3 33.5h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h3m3 0h1m1 0h5M3 34.5h1m5 0h1m2 0h2m1 0h1m2 0h1m5 0h3m1 0h2m1 0h3M3 35.5h7m1 0h1m3 0h4m1 0h2m3 0h6m1 0h1m1 0h1"/></svg></div>
-        <div class="bt-qr-say">
-          <p class="bt-qr-lead">Try it now on your phone or tablet.</p>
-          <p class="bt-qr-sub">Point a camera at the code and the feed opens on your own screen, the same build running in the frame above.</p>
-        </div>
-      </div>
-      <p class="bt-hint" id="btHint">On a phone, open it in a new tab and add it to your home screen. It launches without browser chrome, fills the screen edge to edge, and behaves like the real thing.</p>
-      </div>
-    </div>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:32px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance;flex:none">The solution</h2>
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px;align-items:flex-start">
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px;flex:1 1 440px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Eye-tracking research suggests that strolling conference attendees take 1-3 seconds before deciding to engage or walk right past your expensive display and smiling representatives. Those numbers sure look familiar, don&rsquo;t they? Those are social timespans. They may be cruising, but they&rsquo;re doing the same mental work as a phone-scroll.</p>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">BoothTok harnesses the inexplicable human desire to scroll through stuff, riding the lightweight mental work of curiosity and the need for entertainment, plus the ability to say &ldquo;No. Next?&rdquo; People scroll because they like to scroll, and they&rsquo;re hoping the next thing will wow them. They give platforms many chances when on this journey in search of engagement.</p>
+<h3 style="margin:8px 0 0;font:500 20px/1.3 var(--sf-font-display);letter-spacing:-0.015em;color:var(--sf-text)">Why the TikTok format?</h3>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span>People take one look at it and know what to do with it.</span></li>
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span>It&rsquo;s cross generationally inclusive</span></li>
+<li style="display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;font:400 17px/1.65 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty"><span aria-hidden="true" style="width:6px;height:6px;margin-top:11px;background:var(--sf-brand)"></span><span>It draws the user in and lets them engage, laugh, wonder, and enjoy.</span></li>
+</ul>
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">The &ldquo;branded UGC&rdquo; that makes up the library is up to you and your content strategy. The brand plays the part of director and cinematographer, showing what you want to be experienced, speaking in the language of video.</p>
+</div>
+<div style="flex:0 1 360px;min-width:min(100%,280px);display:flex;flex-direction:column;gap:16px">
+<div data-bt-phone="" style="position:relative;padding:12px;background:linear-gradient(160deg,#2a2d2b,#111413);border-radius:46px;box-shadow:0 2px 3px rgba(255,255,255,.18) inset,0 26px 50px -22px rgba(0,0,0,.65)">
+<span aria-hidden="true" style="position:absolute;z-index:2;top:22px;left:50%;transform:translateX(-50%);width:74px;height:6px;border-radius:4px;background:#0a0c0b;pointer-events:none"></span>
+<iframe src="/innovations/boothtok/app.html" title="BoothTok app" allow="autoplay; fullscreen" style="display:block;width:100%;height:min(748px,calc(100dvh - 8rem));min-height:560px;border:0;border-radius:34px;background:#000"></iframe>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+<button type="button" class="sf-btn sf-btn--primary sf-btn--md" data-dc-on-click="fullPhone">Fullscreen this</button>
+<a class="pg2" href="/innovations/boothtok/app.html" target="_blank" rel="noopener" style="font:500 15px/1 var(--sf-font-body);color:var(--sf-text-muted);display:inline-flex;align-items:center;gap:6px">Open in a new tab <span style="display:inline-flex"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg)"><path d="M7 7h10v10M7 17 17 7"></path></svg></span></a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:16px;background:var(--sf-surface);box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 1px 2px rgba(0,0,0,0.35)">
+<div style="flex:none;background:#fff;padding:6px;line-height:0"><svg style="display:block;width:196px;height:196px" role="img" aria-label="QR code linking to the BoothTok feed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h39v39H0z"/><path stroke="#000000" d="M3 3.5h7m4 0h2m3 0h1m1 0h3m2 0h1m2 0h7M3 4.5h1m5 0h1m2 0h1m1 0h1m3 0h1m6 0h1m1 0h1m1 0h1m5 0h1M3 5.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m1 0h1m1 0h3m1 0h1M3 6.5h1m1 0h3m1 0h1m1 0h3m6 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M3 7.5h1m1 0h3m1 0h1m1 0h3m2 0h8m2 0h1m2 0h1m1 0h3m1 0h1M3 8.5h1m5 0h1m1 0h1m1 0h1m2 0h2m3 0h1m2 0h2m1 0h1m1 0h1m5 0h1M3 9.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M11 10.5h5m1 0h1m1 0h1m4 0h1M3 11.5h1m1 0h5m2 0h1m1 0h4m2 0h1m1 0h1m2 0h1m1 0h1m1 0h5M3 12.5h1m3 0h2m2 0h1m4 0h2m1 0h4m3 0h1m2 0h2m1 0h2m1 0h1M3 13.5h1m1 0h3m1 0h2m2 0h1m2 0h3m8 0h1m3 0h1m1 0h2M5 14.5h2m4 0h1m4 0h1m2 0h1m3 0h5m1 0h1m1 0h3M3 15.5h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m7 0h1m1 0h3m1 0h1M3 16.5h1m2 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m2 0h1m4 0h2M3 17.5h2m2 0h3m3 0h2m3 0h3m3 0h2m1 0h3m1 0h4M4 18.5h2m4 0h1m2 0h1m2 0h1m1 0h1m2 0h5m1 0h3m1 0h3M5 19.5h2m2 0h1m1 0h2m3 0h3m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M4 20.5h1m1 0h1m3 0h1m8 0h5m2 0h1m1 0h3m1 0h4M3 21.5h2m1 0h4m2 0h1m1 0h1m3 0h2m5 0h1m2 0h4m1 0h2M7 22.5h2m3 0h2m4 0h1m2 0h1m1 0h3m2 0h7M5 23.5h2m1 0h5m2 0h3m3 0h2m2 0h1m1 0h2m1 0h3M3 24.5h1m2 0h1m1 0h1m5 0h6m1 0h2m1 0h1m1 0h1m2 0h2m1 0h1m2 0h1M3 25.5h1m1 0h2m2 0h1m4 0h2m1 0h1m2 0h1m4 0h1m1 0h1m3 0h2m1 0h1M3 26.5h1m1 0h3m2 0h1m1 0h1m1 0h2m3 0h1m1 0h1m2 0h1m3 0h3m1 0h4M3 27.5h1m5 0h1m2 0h2m3 0h1m2 0h1m4 0h1m1 0h5m2 0h1M11 28.5h1m1 0h1m1 0h1m1 0h1m1 0h6m1 0h2m3 0h1m1 0h1m1 0h1M3 29.5h7m2 0h2m2 0h5m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2M3 30.5h1m5 0h1m1 0h4m4 0h3m1 0h5m3 0h3m1 0h1M3 31.5h1m1 0h3m1 0h1m1 0h3m1 0h2m2 0h1m3 0h1m1 0h1m1 0h6m1 0h1M3 32.5h1m1 0h3m1 0h1m1 0h1m5 0h2m1 0h4m1 0h1m1 0h2m2 0h2m1 0h2M3 33.5h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h3m3 0h1m1 0h5M3 34.5h1m5 0h1m2 0h2m1 0h1m2 0h1m5 0h3m1 0h2m1 0h3M3 35.5h7m1 0h1m3 0h4m1 0h2m3 0h6m1 0h1m1 0h1"/></svg></div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<p style="margin:0;font:500 15px/1.3 var(--sf-font-body);color:var(--sf-text);text-wrap:pretty">Try it now on your phone or tablet.</p>
+<p style="margin:0;font:400 13px/1.55 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Point a camera at the code and the feed opens on your own screen, the same build running in the frame above.</p>
+</div>
+</div>
+<p style="margin:0;font:400 13px/1.6 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">On a phone, open it in a new tab and add it to your home screen. It launches without browser chrome, fills the screen edge to edge, and behaves like the real thing.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap">
-    <div class="cs-head">
-      <h2>How I made it</h2>
-    </div>
-    <div class="cs-prose">
-      <p>Using Claude Design and Claude Code and sourcing placeholder video from pixabay, pexels, and others, an overlay is placed that evokes the standard TikTok / Instagram Reels / YouTube Shorts controls. This is more signage than functionality, nobody is logged in. The PWA or app can be hosted on Vercel, Lovable or simply published in your own secure environment, transferred to any touch screen monitor -- which you&rsquo;ll want to turn verticle, of course.</p>
-    </div>
-  </div>
+<div aria-hidden="true" style="max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,40px);box-sizing:border-box"><hr class="sf-perf" aria-hidden="true"></div>
+<section data-reveal="" style="max-width:1200px;margin:0 auto;padding:72px clamp(24px,5vw,40px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:20px 64px">
+<h2 style="flex:1 1 260px;margin:0;font:500 clamp(26px,2.6vw,34px)/1.15 var(--sf-font-display);letter-spacing:-0.03em;color:var(--sf-text);text-wrap:balance">How I made it</h2>
+<div style="flex:2 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:18px">
+<p style="margin:0;font:400 17px/1.7 var(--sf-font-body);color:var(--sf-text-muted);text-wrap:pretty">Using Claude Design and Claude Code and sourcing placeholder video from Pixabay, Pexels, and others, an overlay is placed that evokes the standard TikTok / Instagram Reels / YouTube Shorts controls. This is more signage than functionality, nobody is logged in. The PWA or app can be hosted on Vercel, Lovable or simply published in your own secure environment, transferred to any touch screen monitor -- which you&rsquo;ll want to turn vertical, of course.</p>
+</div>
+</div>
 </section>
-
-<section class="cs-sec rule">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
-    <p style="font-family:var(--font-display);font-size:var(--text-2xl);">Next: <a href="cost-calculator.html">Cost Calculator</a></p>
-    <a class="btn btn-ghost" href="index.html">All innovations</a>
-  </div>
-</section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <a class="brand" href="../index.html#top">
-      <span class="logo-mark" data-attrib="Created by lalawidi from Noun Project. CC BY 3.0 Attribution License" tabindex="0"><span class="knight" aria-hidden="true"></span></span>
-      <span class="name" style="font-size:1rem;">Tommy Stubblefield</span>
-    </a>
-    <span class="tag">Thinking forward.</span>
-    <span class="legal">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</span>
-  </div>
-</footer>
 
-<script>
-/* the mini feed is authored at 180x377 and scaled to whatever the render
-   makes the screen panel; it idles only while the hero is on screen */
-(function () {
-  var box = document.getElementById("btScreen");
-  if (!box) return;
-  var frame = box.firstElementChild;
-  var fit = function () { frame.style.transform = "scale(" + (box.clientWidth / 180) + ")"; };
-  fit();
-  if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
-  else window.addEventListener("resize", fit);
-  var seen = true;
-  var tell = function () {
-    try { frame.contentWindow.postMessage({ mini: seen ? "play" : "pause" }, "*"); } catch (err) {}
-  };
-  /* the frame answers with "ready" once its listener exists, which is the only
-     moment a state message is guaranteed to land */
-  window.addEventListener("message", function (e) {
-    if (e.data && e.data.mini === "ready") tell();
-  });
-  frame.addEventListener("load", tell);
-  if (window.IntersectionObserver) {
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        /* fails open: a nested preview frame can report a 0x0 rect for an
-           element that is plainly on screen, and idling is the point here */
-        if (!e.isIntersecting && e.boundingClientRect.width > 0) seen = false;
-        else if (e.isIntersecting) seen = true;
-      });
-      tell();
-    }, { rootMargin: "120px" }).observe(box);
-  }
-})();
-(function () {
-  var phone = document.getElementById("btPhone");
-  var btn = document.getElementById("btFull");
-  var hint = document.getElementById("btHint");
-  var req = phone.requestFullscreen || phone.webkitRequestFullscreen || phone.msRequestFullscreen;
-  var touchOnly = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-  if (!req || touchOnly) {
-    btn.textContent = "Open fullscreen";
-    btn.addEventListener("click", function () { window.open("boothtok/app.html", "_blank", "noopener"); });
-    if (!req) hint.textContent = "This browser will not let an embedded frame go fullscreen. Opening it in a new tab gets you the same thing; on iOS, add it to your home screen and it launches without browser chrome.";
-    return;
-  }
-  btn.addEventListener("click", function () {
-    if (document.fullscreenElement || document.webkitFullscreenElement) {
-      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    } else {
-      var p = req.call(phone);
-      if (p && p.catch) p.catch(function () { window.open("boothtok/app.html", "_blank", "noopener"); });
-    }
-  });
-  ["fullscreenchange", "webkitfullscreenchange"].forEach(function (e) {
-    document.addEventListener(e, function () {
-      var on = !!(document.fullscreenElement || document.webkitFullscreenElement);
-      btn.innerHTML = on ? "Exit fullscreen" : 'Fullscreen this <span class="arr" aria-hidden="true">↗</span>';
-    });
-  });
-})();
-</script>
-<script src="inv-nav.js"></script>
+<footer style="background:var(--sf-surface)"><div style="max-width:1200px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 48px;box-sizing:border-box;display:grid;gap:48px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
+    <div style="display:grid;gap:16px;align-content:start;max-width:420px">
+      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:12px">
+        <span aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
+        <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
+      </a>
+      <p class="sf-small sf-muted" style="margin:0">Strategic marketer, builder, and thought leader.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:48px 96px">
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Pages</span>
+        <a href="/" class="sf-small ft1" style="color:var(--sf-text);text-decoration:none">Home</a>
+        <a href="/what-i-do.html" class="sf-small ft2" style="color:var(--sf-text);text-decoration:none">What I do</a>
+        <a href="/content-strategy.html" class="sf-small ft3" style="color:var(--sf-text);text-decoration:none">Content strategy</a>
+        <a href="/innovations/" class="sf-small ft4" style="color:var(--sf-text);text-decoration:none">Innovations</a>
+        <a href="/#contact" class="sf-small ft5" style="color:var(--sf-text);text-decoration:none">Contact</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="sf-label sf-muted">Elsewhere</span>
+        <a href="https://www.contentstrategylibrary.com/" target="_blank" rel="noopener" class="sf-small ft6" style="color:var(--sf-text);text-decoration:none">Content Strategy Library<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+        <a href="https://www.linkedin.com/in/thisisastub" target="_blank" rel="noopener" class="sf-small ft7" style="color:var(--sf-text);text-decoration:none">LinkedIn<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+      </div>
+    </div>
+  </div>
+  <hr class="sf-perf" aria-hidden="true">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 48px">
+    <div style="display:grid;gap:4px;max-width:720px">
+      <p class="sf-label sf-muted" style="margin:0">© 2026 Tommy Stubblefield. No work on this site may be reproduced without permission.</p>
+      <p class="sf-label sf-muted" style="margin:0">Content on this site is not licensed for use in training AI or large language models.</p>
+    </div>
+    <button type="button" data-dc-on-click="open" class="sf-btn sf-btn--ghost sf-btn--sm">Imagery credits</button>
+  </div>
+</div></footer>
+<div data-dc-if="isOpen" style="display:contents">
+  <div data-dc-on-click="close" style="position:fixed;inset:0;z-index:100;background:var(--sf-canvas);display:grid;place-items:center;padding:24px">
+    <div role="dialog" aria-label="Imagery credits" data-dc-on-click="stop" style="width:100%;max-width:600px;max-height:85vh;overflow-y:auto;box-sizing:border-box;background:var(--sf-surface);border:1px solid var(--sf-rule);border-radius:2px;padding:32px;display:grid;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <h2 class="sf-h3" style="margin:0">Imagery credits</h2>
+        <button type="button" data-dc-on-click="close" class="sf-btn sf-btn--ghost sf-btn--sm">Close</button>
+      </div>
+      <dl style="display:grid;gap:0;margin:0">
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Midtown Atlanta skyline from Clara Meer in Piedmont Park</dt><dd class="sf-label sf-muted" style="margin:0">Daniel Mayer, licensed CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Midtown_Atlanta_skyline_from_Clara_Meer_in_Piedmont_Park.JPG" target="_blank" rel="noopener">Wikimedia Commons<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">A team discussing strategy around a table</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Portrait of Tommy Stubblefield</dt><dd class="sf-label sf-muted" style="margin:0">Source to confirm.</dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Office phone call</dt><dd class="sf-label sf-muted" style="margin:0">maslme via Pixabay. <a href="https://pixabay.com/photos/phone-office-make-a-phone-call-4974179/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Man presenting with his colleagues (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/man-presenting-with-his-colleagues-7812404/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Downtown Atlanta architecture (video)</dt><dd class="sf-label sf-muted" style="margin:0">phlyingdoctor via Pixabay. <a href="https://pixabay.com/videos/architecture-city-building-downtown-290618/" target="_blank" rel="noopener">Pixabay<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Aerial view of Atlanta skyline at sunset (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/aerial-view-of-atlanta-skyline-at-sunset-33133596/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Queen check in chess (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/queen-check-in-chess-855386/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Professional podcast interview in studio setting (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/professional-podcast-interview-in-studio-setting-38630305/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark icon: Chess (knight)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Ilham Fitrotul Hayat from Noun Project. <a href="https://thenounproject.com/icon/chess-7876095/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark hover icons: Chess (pawn, rook, bishop, queen, king)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Uswa KDT from Noun Project. <a href="https://thenounproject.com/browse/collection-icon/chess-152566/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
+        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Brand logos</dt><dd class="sf-label sf-muted" style="margin:0">Property of their respective owners.</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/js/dc-runtime.js"></script>
+<script src="/js/boothtok.js"></script>
+<script>DC.mount(Component)</script>
 </body>
 </html>

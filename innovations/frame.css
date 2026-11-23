@@ -1,0 +1,20 @@
+.dlr-frame { border: 1px solid #BEC5B7; border-radius: 0; overflow: hidden; }
+.dlr-frame-bar { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1.15rem; background: linear-gradient(105deg, #2B2E2C 0%, #3E4341 46%, #55605A 100%); border-bottom: 1px solid #4C514E; }
+.dlr-frame-bar .dlr-lockup { margin-right: auto; }
+.dlr-frame-bar .dlr-mark { color: #FFFFFF; }
+.dlr-frame-bar .dlr-glyph { background-color: transparent; background-size: contain; }
+.dlr-frame-bar .dlr-slogan { color: rgba(255,255,255,0.72); }
+.dlr-frame-bar .dlr-lockup .dlr-slogan::before { background: rgba(255,255,255,0.32); }
+.dlr-frame-bar .dlr-chip { background: transparent; border-color: rgba(255,255,255,0.34); color: rgba(255,255,255,0.85); }
+.dlr-frame-acts { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
+.dlr-fs { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--d-font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em; padding: 0.28rem 0.6rem; background: transparent; border: 1px solid rgba(255,255,255,0.34); color: rgba(255,255,255,0.85); cursor: pointer; transition: border-color 140ms ease, color 140ms ease; }
+.dlr-fs:hover { border-color: #FFFFFF; color: #FFFFFF; }
+.dlr-fs svg { width: 0.82rem; height: 0.82rem; }
+.dlr-frame.is-fs { position: fixed; inset: 0; z-index: 600; display: grid; grid-template-rows: auto minmax(0, 1fr); border: 0; background: var(--d-bg); overflow: hidden; }
+.dlr-frame.is-fs .dlr-frame-foot { display: none; }
+.dlr-frame.is-fs > *:not(.dlr-frame-bar):not(.dlr-frame-foot) { min-height: 0; overflow: auto; }
+body.dlr-fs-lock { overflow: hidden; }
+.dlr-frame-body { padding: clamp(1.3rem, 3.4vw, 2.6rem); }
+.dlr-frame-foot { padding: 0.9rem 1.15rem; background: var(--d-surface-2); border-top: 1px solid var(--d-line); }
+.dlr-frame-acts { align-items: stretch; }
+.dlr-frame-acts .dlr-chip, .dlr-frame-acts .dlr-fs { box-sizing: border-box; display: inline-flex; align-items: center; height: 1.75rem; padding: 0 0.6rem; font-size: 0.72rem; line-height: 1; border-width: 1px; border-style: solid; }

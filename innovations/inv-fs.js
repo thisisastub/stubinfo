@@ -36,11 +36,24 @@
     if (fn) { try { fn.call(document); } catch (e) {} }
   }
 
+  var embedded = window.parent && window.parent !== window;
+  if (embedded) {
+    window.addEventListener("message", function (e) {
+      if (!e.data || typeof e.data.dlrFsState !== "boolean") return;
+      var on = e.data.dlrFsState;
+      Array.prototype.forEach.call(document.querySelectorAll(".dlr-frame"), function (frame) {
+        frame.classList.toggle("is-fs", on); label(frame, on);
+      });
+      document.body.classList.toggle("dlr-fs-lock", on);
+    });
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll(".dlr-fs"), function (btn) {
     var frame = btn.closest(".dlr-frame");
     if (!frame) return;
 
     btn.addEventListener("click", function () {
+      if (embedded) { window.parent.postMessage({ dlrFs: !frame.classList.contains("is-fs") }, "*"); return; }
       if (current() === frame) { exitNative(); return; }
       if (frame.classList.contains("is-fs")) { pin(frame, false); return; }
 
@@ -69,6 +82,7 @@
   /* native fullscreen swallows Escape itself; this is only for the pinned path */
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
+    if (embedded && document.querySelector(".dlr-frame.is-fs")) { window.parent.postMessage({ dlrFs: false }, "*"); return; }
     pinned.slice().forEach(function (frame) { pin(frame, false); });
   });
 })();
