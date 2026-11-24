@@ -24,7 +24,7 @@
     font-size: min(20px, calc((100vw - 120px) / 15.4)) !important; }
 }
 /* Footer name: fits the column on narrow phones, 22px everywhere else */
-footer.sf-footer .sf-brand__text { font-size: min(22px, calc((100vw - 48px) / 15.4)); }
+footer[data-r="site-footer"] .sf-brand__text { font-size: min(22px, calc((100vw - 48px) / 15.4)); }
 @media (max-width: 1120px) {
 
   .sf-burger {

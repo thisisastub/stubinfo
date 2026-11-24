@@ -27,8 +27,8 @@
 [data-scrolled] .sf-header .sf-brand__avatar{width:0;padding:0;opacity:0}
 [data-scrolled] .sf-header .sf-brand__text{transform:scale(.88)}
 
-/* Footer: text only, 22px */
-.sf-footer .sf-brand__text{font-size:22px}
+/* Footer: text only, 22px. Hooked on data-r="site-footer", not .sf-footer, which components.css already uses for the design-system Footer grid. */
+[data-r="site-footer"] .sf-brand__text{font-size:22px}
 
 @media (prefers-reduced-motion:reduce){
   .sf-brand__avatar::before{animation:none!important}
