@@ -126,3 +126,15 @@ footer[data-r="site-footer"] .sf-brand__text { font-size: min(22px, calc((100vw 
     background: rgba(17,19,21,0.78) !important;
   }
 }
+
+/* ---------- Skip link (keyboard users): hidden until it receives focus ---------- */
+.sf-skip {
+  position: fixed; left: 16px; top: -64px; z-index: 1000;
+  padding: 10px 16px; border-radius: 2px;
+  background: var(--sf-brand); color: var(--sf-on-brand) !important;
+  font: 600 15px/1 var(--sf-font-body); text-decoration: none;
+  transition: top 120ms ease-out;
+}
+.sf-skip:focus { top: 12px; }
+#main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) { .sf-skip { transition: none; } }

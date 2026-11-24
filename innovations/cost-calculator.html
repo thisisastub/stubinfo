@@ -32,6 +32,7 @@
 </head>
 <body>
 <div data-dc-root style="display:contents">
+<a class="sf-skip" href="#main">Skip to content</a>
 <div aria-hidden="true" style="height:88px"></div>
 <header data-r="site-header" class="sf-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
   <div data-r="header-bar" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
@@ -50,7 +51,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <section style="position:relative;overflow:hidden;">
 <video data-hero-bg="" poster="/assets/posters/hero-calc.webp" muted src="/innovations/hero-calc.mp4" autoplay="" loop="" playsinline="" preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0.55"></video>
 <div style="position:absolute;right:clamp(12px,3vw,28px);bottom:12px;z-index:2"><button type="button" class="sf-bgv-toggle" aria-label="{{ bgLabel }}" aria-pressed="{{ bgPressed }}" data-dc-on-click="toggleBg" style="width:44px;height:44px;border:0;background:none;color:var(--sf-text);font:500 20px/1 var(--sf-font-body);cursor:pointer;"><div data-dc-if="bgPlaying" style="display:contents"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em"><path d="M8 5v14M16 5v14"></path></svg></div><div data-dc-if="bgPaused" style="display:contents"><svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em"><path d="M7 5v14l12-7z"></path></svg></div></button></div>

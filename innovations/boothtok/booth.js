@@ -82,7 +82,7 @@ stage.insertAdjacentHTML("beforeend",
   '</nav>' +
   '<div class="sheet" id="btSheet"><div class="scrim"></div><div class="card">' +
     '<h2>Credits<button class="x" aria-label="Close">\u00d7</button></h2>' +
-    '<div class="body"><p><b>BoothTok</b> is a concept demo for Dollarous, a fictitious FinTech brand. The handles, captions and counts are invented. The footage is stock, used here to stand in for a brand\u2019s own event library.</p>' +
+    '<div class="body" tabindex="0" role="region" aria-label="Credits"><p><b>BoothTok</b> is a concept demo for Dollarous, a fictitious FinTech brand. The handles, captions and counts are invented. The footage is stock, used here to stand in for a brand\u2019s own event library.</p>' +
     '<ul>' + FEED.map(function (p) { return "<li><b>@" + p.h + "</b>" + p.cr + "</li>"; }).join("") + '</ul>' +
     '<p style="margin-top:1rem">Pexels and Coverr clips are used under their respective free licenses. No clip depicts a real Dollarous event, because there is no Dollarous.</p></div>' +
   '</div></div>');
