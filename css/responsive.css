@@ -10,6 +10,18 @@
   /* "TOMMY STUBBLEFIELD" is ~15.2× its font size wide; size it to the room left beside the
      headshot and menu button, capped at the desktop 23px (390px phone ≈ 15.6px). */
   .sf-header .sf-brand__text { font-size: min(23px, calc((100vw - 150px) / 15.4)); }
+  /* the menu button always keeps its spot; the name gives way first */
+  .sf-header .sf-brand { flex: 0 1 auto; min-width: 0; overflow: hidden; }
+}
+/* Phones: the header stays in its compact (scrolled) look at all times: no headshot, smaller
+   name sized to the room beside the menu button. Real font size, not a scale() transform,
+   so the name's layout width shrinks too. */
+@media (max-width: 640px) {
+  .sf-header .sf-brand { gap: 0 !important; }
+  .sf-header .sf-brand__avatar { display: none !important; }
+  .sf-header .sf-brand__text,
+  [data-scrolled] .sf-header .sf-brand__text { transform: none !important; transition: none !important;
+    font-size: min(20px, calc((100vw - 120px) / 15.4)) !important; }
 }
 /* Footer name: fits the column on narrow phones, 22px everywhere else */
 footer.sf-footer .sf-brand__text { font-size: min(22px, calc((100vw - 48px) / 15.4)); }
