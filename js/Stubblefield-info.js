@@ -51,7 +51,7 @@ class Component extends DCLogic {
       paused, playing: !paused, pausedAttr: paused ? 'true' : 'false', pauseLabel: paused ? 'Play carousel' : 'Pause carousel', togglePause: () => this.setState({ paused: !paused }),
       people: AV.map((a, i) => ({ name: NAMES[i], src: '/assets/avatars/' + a + '.png', sel: i === q ? 'true' : 'false', ring: i === q ? '2px solid var(--sf-text)' : '2px solid transparent', op: i === q ? 1 : 0.55, pick: () => { this.setState({ q: i }); this.qTimer(); } })),
       formOpen: !sent, formSent: sent,
-      send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again, or email hello@stubblefield.info directly.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr,
+      send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr,
       reset: () => this.setState({ sent: false })
     };
     const E = React.createElement;

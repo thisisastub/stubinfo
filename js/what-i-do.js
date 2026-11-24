@@ -215,6 +215,6 @@ class Component extends DCLogic {
   }
   renderVals() {
     return { cardRef: this.cardRef, heroRef: this.heroRef, graphWrap: this.graphWrap, canvasRef: this.canvasRef, skillTree: Component.tree(),
-      formOpen: !this.state.sent, formSent: this.state.sent, send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again, or email hello@stubblefield.info directly.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr, reset: () => this.setState({ sent: false }) };
+      formOpen: !this.state.sent, formSent: this.state.sent, send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr, reset: () => this.setState({ sent: false }) };
   }
 }
