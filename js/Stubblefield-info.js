@@ -62,7 +62,9 @@ class Component extends DCLogic {
     v.featHref = ['/what-i-do.html', '/content-strategy.html', '/innovations/thought-leadership.html', '/innovations/', '/articles/content-strategy-library.html'][f];
     v.fi = f === 0;
     for (let i = 0; i < 4; i++) v['f' + i] = f === i + 1;
-    const words = (txt, tag, hold = 750) => { const ws = txt.split(' '); return E(tag, { style: { margin: 0, font: '800 clamp(44px,min(9.5vw,16vh),150px)/0.95 var(--sf-font-display)', letterSpacing: '-0.035em', color: 'var(--sf-text)', maxWidth: '11ch', display: 'flex', flexWrap: 'wrap', gap: '0 0.24em' } }, ws.map((w, i) => E('span', { key: i, 'data-word': '', style: { display: 'inline-block', animation: 'sfWord 1ms steps(1,end) ' + (950 + i * 220) + 'ms both, sfWordOut 1ms steps(1,end) ' + (950 + (ws.length - 1) * 220 + hold + i * 150) + 'ms forwards', animationPlayState: paused ? 'paused' : 'running' } }, w))); };
+    // step-start, not steps(1,end): a 1ms animation can finish at progress 0.9999…, and an end-step never flips,
+    // which left words 2+ hidden until the exit animation began (the "pause after word 1")
+    const words = (txt, tag, hold = 750) => { const ws = txt.split(' '); return E(tag, { style: { margin: 0, font: '800 clamp(44px,min(9.5vw,16vh),150px)/0.95 var(--sf-font-display)', letterSpacing: '-0.035em', color: 'var(--sf-text)', maxWidth: '11ch', display: 'flex', flexWrap: 'wrap', gap: '0 0.24em' } }, ws.map((w, i) => E('span', { key: i, 'data-word': '', style: { display: 'inline-block', animation: 'sfWord 1ms step-start ' + (950 + i * 220) + 'ms both, sfWordOut 1ms step-start ' + (950 + (ws.length - 1) * 220 + hold + i * 150) + 'ms forwards', animationPlayState: paused ? 'paused' : 'running' } }, w))); };
     v.introWords = words('How many steps ahead is your content?', 'h1');
     ['Changing the right minds', 'Beyond the wall of text', 'Brewing up new ideas', 'Strategy tools and frameworks'].forEach((s, k) => { v['words' + k] = words(s, 'p', 1750); });
     for (let i = 0; i < 8; i++) v['q' + i] = q === i;
