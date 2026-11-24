@@ -2,7 +2,7 @@
    DCLogic is a React-class-style base (state, setState, lifecycle). renderVals() returns the values bound to
    {{ name }} holes and data-dc-* attributes in the HTML. Port this into your own vanilla JS or React. */
 const AV = ['ricardo','tj','john','paul','teresa','tara','mary','david'];
-const HERO_MEDIA = [['/assets/posters/chess.webp', '/assets/hero/chess.mp4'], ['/assets/posters/atlanta-skyline.webp', '/assets/hero/atlanta-skyline.mp4'], ['/assets/posters/hero-tl-t2.webp', '/innovations/hero-tl.mp4'], ['/assets/posters/hero-lab.webp', '/innovations/hero-lab.mp4'], ['/assets/media/office-isometric-poster.jpg', '/assets/media/office-isometric.mp4']];
+const HERO_MEDIA = [['/assets/posters/chess.webp', '/assets/hero/chess.mp4'], ['/assets/posters/atlanta-skyline.webp', '/assets/hero/home/atlanta-skyline.mp4'], ['/assets/posters/hero-tl-t2.webp', '/assets/hero/home/thought-leadership.mp4'], ['/assets/posters/hero-lab.webp', '/innovations/hero-lab.mp4'], ['/assets/media/office-isometric-poster.jpg', '/assets/hero/home/office-isometric.mp4']];
 const NAMES = ['Ricardo Gutierrez','TJ Jackson','John Ujda','Paul Sansone','Teresa Minnaugh','Tara Gilchrist','Mary Fajimi','David Papa'];
 class Component extends DCLogic {
   state = { f: 0, q: 0, sent: false, paused: false };
@@ -75,7 +75,7 @@ class Component extends DCLogic {
     // which left words 2+ hidden until the exit animation began (the "pause after word 1")
     const words = (txt, tag, hold = 750) => { const ws = txt.split(' '); return E(tag, { style: { margin: 0, font: '800 clamp(44px,min(9.5vw,16vh),150px)/0.95 var(--sf-font-display)', letterSpacing: '-0.035em', color: 'var(--sf-text)', maxWidth: '11ch', display: 'flex', flexWrap: 'wrap', gap: '0 0.24em' } }, ws.map((w, i) => E('span', { key: i, 'data-word': '', style: { display: 'inline-block', animation: 'sfWord 1ms step-start ' + (950 + i * 220) + 'ms both, sfWordOut 1ms step-start ' + (950 + (ws.length - 1) * 220 + hold + i * 150) + 'ms forwards', animationPlayState: paused ? 'paused' : 'running' } }, w))); };
     v.introWords = words('How many steps ahead is your content?', 'h1');
-    ['Changing the right minds', 'Beyond the wall of text', 'Brewing up new ideas', 'Strategy tools and frameworks'].forEach((s, k) => { v['words' + k] = words(s, 'p', 1750); });
+    ['Changing the right minds', 'Beyond the wall of text', 'Brewing up new solutions', 'Strategy tools and frameworks'].forEach((s, k) => { v['words' + k] = words(s, 'p', 1750); });
     for (let i = 0; i < 8; i++) v['q' + i] = q === i;
     return v;
   }
