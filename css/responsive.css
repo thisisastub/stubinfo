@@ -117,3 +117,13 @@
   /* let the last lines of a slide scroll clear of the Credits toggle */
   [data-scroll] { padding-bottom: 56px !important; box-sizing: border-box; }
 }
+
+/* ---------- Homepage hero: no live blur over video on phones ----------
+   Re-blurring every video frame is expensive on phone GPUs and stalls the
+   headline's word-by-word reveal. A denser fill reads the same. */
+@media (max-width: 640px) {
+  [data-r="hero-bar"] > a[data-cblock] {
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+    background: rgba(17,19,21,0.78) !important;
+  }
+}

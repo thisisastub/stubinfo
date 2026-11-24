@@ -100,7 +100,7 @@ var toast = function (m) {
 function build(list) {
   feed.innerHTML = list.map(function (p, i) {
     return '<article class="post" data-i="' + i + '" data-f="' + p.f + '">' +
-      '<video playsinline muted preload="none" disablepictureinpicture ' + (p.pos ? 'style="object-position:' + p.pos + '"' : "") + "></video>" +
+      '<video playsinline webkit-playsinline muted preload="none" disablepictureinpicture ' + (p.pos ? 'style="object-position:' + p.pos + '"' : "") + "></video>" +
       '<div class="veil"></div><div class="tap"></div>' +
       '<div class="pausedot">' + I.play + '</div>' +
       '<div class="prog"><i></i></div>' +

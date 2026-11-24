@@ -120,7 +120,15 @@
     if (isVideo) {
       var userRef = props.ref;
       props.ref = function (node) {
-        if (node) { node.muted = true; node.setAttribute('muted', ''); }
+        if (node) {
+          node.muted = true; node.setAttribute('muted', '');
+          // background videos stay in the page: inline on iOS (incl. older in-app browsers),
+          // and no picture-in-picture or casting pop-outs on Android
+          node.playsInline = true; node.setAttribute('playsinline', ''); node.setAttribute('webkit-playsinline', '');
+          node.disablePictureInPicture = true; node.setAttribute('disablepictureinpicture', '');
+          node.disableRemotePlayback = true; node.setAttribute('disableremoteplayback', '');
+          node.setAttribute('x-webkit-airplay', 'deny');
+        }
         if (typeof userRef === 'function') userRef(node); else if (userRef) userRef.current = node;
       };
     }
