@@ -12,16 +12,19 @@
 <link rel="stylesheet" href="/css/site-chrome.css">
 <link rel="stylesheet" href="/css/innovations.css">
 <link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap">
+<link rel="stylesheet" href="/css/brand-mark.css">
+<script src="/js/brand-mark.js" defer></script>
 <!-- Bindings: data-dc-if / data-dc-for / data-dc-on-* / {{ name }} are wired by js/innovations.js (behaviour reference). See README, "How to read the page files". -->
 </head>
 <body>
 <div data-dc-root style="display:contents">
 <div aria-hidden="true" style="height:88px"></div>
-<header data-r="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
+<header data-r="site-header" class="sf-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--sf-canvas) 68%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid color-mix(in srgb,var(--sf-rule) 60%,transparent)">
   <div data-r="header-bar" style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,64px);box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;min-height:88px">
-    <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px">
-      <span data-piece="" aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
-      <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
+    <a href="/" class="sf-brand" aria-label="Tommy Stubblefield, home">
+      <span class="sf-brand__avatar" aria-hidden="true"><span><img src="/assets/headshot-256.webp" alt="" width="40" height="40" decoding="async"></span></span>
+      <span class="sf-brand__text">Tommy Stubblefield</span>
     </a>
     <button type="button" class="sf-burger" data-burger="" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
     <nav id="site-nav" data-r="nav" style="display:flex;gap:16px 32px;align-items:center;flex-wrap:wrap">
@@ -94,12 +97,11 @@
 </div>
 
 
-<footer style="background:var(--sf-surface)"><div style="max-width:1200px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 48px;box-sizing:border-box;display:grid;gap:48px">
+<footer class="sf-footer" style="background:var(--sf-surface)"><div style="max-width:1200px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 48px;box-sizing:border-box;display:grid;gap:48px">
   <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
     <div style="display:grid;gap:16px;align-content:start;max-width:420px">
-      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:12px">
-        <span aria-hidden="true" style="width:32px;height:32px;display:block;flex:none;background-color:var(--sf-text);-webkit-mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat;mask:url(/logo/stubblefield-knight-ink.svg) center/contain no-repeat"></span>
-        <span class="sf-wordmark" style="font-size:22px"><span class="sf-wordmark__name">Stubblefield</span><span class="sf-wordmark__tld">.info</span></span>
+      <a href="/" class="sf-brand" aria-label="Tommy Stubblefield, home">
+        <span class="sf-brand__text">Tommy Stubblefield</span>
       </a>
       <p class="sf-small sf-muted" style="margin:0">Strategic marketer, builder, and thought leader.</p>
     </div>
@@ -144,8 +146,6 @@
         <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Aerial view of Atlanta skyline at sunset (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/aerial-view-of-atlanta-skyline-at-sunset-33133596/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
         <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Queen check in chess (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/queen-check-in-chess-855386/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
         <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Professional podcast interview in studio setting (video)</dt><dd class="sf-label sf-muted" style="margin:0">Pexels. <a href="https://www.pexels.com/video/professional-podcast-interview-in-studio-setting-38630305/" target="_blank" rel="noopener">Pexels<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
-        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark icon: Chess (knight)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Ilham Fitrotul Hayat from Noun Project. <a href="https://thenounproject.com/icon/chess-7876095/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
-        <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Wordmark hover icons: Chess (pawn, rook, bishop, queen, king)</dt><dd class="sf-label sf-muted" style="margin:0">Created by Uswa KDT from Noun Project. <a href="https://thenounproject.com/browse/collection-icon/chess-152566/" target="_blank" rel="noopener">Noun Project<svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline-block;vertical-align:-0.06em;flex:none;transform:rotate(0deg);margin-left:0.3em"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></dd></div>
         <div style="display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--sf-rule)"><dt class="sf-small">Brand logos</dt><dd class="sf-label sf-muted" style="margin:0">Property of their respective owners.</dd></div>
       </dl>
     </div>

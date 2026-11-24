@@ -2,12 +2,18 @@
    The design's markup carries inline styles, so the overrides below use !important.
    Hooks are data-r="…" attributes added to the page markup. */
 
-/* ---------- Mobile menu (≤ 820px) ---------- */
+/* ---------- Mobile menu (≤ 1120px: below that, the name and the nav no longer fit on one row) ---------- */
 .sf-burger { display: none; }
 
-@media (max-width: 820px) {
-  [data-r="header-bar"] { flex-wrap: nowrap !important; min-height: 64px !important; padding-top: 10px !important; padding-bottom: 10px !important; }
-  [data-r="header-bar"] .sf-wordmark { font-size: 20px !important; }
+@media (max-width: 1120px) {
+  [data-r="header-bar"] { flex-wrap: nowrap !important; min-height: 64px !important; padding-top: 10px !important; padding-bottom: 10px !important; column-gap: 12px !important; }
+  /* "TOMMY STUBBLEFIELD" is ~15.2× its font size wide; size it to the room left beside the
+     headshot and menu button, capped at the desktop 23px (390px phone ≈ 15.6px). */
+  .sf-header .sf-brand__text { font-size: min(23px, calc((100vw - 150px) / 15.4)); }
+}
+/* Footer name: fits the column on narrow phones, 22px everywhere else */
+footer.sf-footer .sf-brand__text { font-size: min(22px, calc((100vw - 48px) / 15.4)); }
+@media (max-width: 1120px) {
 
   .sf-burger {
     display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;

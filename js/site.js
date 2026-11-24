@@ -3,7 +3,7 @@
    Uses event delegation, so it works on the React-rendered header. */
 (function () {
   'use strict';
-  var root = document.documentElement, MQ = window.matchMedia('(max-width: 820px)');
+  var root = document.documentElement, MQ = window.matchMedia('(max-width: 1120px)');
 
   function btn() { return document.querySelector('[data-burger]'); }
   function setOpen(open) {
