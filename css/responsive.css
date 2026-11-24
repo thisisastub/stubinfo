@@ -63,11 +63,10 @@
 
 /* ---------- What I do: skills map on phones ----------
    The interactive map does not work at phone size, so phones get a still of it
-   (Content strategy highlighted) where the map sits on narrow screens. */
+   (Content strategy highlighted), behind the intro card as on desktop. */
 @media (max-width: 720px) {
   [data-r="skills-graph"] {
-    position: relative !important; inset: auto !important; order: 2;
-    width: 100%; aspect-ratio: 1440 / 1680;
+    position: absolute !important; inset: 0 !important; z-index: 0;
     background: var(--sf-surface) url(/assets/media/skills-map-content-strategy.webp) center / cover no-repeat;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
     -webkit-mask-composite: source-in;
