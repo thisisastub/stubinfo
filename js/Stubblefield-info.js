@@ -2,6 +2,7 @@
    DCLogic is a React-class-style base (state, setState, lifecycle). renderVals() returns the values bound to
    {{ name }} holes and data-dc-* attributes in the HTML. Port this into your own vanilla JS or React. */
 const AV = ['ricardo','tj','john','paul','teresa','tara','mary','david'];
+const HERO_MEDIA = [['/assets/posters/chess.webp', '/assets/hero/chess.mp4'], ['/assets/posters/atlanta-skyline.webp', '/assets/hero/atlanta-skyline.mp4'], ['/assets/posters/hero-tl-t2.webp', '/innovations/hero-tl.mp4'], ['/assets/posters/hero-lab.webp', '/innovations/hero-lab.mp4'], ['/assets/media/office-isometric-poster.jpg', '/assets/media/office-isometric.mp4']];
 const NAMES = ['Ricardo Gutierrez','TJ Jackson','John Ujda','Paul Sansone','Teresa Minnaugh','Tara Gilchrist','Mary Fajimi','David Papa'];
 class Component extends DCLogic {
   state = { f: 0, q: 0, sent: false, paused: false };
@@ -9,6 +10,10 @@ class Component extends DCLogic {
   componentDidMount() {
     this._q = this.state.q;
     this.restart();
+    // hero slides only load when they come up; fetch every still frame now and the next slide's video ahead of time
+    this.warmNext = () => { clearTimeout(this.wt); this.wt = setTimeout(() => DC.warm(HERO_MEDIA[(this.state.f + 1) % 5][1]), 1200); };
+    const warmAll = () => { HERO_MEDIA.forEach(m => DC.warm(m[0])); this.warmNext(); };
+    if (document.readyState === 'complete') warmAll(); else window.addEventListener('load', warmAll, { once: true });
     const el = this.quoteRef.current; if (!el) return;
     this.check = () => { const r = el.getBoundingClientRect(); const vis = r.top < window.innerHeight * 0.8 && r.bottom > window.innerHeight * 0.15; if (vis === this.vis) return; this.vis = vis; if (vis && !this.seen) this.show(); this.qTimer(); };
     window.addEventListener('scroll', this.check, { passive: true }); window.addEventListener('resize', this.check);
@@ -19,10 +24,10 @@ class Component extends DCLogic {
     sec.addEventListener('focusin', () => hold(true)); sec.addEventListener('focusout', (e) => { if (!sec.contains(e.relatedTarget)) hold(false); });
     this.fb = setTimeout(() => { if (!this.seen && this.quoteRef.current) this.quoteRef.current.style.opacity = ''; }, 4000);
   }
-  show() { this.seen = true; clearTimeout(this.fb); this.reveal(); }
+  show() { this.seen = true; clearTimeout(this.fb); clearTimeout(this.wt); this.reveal(); }
   qTimer() { clearInterval(this.qt); if (!this.vis || this.hold || this.picked || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; this.qt = setInterval(() => { if (this.vis && !this.hold) this.setState(s => ({ q: (s.q + 1) % 8 })); }, 7000); }
   componentDidUpdate() {
-    if (this._p !== this.state.paused || this._f !== this.state.f) { this._p = this.state.paused; this._f = this.state.f; requestAnimationFrame(() => document.querySelectorAll('[data-hero] video').forEach(v => { if (this.state.paused) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); } })); } if (this._q !== this.state.q) { this._q = this.state.q; if (this.seen) this.reveal(); else this.show(); } }
+    if (this._p !== this.state.paused || this._f !== this.state.f) { this._p = this.state.paused; this._f = this.state.f; if (this.warmNext) this.warmNext(); requestAnimationFrame(() => document.querySelectorAll('[data-hero] video').forEach(v => { if (this.state.paused) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); } })); } if (this._q !== this.state.q) { this._q = this.state.q; if (this.seen) this.reveal(); else this.show(); } }
   componentWillUnmount() { (this.lts || []).forEach(clearTimeout); clearInterval(this.t); clearInterval(this.qt); clearTimeout(this.fb); window.removeEventListener('scroll', this.check); window.removeEventListener('resize', this.check); }
   hideQuote() { const el = this.quoteRef.current; if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) el.style.opacity = '0'; }
   reveal() {

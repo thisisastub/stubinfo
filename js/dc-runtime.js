@@ -121,6 +121,11 @@
       props[NAMES[n] || n] = v;
     }
     if (el.ref) { var ref = lookup(el.ref, scope); if (ref) props.ref = ref; }
+    if (isVideo && props.poster) {
+      // the still frame sits behind the video, so a slow or restarting video shows it instead of black
+      props.style = Object.assign({}, props.style, { backgroundImage: 'url("' + props.poster + '")',
+        backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' });
+    }
     if (isVideo) {
       var userRef = props.ref;
       props.ref = function (node) {
@@ -190,6 +195,24 @@
       .catch(function () { return { success: false }; });
   }
 
+  /* ---------- load media ahead of time so it is cached before it is shown ---------- */
+  var warmed = {};
+  function warm(url) {
+    if (!url) return; url = url.split('#')[0];
+    if (warmed[url]) return; warmed[url] = 1;
+    if (/\.(webp|jpe?g|png|avif)$/i.test(url)) { var im = new Image(); im.decoding = 'async'; im.src = url; return; }
+    try { fetch(url, { priority: 'low' }).then(function (r) { return r.ok && r.arrayBuffer(); }).catch(function () {}); } catch (e) {}
+  }
+  // hover-to-play card videos (preload="none"): on devices that hover, fetch each one as its card scrolls into view
+  function warmCards() {
+    if (!window.IntersectionObserver || !window.matchMedia || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var vids = document.querySelectorAll('video[preload="none"]'); if (!vids.length) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); warm(e.target.getAttribute('src')); } });
+    }, { rootMargin: '200px 0px' });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+
   function mount(Comp) {
     var root = document.querySelector('[data-dc-root]');
     if (!root) return;
@@ -202,8 +225,9 @@
     var r = RD.createRoot(host);
     RD.flushSync(function () { r.render(E(Comp, {})); });
     document.documentElement.classList.remove('dc-pending');
+    if (document.readyState === 'complete') warmCards(); else window.addEventListener('load', warmCards);
     if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
   }
 
-  window.DC = { mount: mount, sendForm: sendForm };
+  window.DC = { mount: mount, sendForm: sendForm, warm: warm };
 })();
