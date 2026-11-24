@@ -45,10 +45,6 @@
       <p class="sf-body sf-muted" style="margin:0;text-wrap:pretty">I lead content from strategy through execution. I start by understanding what a brand needs and what its audience is asking for, then plan content that does the job. Every plan is built on established content strategy frameworks.</p>
     </div>
   </div>
-  <div data-r="skills-m" class="skills-m">
-    <p class="sf-label sf-muted skills-m__hint">Six areas of work. Tap one to see the skills inside it.</p>
-    <div data-dc-for="skillTree" data-dc-as="c" style="display:contents"><details class="skills-m__area"><summary><span class="skills-m__name">{{ c.name }}</span><span class="skills-m__count">{{ c.count }}</span></summary><ul class="skills-m__list"><div data-dc-for="c.kids" data-dc-as="s" style="display:contents"><li><span class="skills-m__skill">{{ s.name }}</span><div data-dc-if="s.hasKids" style="display:contents"><span class="skills-m__sub">{{ s.subs }}</span></div></li></div></ul></details></div>
-  </div>
   <ul data-r="skills-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0">
       <div data-dc-for="skillTree" data-dc-as="c" style="display:contents"><li>{{ c.name }}<ul><div data-dc-for="c.kids" data-dc-as="s" style="display:contents"><li>{{ s.name }}<div data-dc-if="s.hasKids" style="display:contents"><ul><div data-dc-for="s.kids" data-dc-as="x" style="display:contents"><li>{{ x.name }}</li></div></ul></div></li></div></ul></li></div>
     </ul>

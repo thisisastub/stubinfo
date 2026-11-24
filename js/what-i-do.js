@@ -116,8 +116,6 @@ class Component extends DCLogic {
       if (/^\d+\./.test(l)) { c = { name: l.replace(/^\d+\.\s*/, ''), kids: [] }; out.push(c); }
       else if (l[0] === '•') { s = { name: l.slice(1).trim(), kids: [], hasKids: false }; c.kids.push(s); }
       else if (l[0] === '◦') { s.kids.push({ name: l.slice(1).trim() }); s.hasKids = true; } });
-    // labels for the phone list (what-i-do.html, data-r="skills-m")
-    out.forEach(c => { c.count = String(c.kids.length); c.kids.forEach(k => { k.subs = k.kids.map(x => x.name).join(' · '); }); });
     return (Component._t = out);
   }
   // Phones get the tappable list instead of the canvas map (see css/responsive.css).
