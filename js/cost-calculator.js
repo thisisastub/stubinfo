@@ -3,6 +3,8 @@
    {{ name }} holes and data-dc-* attributes in the HTML. Port this into your own vanilla JS or React. */
 class Component extends DCLogic {
   componentDidMount() {
+    // visitors who ask for reduced motion get the hero video paused from the start
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ bgPaused: true }); const hv = document.querySelector('video[data-hero-bg]'); if (hv) hv.pause(); }
     this.ros = [];
     document.querySelectorAll('iframe[data-autoh]').forEach(f => {
       const fit = () => { try { const d = f.contentDocument; if (!d || !d.body) return; const h = Math.ceil(d.body.getBoundingClientRect().height); if (h > 50) { f._h = h + 'px'; if (!f.dataset.fs) f.style.height = f._h; } } catch (e) {} };
@@ -48,6 +50,8 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener('message', this.onFsMsg); document.removeEventListener('fullscreenchange', this.onFsChange); document.removeEventListener('webkitfullscreenchange', this.onFsChange); window.removeEventListener('keydown', this.onFsKey); (this.ros || []).forEach(r => r.disconnect()); this.onMsg && window.removeEventListener('message', this.onMsg); }
   renderVals() {
     return {
+      bgPaused: !!(this.state && this.state.bgPaused), bgPlaying: !(this.state && this.state.bgPaused), bgPressed: (this.state && this.state.bgPaused) ? 'true' : 'false', bgLabel: (this.state && this.state.bgPaused) ? 'Play background video' : 'Pause background video',
+      toggleBg: () => { const p = !(this.state && this.state.bgPaused); this.setState({ bgPaused: p }); const hv = document.querySelector('video[data-hero-bg]'); if (hv) { if (p) hv.pause(); else { const r = hv.play(); if (r && r.catch) r.catch(() => {}); } } },
       fullPhone: () => { const p = document.querySelector('[data-bt-phone]'); if (!p) return; const req = p.requestFullscreen || p.webkitRequestFullscreen; if (req) { const r = req.call(p); if (r && r.catch) r.catch(() => window.open('/innovations/boothtok/app.html', '_blank', 'noopener')); } else window.open('/innovations/boothtok/app.html', '_blank', 'noopener'); }
     };
   }

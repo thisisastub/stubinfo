@@ -22,6 +22,8 @@ class Component extends DCLogic {
     };
     window.addEventListener('keydown', this.onKey);
     this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // slides with a looping background video get the pause button (WCAG 2.2.2); reduced motion starts paused
+    this.setState({ bgPaused: !!this.reduce, vslides: [...document.querySelectorAll('[data-slide]')].filter((sl) => sl.querySelector('video[data-bgv]')).map((sl) => +sl.dataset.slide) });
     setTimeout(() => this.enter(this.state.i), 60); setTimeout(() => this.enter(this.state.i), 700); window.addEventListener('load', () => this.enter(this.state.i), { once: true });
   }
   hintKeys() {
@@ -35,10 +37,12 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
   componentDidUpdate() { if (this._i !== this.state.i) { this._i = this.state.i; this.enter(this.state.i); } }
   enter(i) {
+    // only the current slide is reachable by Tab and read by screen readers (the others sit off-screen)
+    document.querySelectorAll("[data-slide]").forEach((s) => { s.inert = +s.dataset.slide !== i; });
     document.querySelectorAll('video[data-bgv]').forEach((v) => {
       const s = +v.closest('[data-slide]').dataset.slide; v.muted = true;
       if (Math.abs(s - i) <= 1) v.preload = 'auto';
-      if (s === i && !this.reduce) { const play = () => { if (+v.closest('[data-slide]').dataset.slide !== this.state.i) return; const p = v.play(); if (p && p.catch) p.catch(() => {}); }; play(); if (v.readyState < 3) { v.addEventListener('canplay', play, { once: true }); v.addEventListener('loadeddata', play, { once: true }); } } else if (!v.paused) v.pause();
+      if (s === i && !this.reduce && !this.state.bgPaused) { const play = () => { if (+v.closest('[data-slide]').dataset.slide !== this.state.i) return; const p = v.play(); if (p && p.catch) p.catch(() => {}); }; play(); if (v.readyState < 3) { v.addEventListener('canplay', play, { once: true }); v.addEventListener('loadeddata', play, { once: true }); } } else if (!v.paused) v.pause();
     });
     const sec = document.querySelector('[data-slide="' + i + '"]'); if (!sec) return;
     const sc = sec.querySelector('[data-scroll]'); if (sc) sc.scrollTop = 0;
@@ -49,6 +53,9 @@ class Component extends DCLogic {
   renderVals() {
     const i = this.state.i;
     return {
+      hasBg: (this.state.vslides || [0]).includes(i),
+      bgPaused: !!(this.state && this.state.bgPaused), bgPlaying: !(this.state && this.state.bgPaused), bgPressed: (this.state && this.state.bgPaused) ? 'true' : 'false', bgLabel: (this.state && this.state.bgPaused) ? 'Play background video' : 'Pause background video',
+      toggleBg: () => { const p = !this.state.bgPaused; this.setState({ bgPaused: p }, () => { if (p) document.querySelectorAll('video[data-bgv]').forEach((v) => v.pause()); else this.enter(this.state.i); }); },
       trackX: 'translate3d(' + (-i * 100) + 'vw,0,0)',
       counter: pad(i + 1) + ' / ' + pad(N),
       navOp: i === 0 ? 0 : 1, navPe: i === 0 ? 'none' : 'auto', navY: i === 0 ? '12px' : '0px',

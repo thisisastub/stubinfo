@@ -13,10 +13,14 @@ class Component extends DCLogic {
     this.check = () => { const r = el.getBoundingClientRect(); const vis = r.top < window.innerHeight * 0.8 && r.bottom > window.innerHeight * 0.15; if (vis === this.vis) return; this.vis = vis; if (vis && !this.seen) this.show(); this.qTimer(); };
     window.addEventListener('scroll', this.check, { passive: true }); window.addEventListener('resize', this.check);
     this.hideQuote(); this.check();
+    // WCAG 2.2.2: rotation pauses while the pointer or keyboard focus is on the testimonials, and stops once a visitor picks one
+    const sec = el.closest('section') || el; const hold = (on) => { this.hold = on; this.qTimer(); };
+    sec.addEventListener('mouseenter', () => hold(true)); sec.addEventListener('mouseleave', () => hold(false));
+    sec.addEventListener('focusin', () => hold(true)); sec.addEventListener('focusout', (e) => { if (!sec.contains(e.relatedTarget)) hold(false); });
     this.fb = setTimeout(() => { if (!this.seen && this.quoteRef.current) this.quoteRef.current.style.opacity = ''; }, 4000);
   }
   show() { this.seen = true; clearTimeout(this.fb); this.reveal(); }
-  qTimer() { clearInterval(this.qt); if (!this.vis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; this.qt = setInterval(() => { if (this.vis) this.setState(s => ({ q: (s.q + 1) % 8 })); }, 7000); }
+  qTimer() { clearInterval(this.qt); if (!this.vis || this.hold || this.picked || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; this.qt = setInterval(() => { if (this.vis && !this.hold) this.setState(s => ({ q: (s.q + 1) % 8 })); }, 7000); }
   componentDidUpdate() {
     if (this._p !== this.state.paused || this._f !== this.state.f) { this._p = this.state.paused; this._f = this.state.f; requestAnimationFrame(() => document.querySelectorAll('[data-hero] video').forEach(v => { if (this.state.paused) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); } })); } if (this._q !== this.state.q) { this._q = this.state.q; if (this.seen) this.reveal(); else this.show(); } }
   componentWillUnmount() { (this.lts || []).forEach(clearTimeout); clearInterval(this.t); clearInterval(this.qt); clearTimeout(this.fb); window.removeEventListener('scroll', this.check); window.removeEventListener('resize', this.check); }
@@ -46,10 +50,10 @@ class Component extends DCLogic {
       heroTouchStart: e => { const t = e.touches[0]; this.sx = t.clientX; this.sy = t.clientY; },
       heroTouchEnd: e => { const d = this.swipe(e); if (d) this.setState(s => ({ f: (s.f + (d > 0 ? 1 : 4)) % 5 })); },
       qTouchStart: e => { const t = e.touches[0]; this.sx = t.clientX; this.sy = t.clientY; },
-      qTouchEnd: e => { const d = this.swipe(e); if (d) { this.setState(s => ({ q: (s.q + (d > 0 ? 1 : 7)) % 8 })); this.qTimer(); } },
+      qTouchEnd: e => { const d = this.swipe(e); if (d) { this.picked = true; this.setState(s => ({ q: (s.q + (d > 0 ? 1 : 7)) % 8 })); this.qTimer(); } },
       quoteRef: this.quoteRef,
       paused, playing: !paused, pausedAttr: paused ? 'true' : 'false', pauseLabel: paused ? 'Play carousel' : 'Pause carousel', togglePause: () => this.setState({ paused: !paused }),
-      people: AV.map((a, i) => ({ name: NAMES[i], src: '/assets/avatars/' + a + '.png', sel: i === q ? 'true' : 'false', ring: i === q ? '2px solid var(--sf-text)' : '2px solid transparent', op: i === q ? 1 : 0.55, pick: () => { this.setState({ q: i }); this.qTimer(); } })),
+      people: AV.map((a, i) => ({ name: NAMES[i], src: '/assets/avatars/' + a + '.png', sel: i === q ? 'true' : 'false', ring: i === q ? '2px solid var(--sf-text)' : '2px solid transparent', op: i === q ? 1 : 0.55, pick: () => { this.picked = true; this.setState({ q: i }); this.qTimer(); } })),
       formOpen: !sent, formSent: sent,
       send: e => { e.preventDefault(); const f = e.currentTarget; if (this.state.sending) return; this.setState({ sending: true, formErr: '' }); DC.sendForm(f).then(d => { if (d && d.success) { f.reset(); this.setState({ sent: true, sending: false }); } else this.setState({ sending: false, formErr: ((d && d.message) ? d.message + ' ' : 'Couldn’t send right now. ') + 'Please try again.' }); }); }, sending: this.state.sending ? 'true' : 'false', formErr: this.state.formErr,
       reset: () => this.setState({ sent: false })

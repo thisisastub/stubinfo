@@ -67,6 +67,10 @@
       else if (n.indexOf('data-dc-on-') === 0) el.attrs.push({ ev: evName(n.slice(11)), path: a.value.trim() });
       else el.attrs.push({ n: n, v: a.value });
     }
+    // A data-dc-if / data-dc-for wrapper whose only style is display:contents exists purely to group
+    // the template; render its children without an element so e.g. <ul><li> stays a valid list.
+    el.bare = !!(el.cond || el.each) && (tag === 'div' || tag === 'span') && el.attrs.length === 1 &&
+      el.attrs[0].n === 'style' && /^\s*display\s*:\s*contents\s*;?\s*$/i.test(el.attrs[0].v);
     if (tag === 'style' || tag === 'script') { el.raw = node.textContent; return el; }
     var src = tag === 'template' ? node.content : node;
     for (var c = src.firstChild; c; c = c.nextSibling) { var k = compile(c); if (k) el.kids.push(k); }
@@ -146,6 +150,7 @@
         return E(R.Fragment, { key: idx }, kids(el.kids, s));
       });
     } else children = kids(el.kids, scope);
+    if (el.bare) return E.apply(null, [R.Fragment, null].concat(children));
     return E.apply(null, [el.tag, props].concat(children));
   }
 
